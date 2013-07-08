@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'krunksystems.views.home', name='home'),
+    url(r'^$', 'landingapp.views.A1V1_landing', name='A1V1_landing_url'),
     # url(r'^krunksystems/', include('krunksystems.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -1,0 +1,638 @@
+/*
+CSS Parallax Scrolling Demo
+
+Dual licensed under the MIT and GPL licenses:
+http://www.opensource.org/licenses/mit-license.php
+http://www.gnu.org/licenses/gpl.html
+*/
+/* Fontface */
+
+a {
+text-decoration: none;
+color: #66ccff;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+@font-face {
+    font-family: 'MisoLight';
+    src: url('../files/miso-light-webfont.eot');
+    src: url('../files/miso-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../files/miso-light-webfont.woff') format('woff'),
+         url('../files/miso-light-webfont.ttf') format('truetype'),
+         url('../files/miso-light-webfont.svg#MisoLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MisoRegular';
+    src: url('../files/miso-webfont.eot');
+    src: url('../files/miso-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../files/miso-webfont.woff') format('woff'),
+         url('../files/miso-webfont.ttf') format('truetype'),
+         url('../files/miso-webfont.svg#MisoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MisoBold';
+    src: url('../files/miso-bold-webfont.eot');
+    src: url('../files/miso-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../files/miso-bold-webfont.woff') format('woff'),
+         url('../files/miso-bold-webfont.ttf') format('truetype'),
+         url('../files/miso-bold-webfont.svg#MisoBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin: 0;
+	min-width: 980px;
+	padding: 0;
+	color: #000;
+}
+
+p{
+	margin: 0 0 20px 0;	
+}
+
+p, ul{
+	font-family:"Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-size-adjust:0.488;
+	font-weight:200;
+	font-style:normal;
+	
+}
+
+img{
+	border: 0;
+}
+
+
+h1, #pixels{
+	font-family:"Museo 900", Verdana, serif;
+	font-size-adjust:0.40;
+	font-weight:700;
+	font-style:normal;
+}
+
+h1 .teal{
+	text-transform: uppercase;
+	color: #8cd0e7;
+	font-family:"MisoBold", Verdana, serif;
+	font-size:60px;
+	margin-bottom: 15px;
+}
+
+h1.bigbig{
+	text-transform: uppercase;
+	color: #333;
+	font-family:"MisoBold", Verdana, serif;
+	font-size:85px;
+	margin-bottom: 40px;
+}
+
+h2{
+	font-family:"MisoBold", Verdana, sans-serif;
+	font-size:60px;
+	font-weight:500;
+	font-style:normal;
+}
+
+h3{
+	font-family:"MisoBold", Verdana, sans-serif;
+	font-size:35px;
+	font-weight:500;
+	font-style:normal;
+	line-height:10px;
+	padding-bottom: 1px;
+}
+
+
+
+.float-left{
+	float: left;	
+	margin: 0 0 0 20px;
+}
+
+
+
+.about-title h1{
+	position: absolute;
+	margin-top: 160px;
+	color: #fff;
+	background-color:rgba(153,153,153,0.8);
+	padding: 15px 10px;
+	height:110px;
+	
+		
+
+}
+
+.about-text{
+position: absolute;
+margin-top: 160px;
+margin-left: 400px;
+width: 400px;
+height:500px;
+color: #fff;
+background-color:rgba(140,208,231,0.9);
+
+
+
+}
+
+.about-text p{
+font-size: 17.2px;
+padding: 20px 20px 0px 20px;
+
+
+
+
+}
+
+
+.float-right{
+	float: right;
+	margin: 0 20px 0 0;
+}
+
+.center{
+	font-size: 2.5em;
+	padding: 80px 0;
+	text-align: center;
+}
+
+.positions{
+position: absolute;
+top:270px;
+font-family:'MisoBold';
+font-size: 2.1em;
+height:300px;
+}
+
+.positions a{
+font-family:'MisoBold';
+color:#ccc;
+line-height: 50px;
+font-size: 1.1em;
+text-decoration: none;
+
+}
+
+.positions a:hover{
+font-family:'MisoBold';
+font-size: 1.1em;
+border-bottom: 3px Solid #8cd0e7;
+
+}
+
+
+#nav{
+	list-style: none;
+	position: fixed;
+	right: 20px;
+}
+
+#nav li{
+	margin: 0 0 15px 0;
+	font-family: 'MisoBold';
+	color: #666;
+	text-align:right;
+}
+
+#nav li a{
+	margin: 0 0 15px 0;
+	font-family: 'MisoBold';
+	color: #666;
+	text-decoration: none;
+	font-size:22px;
+	
+	
+}
+
+#nav li a:hover{
+	margin: 0 0 15px 0;
+	font-family: 'MisoBold';
+	color: #8cd0e7;
+	text-decoration: none;
+	font-size:22px;
+	
+	
+}
+
+#header, #first, #second{
+	width: 100%;
+}
+
+#header{
+	background: black;
+	height: 130px;
+
+}
+
+#first{
+	background: #fff;
+	color: white;
+	height: 700px;
+	padding: 140px 0 0 0;
+}
+
+#second{
+	color: white;
+	height: 850px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0;
+	background: gray url('../images/office_rahul.jpg') 50% 0 no-repeat fixed;
+}
+
+#m { position: fixed; _position: absolute; }
+
+
+/*
+#second .bg{
+	background: url(images/graph.jpg) 50% 0 no-repeat fixed;
+	height: 1000px;
+	margin: 0 auto;
+	padding: 0;
+	position: absolute;
+	width: 900px;
+	z-index: 200;
+}
+*/
+
+
+
+
+
+#third{
+	background: gray url('../images/code.jpg') 50% 0 no-repeat fixed;
+	color: white;
+	height: 850px;
+	padding: 100px 0 0 0;	
+}
+
+#fourth{
+	background: url(images/bubbles2.png), url(images/bubbles2.png), url(images/bubbles1.png); 
+	background-position: 50% 0, 50% 0, 50% 0, 50% 0;
+	background-color: #fff;
+	
+	background-attachment: fixed;
+	background-repeat: repeat, repeat, repeat ,no-repeat;
+	color: white;
+	height: 1300px;
+	padding: 50px 0 0 0;
+}
+
+#fifth{
+	background: #fff;
+	height: 700px;
+	margin: 0 auto;
+	padding: 10px 0 0 0;
+}
+
+#sixth{
+		background: #fff;
+	height: 700px;
+	margin: 0 auto;
+	padding: 40px 0 0 0;
+	
+	
+
+
+}
+
+#seventh{
+	background: url(images/bubbles2.png), url(images/bubbles2.png), url(images/bubbles1.png); 
+	background-position: 50% 0, 50% 0, 50% 0, 50% 0;
+	background-color: #fff;
+	
+	background-attachment: fixed;
+	background-repeat: repeat, repeat, repeat ,no-repeat;
+	color: white;
+	height: 800px;
+	padding: 40px 0 0 0;
+}
+
+
+#eighth{
+		background: #fff;
+	height: 800px;
+	margin: 0 auto;
+	padding: 40px 0 0 0;
+	
+}
+
+#ninth{
+
+	background: #fff;
+	color: white;
+	height: 565px;
+	padding: 160px 0 0 0;
+}
+
+
+
+
+
+/* Job Descriptions */
+
+
+/*About us */
+#aboutus1{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 450px;
+	width:400px;
+}
+
+#aboutus2{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 450px;
+	width:400px;
+}
+
+#aboutus3{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 450px;
+	width:400px;
+}
+
+#aboutus4{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 450px;
+	width:400px;
+}
+
+#aboutus_all{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 450px;
+	width:400px;
+}
+
+#aboutus_font{
+color: #ccc;
+font-family: 'MisoBold';
+font-size: 20px;
+}
+
+#aboutus_font_head{
+font-family:'MisoBold';
+font-size: 2.1em;
+}
+
+/*END*/
+
+#php {
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+
+#designer {
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+
+#uxdesigner {
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+
+#hr1 {
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+
+#intern {
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+#ourteam{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+#emailus{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+#tweetus{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+#sendusmail{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+#callus{
+    display: none;
+	height:auto;
+	position: absolute;
+	top:280px;
+	margin-left: 400px;
+	width:400px;
+}
+
+
+
+
+
+
+/* End Job Descriptions */
+
+
+.story {
+	margin: 0 auto;
+	min-width: 980px;
+	width: 600px;
+	color: #999;
+}
+
+.story-white {
+	margin: 0 auto;
+	min-width: 980px;
+	width: 600px;
+	color: #fff;
+}
+
+.story .bio {
+	margin: 0 auto;
+	margin-top:90px;
+	min-width: 980px;
+	width: 980px;
+	color: #999;
+	z-index: 200;
+}
+
+
+.story .float-left, .story .float-right{
+	padding: 10px 0 0 0;
+	position: relative;
+	width: 600px;
+	height:200px;
+}
+
+.story .float-left-inner{
+	padding: 50px 0 0 120px;
+	position: absolute;
+	width: 350px;	
+}
+
+.bio-left{
+padding-top:60px;
+position:absolute;
+width:80px;
+height:150px;
+margin-left: 0px;
+}
+
+.bio-right{
+padding-top:10px;
+margin-left: 100px;
+position:relative;
+width:100px;
+height:150px;
+}
+
+.graybox{
+color: #fff;
+font-family: 'MisoBold';
+font-size: 20px;
+padding: 20px;
+position: absolute;
+margin-top: 77px;
+line-height: 25px;
+margin-left: 270px;
+width: 500px;
+height: 40px;
+background: #ccc;
+}
+.graybox_team{
+color: #fff;
+font-family: 'MisoBold';
+font-size: 20px;
+padding: 20px;
+position: absolute;
+margin-top: 68px;
+line-height: 25px;
+margin-left: 340px;
+width: 480px;
+height: 40px;
+background: #ccc;
+}
+
+
+.teamtag{
+margin-top: 100px;
+padding-left: 50px;
+padding-top: 5px;
+background-color: #8cd0e7;
+float: left;
+height: 30px;
+font-family: 'MisoBold';
+color: #fff;
+font-size: 30px;
+text-transform: uppercase;
+
+}
+
+.register {
+margin-left: 20px;
+padding:10px;
+background-color: #8cd0e7;;
+float: left;
+height: 44px;
+font-family: 'MisoBold';
+color: #fff;
+font-size: 40px;
+text-transform: uppercase;
+
+}
+
+.register a:hover{
+margin-left: 20px;
+padding:10px;
+
+float: left;
+height: 35px;
+font-family: 'MisoBold';
+color: black;
+font-size: 40px;
+text-transform: uppercase;
+text-decoration: none;
+
+}
+.register a{
+margin-left: 20px;
+padding:10px;
+float: left;
+height: 35px;
+font-family: 'MisoBold';
+color: black;
+font-size: 40px;
+text-transform: uppercase;
+text-decoration: none;
+
+}
