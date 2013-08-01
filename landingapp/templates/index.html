@@ -7,107 +7,79 @@ Krunk Systems
 {%endblock head%}
 
 {%block content%}
-<div class="row" >
-    <div class="conatiner span3 pull-right">
-        <div class="well">
-        <ul class="navbar ">
-            <li><a href="#first" title="Next Section">home</a></li>
-            <li><a href="#second" title="Next Section">about</a></li>
-            <li><a href="#third" title="Next Section">blog</a></li>
-            <li><a href="#fourth" title="Next Section">internships</a></li>
-            <li><a href="#fifth" title="Next Section">projects</a></li>
-            <li><a href="#sixth" title="Next Section">the team</a></li>
-            <li><a href="#seventh" title="Next Section">contact</a></li>
-            <li><a href="#eighth" title="Next Section">jobs</a></li>
-        </ul>
+
+<ul id="nav">
+    <li><a href="#first" title="Next Section">home</a></li>
+    <li><a href="#second" title="Next Section">about</a></li>
+    <li><a href="#third" title="Next Section">blog</a></li>
+    <li><a href="#fourth" title="Next Section">internships</a></li>
+    <li><a href="#fifth" title="Next Section">projects</a></li>
+    <li><a href="#sixth" title="Next Section">the team</a></li>
+    <li><a href="#seventh" title="Next Section">contact</a></li>
+    <li><a href="#eighth" title="Next Section">jobs</a></li>
+</ul>
+
+<div id="first">
+    <div class="story">
+        <div class="center">
+        <img src="images/krunk_logo.png">
         </div>
-    </div>
-        
+    </div> <!--.story-->
+</div> <!--#first-->
+
+<div id="second">
+        <div class="story">
+        {% include 'aboutus.html'%}
+        </div>
+</div> <!--#second-->
+
+<div id="third">
+        <div class="story">
+        {% include 'blog.html'%}
+        </div>
+</div> <!--#third-->
+
+<div id="fourth">
+    <div class="story">
+        {% include 'internship.html'%}
+    </div> <!--.story-->
+</div> <!--#fourth-->
+
+<div id="fifth">
+<div class="bg"></div>
+    <div class="story">
+        {% include 'projects.html'%}
+    </div> <!--.story-->
+</div> <!--#fifth-->
+
+<div id="sixth"><!--<div class="teamtag">Our Team&nbsp;</div>-->
+    <div class="story">
+        {% include 'team.html'%}
+    </div> <!--.story-->
+</div> <!--#sixth-->
+
+<div id="seventh">
+    <div class="story">
+        {% include 'contactus.html'%}
+    </div> <!--.story-->
+</div> <!--#seventh-->
+
+<div id="eighth">
+    <div class="story">
+        {% include 'jobs.html'%}
+    </div> <!--.story-->
+</div> <!--#eighth-->
+
+<div id="ninth">
+    <div class="story">
+        <div class="center">
+            <img src="images/krunk_logo.png">
+        </div>
+    </div> <!--.story-->
+</div> <!--#ninth-->
 
 
-<script>
-    var a='D';
-    if (a=='D'){
-    console.log('Deepak Malik');
-    }
-</script>
-<div class="container pull-left" style="backgound-color:green;">
-            <div class="well span12">
-            <div id="first">
-                <div class="story">
-                    <img src="/static/images/krunk_logo.png">
-                </div> <!--.story-->
-            </div> <!--first-->
-            </div><!- span8 class closed>
-
-            <div class="well span12">
-            <div id="second">
-                    <div class="story">
-                    {% include 'aboutus.html'%}
-                    </div>
-            </div> <!--second-->
-            </div>
-            <div class="well span12">
-            <div id="third">
-                    <div class="story">
-                    {% include 'blog.html'%}
-                    </div>
-            </div> <!--third-->
-            </div><!-- SPAN12 with class closed-->
-
-            <div class="well span12">
-            <div id="fourth">
-                <div class="story">
-                    {% include 'internship.html'%}
-                </div> <!--.story-->
-            </div> <!--fourth-->
-            </div>
-
-            <div class="well span12">
-            <div id="fifth">
-            <div class="bg"></div>
-                <div class="story">
-                    {% include 'projects.html'%}
-                </div> <!--.story-->
-            </div> <!--fifth-->
-            </div>
 
 
-            <div class="well span12">
-            <div id="sixth"><!--<div class="teamtag">Our Team&nbsp;</div>-->
-                <div class="story">
-                    {% include 'team.html'%}
-                </div> <!--.story-->
-            </div> <!--sixth-->
-            </div>
-
-
-            <div class="well span12">
-            <div id="seventh">
-                <div class="story">
-                    {% include 'contactus.html'%}
-                </div> <!--.story-->
-            </div> <!--seventh-->
-            </div>
-
-            <div class="well span12">
-            <div id="eighth" style="background-color:red;">
-                <div class="story" style="background-color:green;">
-                    {% include 'jobs.html'%}
-                </div> <!--.story-->
-            </div> <!--eighth-->
-            </div>
-
-            <div class="well span12">
-            <div id="ninth">
-                <div class="story">
-                    <div class="center">
-                        <img src="/static/images/krunk_logo.png">
-                    </div>
-                </div> <!--.story-->
-            </div> <!--ninth-->
-            </div>
-            </div>
-</div>
 {%endblock content%}
 

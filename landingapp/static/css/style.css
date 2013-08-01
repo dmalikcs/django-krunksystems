@@ -100,9 +100,8 @@ h1.bigbig{
 	text-transform: uppercase;
 	color: #333;
 	font-family:"MisoBold", Verdana, serif;
-	font-size:180px;
-	margin-top:10px;
-	margin-bottom:10px;
+	font-size:85px;
+	margin-bottom: 40px;
 }
 
 h2{
@@ -125,7 +124,7 @@ h3{
 
 .float-left{
 	float: left;	
-	margin: 0 0 0 10px;
+	margin: 0 0 0 20px;
 }
 
 
@@ -197,8 +196,8 @@ text-decoration: none;
 font-family:'MisoBold';
 font-size: 1.1em;
 border-bottom: 3px Solid #8cd0e7;
-}
 
+}
 
 
 #nav{
@@ -248,8 +247,7 @@ border-bottom: 3px Solid #8cd0e7;
 	background: #fff;
 	color: white;
 	height: 700px;
-	padding:0 0 0 0;
-        margin:0px 0px 0px 0px;
+	padding: 140px 0 0 0;
 }
 
 #second{
@@ -359,7 +357,7 @@ border-bottom: 3px Solid #8cd0e7;
 	height:auto;
 	position: absolute;
 	top:280px;
-	margin-left: 50px;
+	margin-left: 450px;
 	width:400px;
 }
 
@@ -509,7 +507,7 @@ font-size: 2.1em;
 	margin: 0 auto;
 	min-width: 980px;
 	width: 600px;
-	background-color: green;;
+	color: #999;
 }
 
 .story-white {
