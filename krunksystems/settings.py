@@ -123,6 +123,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'landingapp',
+    #'contactus',
+    'gunicorn',
+    'Leigh',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

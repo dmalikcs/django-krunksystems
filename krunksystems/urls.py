@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -7,6 +8,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'landingapp.views.A1V1_landing', name='A1V1_landing_url'),
+    url(r'^Leigh/', 'Leigh.views.A3V1_response'),
+    url(r'^contactus/', 'contactus.views.A2V1_contactus', name='A1V1_contactus_url'),
+
     # url(r'^krunksystems/', include('krunksystems.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
@@ -15,3 +19,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
+
+#if settings.DEBUG:
+
+#            urlpatterns += patterns('',
+#            url(r'%s(?P<path>.*)' % settings.MEDIA_URL[1:], 'django.views.static.serve', {'document_root':settings.MEDIA_ROOT}),)
