@@ -51,3 +51,24 @@
 {
     margin-left:100px;
 }
+
+#services
+{
+    background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
+    height:700px;
+}
+#projects
+{
+    background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
+    height:700px;
+}
+#team
+{
+    background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
+    height:700px;
+}
+#contact
+{
+    background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
+    height:700px;
+}
