@@ -1,0 +1,39 @@
+{%extends 'base.html' %}
+{%block content%}
+<section>
+      <div id = "home" class="inview">
+        {%include 'home.html'%}
+                
+     </div>
+ </section>
+ <section>
+         <div id = "about" class="inview">
+            {%include 'about.html'%}
+         </div> 
+ </section> 
+ <section>
+        <div id = "blog" class="inview">
+            {%include 'blog.html'%}
+        </div>
+</section>
+ <section>
+        <div id = "internships" class="inview">
+            {%include 'services.html'%}
+        </div>
+</section>
+ <section>
+        <div id = "projects" class="inview">
+            {%include 'projects.html'%}
+        </div>
+</section>
+ <section>
+        <div id = "team" class="inview">
+            {%include 'team.html'%}
+        </div>
+</section>
+ <section>
+        <div id = "contact" class="inview">
+            {%include 'contactus.html'%}
+        </div>
+</section>
+{%endblock content%}

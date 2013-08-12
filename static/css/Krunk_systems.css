@@ -1,0 +1,29 @@
+#scrolling
+{
+	margin-top:100px;
+	position:fixed;
+	
+}
+#firstpg
+{
+	background:url(//C:/Users/Deepak/Desktop/KrunkSystems/images/krunk_logo.png) 50% 50% no-repeat fixed;
+	height: 600px;
+    margin-top: 0;
+    padding:160px 0 0 0;
+}
+
+#secondpg
+{
+	background:url(//C:/Users/Deepak/Desktop/KrunkSystems/images/home_page.png) 50% 0 no-repeat fixed;
+	height:600px;
+	position : absolute;
+    margin-top: 0;
+    padding:160px 0 0 0;
+	z-index:200;
+}
+
+.story{
+    margin: 0 auto;
+    min-width: 980px;
+    width: 980px;
+}
