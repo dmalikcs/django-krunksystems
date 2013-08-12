@@ -17,7 +17,7 @@
         </div>
 </section>
  <section>
-        <div id = "services" class="inview">
+        <div id = "services" class="inview container">
             {%include 'services.html'%}
         </div>
 </section>
@@ -33,7 +33,7 @@
 </section>
  <section>
         <div id = "contact" class="inview">
-            {%include 'contactus.html'%}
+            {%include 'contactus.html' with form=contactus_form %}
         </div>
 </section>
 {%endblock content%}

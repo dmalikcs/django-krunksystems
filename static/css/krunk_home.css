@@ -1,6 +1,6 @@
 .menuitem
 {
-    top:100px;
+    top:30%;
     position:fixed;
     right:-80px;
     z-index:30;
@@ -12,15 +12,16 @@
 }
 .title
 {
-   margin-top:200px;
+   margin-top:15%;
    margin-left:450px;
 }
 
 #home
 {
-   background:url(/static/images/home_page.png) 50% 0 no-repeat fixed;
-   height:600px;
+   background:url(/static/images/orange.jpg) 50% 0 no-repeat fixed;
+   height:700px;
    width:100%
+   overflow:hidden;
 }
 
 
@@ -45,8 +46,16 @@
 {
     background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
     height:700px;
+    width:100%;
 }
 
+#blog .innerbg
+{
+    background:url(/static/images/chilli.jpg) 10% 0 no-repeat;
+    height:400px;
+    overflow:hidden;
+    z-index:20;
+}
 .title .blg
 {
     margin-left:100px;
@@ -56,19 +65,24 @@
 {
     background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
     height:700px;
+    width:100%;
 }
 #projects
 {
     background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
     height:700px;
+    width:100%;
 }
 #team
 {
     background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
     height:700px;
+    width:100%;
+
 }
 #contact
 {
     background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
     height:700px;
+    width:100%;
 }
