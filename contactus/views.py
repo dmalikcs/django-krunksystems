@@ -11,8 +11,8 @@ from .models import A2F1_contactus,A2M1_contactus
 def A2V1_contactus(request):
     '''
     Contact us page desiged for Krunksystems.com 
-    # Worked with Ajax        # Not yet
-    # Worked with Post method # Tested
+    Worked with Ajax        # Not yet
+    Worked with Post method # Tested
 
     '''
     template_dic={}
