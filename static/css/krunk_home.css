@@ -6,9 +6,10 @@
     z-index:30;
 }
 
-.menuitem .txtcol
+.menuitem .txtcol > img
 {
-    color:grey;
+    width:30px;
+    height:30px;
 }
 .title
 {
@@ -18,12 +19,71 @@
 
 #home
 {
-   background:url(/static/images/orange.jpg) 50% 0 no-repeat fixed;
-   height:700px;
-   width:100%
+   height:800px;
+   width:100%;
    overflow:hidden;
 }
+.row-fluid .slide1
+{
+    background:url(/static/images/firstBG.jpg) no-repeat;
+    height:800px;
+    overflow:hidden;
+}
 
+  .possible
+{
+    margin:15% 0 0 2%;
+}
+.slide1  .possible > h1
+{
+    font:120px Georgia;
+    color:yellow;
+}
+.possible .inline > p{
+    font:55px Georgia;
+    color:white;
+}
+
+.row-fluid .slide2
+{
+
+    background:url(/static/images/secondBG.jpg) no-repeat;
+    height:800px;
+    overflow:hidden;
+}
+
+.slide2  h1 {
+    color:cyan;
+    font:120px Georgia;
+    text-decoration:bold;
+}
+
+.slide2  p {
+    color:black;
+    font-size:40px;
+    text-decoration:bold;
+    text-transform:uppercase;
+}
+
+.row-fluid .slide3
+{
+    background:url(/static/images/thirdBG.jpg) no-repeat;
+    height:800px;
+    overflow:hidden;
+}
+
+.slide3  h1 {
+    color:cyan;
+    font:120px Georgia;
+    text-decoration:bold;
+}
+
+.slide3  p {
+    color:black;
+    font-size:40px;
+    text-decoration:bold;
+    text-transform:uppercase;
+}
 
 .title h1
 {
@@ -86,3 +146,4 @@
     height:700px;
     width:100%;
 }
+

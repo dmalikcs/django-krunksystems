@@ -3,7 +3,7 @@
 {
 	
 	margin-top:30px;
-	padding:30px;
+	padding-left:10%;
 	
 }
 /* for "about us" text*/
@@ -12,9 +12,11 @@
 	background-color:grey;
 	color:#fff;
 	-webkit-transform:rotate(-90deg);
-	margin-top:46px;
+        -moz-transform:rotate(-90deg);
+	margin-top:50px;
 	margin-left:70px;
-	width:150px;
+	width:160px;
+
 	
 }
 /* for all the list items*/
