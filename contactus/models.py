@@ -50,5 +50,29 @@ class A2M1_contactus(models.Model):
 
                                 
 class A2F1_contactus(forms.ModelForm):
+    '''Contact form with extra widget
+       Twitter-bootstrap class added
+    '''
     class Meta:
         model=A2M1_contactus
+        fields=('First_name','Last_name','Email','Message',)
+        widgets={
+                'First_name':forms.TextInput(
+                    attrs={
+                        'class':'span4',
+
+                        }),
+                'Last_name':forms.TextInput(
+                    attrs={
+                        'class':'span4',
+                        }),
+                'Email':forms.TextInput(
+                    attrs={
+                        'class':'span4',
+                        }),
+                'Message':forms.Textarea(
+                    attrs={
+                        'class':'span4',
+                        }),
+                }
+
