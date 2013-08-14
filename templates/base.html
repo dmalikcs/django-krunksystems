@@ -9,6 +9,7 @@
             <link rel = "stylesheet" href = "/static/css/Krunk_abtus1.css">
     </head>
     <body>
+        {%include "templates.html"%}
         {%block menu%}
         <section>
         <ul class = "nav nav-stacked menuitem " id="menu">
@@ -28,6 +29,10 @@
         {%block content %}
         {%endblock content%}
             <script type="text/javascript" src="/static/js/jquery.js"></script>
+            <script type="text/javascript" src="/static/js/underscore.js"></script>
+            <script type="text/javascript" src="/static/js/backbone.js"></script>
+            <script type="text/javascript" src="/static/js/views.js"></script>
+            <script type="text/javascript" src="/static/js/routes.js"></script>
             <script type="text/javascript" src="/static/js/bootstrap.js"></script>
             <script type="text/javascript">$('.carousel').carousel({interval:3000});</script> 
             <script type="text/javascript" src="/static/js/bootstrap-tooltip.js"> </script>
@@ -43,13 +48,11 @@
             <script type="text/javascript" src="/static/js/jquery.localscroll-1.2.7-min.js"></script>
             <script type="text/javascript" src="/static/js/jquery.scrollTo-1.4.2-min.js"></script>
             <script type="text/javascript" src="/static/js/jquery.inview.js"></script>
-            <script type="text/javascript" src="/static/js/underscore.js"></script>
-            <script type="text/javascript" src="/static/js/backbone.js"></script>
             <script type = "text/javascript">
                     $(document).ready(function()
                     {
                         $('#menu').localScroll();
                     });
-            </script>
+                </script>
     </body>
     </html>
