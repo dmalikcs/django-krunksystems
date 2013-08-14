@@ -132,6 +132,8 @@
     background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
     height:700px;
     width:100%;
+    padding-top:5%;
+    padding-left:1%;
 }
 #team
 {
@@ -146,4 +148,3 @@
     height:700px;
     width:100%;
 }
-
