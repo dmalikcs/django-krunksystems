@@ -129,6 +129,11 @@ INSTALLED_APPS = (
     'django.contrib.webdesign',
     'landingapp',
     'contactus',
+    'south',
+    'trainingapp',
+    'Consultancyapp',
+    'webapp',
+    'erpapp',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
