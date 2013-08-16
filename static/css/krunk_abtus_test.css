@@ -1,0 +1,24 @@
+.nav_abtus
+{
+    padding-top:3%;
+}
+.menubar > .navbar > .navbar-inner
+{
+    border:0px;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+}
+.menubar > .navbar
+{
+    border:0px;
+    padding-top:2%;
+}
+.menubox_size h2,h6
+{
+    margin-top:0px;
+    margin-bottom:0px;
+}
+.menubox_size
+{
+    background-color:red;
+}
