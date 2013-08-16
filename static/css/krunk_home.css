@@ -19,14 +19,12 @@
 
 #home
 {
-   height:800px;
-   width:100%;
    overflow:hidden;
 }
 .row-fluid .slide1
 {
     background:url(/static/images/firstBG.jpg) no-repeat;
-    height:800px;
+    height:1000px;
     overflow:hidden;
 }
 
@@ -48,7 +46,7 @@
 {
 
     background:url(/static/images/secondBG.jpg) no-repeat;
-    height:800px;
+    height:1000px;
     overflow:hidden;
 }
 
@@ -68,7 +66,7 @@
 .row-fluid .slide3
 {
     background:url(/static/images/thirdBG.jpg) no-repeat;
-    height:800px;
+    height:1000px;
     overflow:hidden;
 }
 
@@ -94,57 +92,38 @@
 #about
 {   
     background:url(/static/images/krunk2.png) 50% 0 no-repeat fixed;
-    height:700px;
-}
-
-.title .abt
-{
-    margin-left:50px;
-}
-
-#blog
-{
-    background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
-    height:700px;
-    width:100%;
-}
-
-#blog .innerbg
-{
-    background:url(/static/images/chilli.jpg) 10% 0 no-repeat;
-    height:400px;
+    height:1000px;
     overflow:hidden;
-    z-index:20;
-}
-.title .blg
-{
-    margin-left:100px;
 }
 
 #services
 {
     background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
-    height:700px;
+    height:1000px;
     width:100%;
+    overflow:hidden;
 }
+
 #projects
 {
     background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
-    height:700px;
+    height:1000px;
     width:100%;
-    padding-top:5%;
-    padding-left:1%;
+    overflow:hidden;
 }
-#team
+#projects .proj_pg
 {
-    background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
-    height:700px;
-    width:100%;
-
+    padding-top:3%;
 }
 #contact
 {
     background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;
-    height:700px;
+    height:1000px;
     width:100%;
+    overflow:hidden;
 }
+#contact .contact_pg
+{
+    padding-top:3%;
+}
+
