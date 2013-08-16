@@ -134,8 +134,9 @@ INSTALLED_APPS = (
     'Consultancyapp',
     'webapp',
     'erpapp',
+    'tastypie',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging
