@@ -1,4 +1,18 @@
 from django.conf.urls import patterns, include, url
+from tastypie.api import Api
+from trainingapp.api.resources import TrainingCourseResource,CorporateTrainingResource,IndustrialTrainingResource,AcademyTrainingResource
+from Consultancyapp.api.resources import PythonConsultancyResource,DjangoConsultancyResource,OpensourceConsultancyResource,MidrangeConsultancyResource
+from webapp.api.resources import DevelopmentResource
+v1_api=Api(api_name='v1')
+v1_api.register(TrainingCourseResource())
+v1_api.register(CorporateTrainingResource())
+v1_api.register(IndustrialTrainingResource())
+v1_api.register(AcademyTrainingResource())
+v1_api.register(PythonConsultancyResource())
+v1_api.register(DjangoConsultancyResource())
+v1_api.register(OpensourceConsultancyResource())
+v1_api.register(MidrangeConsultancyResource())
+v1_api.register(DevelopmentResource())
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -11,8 +25,9 @@ urlpatterns = patterns('',
     # url(r'^krunksystems/', include('krunksystems.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^api/',include(v1_api.urls)),
 )
