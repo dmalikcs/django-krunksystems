@@ -47,6 +47,9 @@ class A2M1_contactus(models.Model):
             )
     def __unicode__(self):
         return u'%s %s' % (self.First_name,self.Last_name)
+    class Meta:
+        verbose_name='Query'
+        verbose_name_plural='Queries'
 
                                 
 class A2F1_contactus(forms.ModelForm):

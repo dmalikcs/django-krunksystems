@@ -1,0 +1,2 @@
+\n
+curl --dump-header - -H "Authorization: ApiKey dmalik5:4791c10acb8d425fbab86dc05adc49087d3050c2" -H "Content-Type: application/json" -X POST --data '{"cource_detail": "Hello, It", "course_name": "Cluster", "hours": 40}' http://192.168.1.101:8002/api/v1/trainingcource/
