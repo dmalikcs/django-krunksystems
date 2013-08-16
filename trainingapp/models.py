@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 type_of_training=(
         ('Corporate','CT'),
         ('Industrial','IT'),
@@ -143,3 +144,7 @@ class AcademyTraining(models.Model):
         verbose_name='Academy Training'
         verbose_name_plural='Academy Trainings'
 
+
+class CorporateTrainingForm(forms.ModelForm):
+    class Meta:
+        model=CorporateTraining
