@@ -148,3 +148,18 @@ class AcademyTraining(models.Model):
 class CorporateTrainingForm(forms.ModelForm):
     class Meta:
         model=CorporateTraining
+        fields=['personal_email',]
+        widgets ={ 'personal_email':forms.TextInput(attrs={ }) }
+
+class TrainingCourseFrom(forms.ModelForm):
+    class Meta:
+        model=TrainingCourse
+
+
+class IndustrialTrainingForm(forms.ModelForm):
+    class Meta:
+        model=IndustrialTraining
+
+class AcademyTrainingForm(forms.ModelForm):
+    class Meta:
+        model=AcademyTraining
