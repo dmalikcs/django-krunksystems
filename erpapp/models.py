@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 class ERPInquiry(models.Model):
     name=models.CharField(verbose_name='name',
@@ -98,5 +99,20 @@ class ErpCustomers(models.Model):
         verbose_name='ERP Customer'
         verbose_name_plural='ERP Customers'
 
+class ERPInquiryForm(forms.ModelForm):
+    class Meta:
+        model=ERPInquiry
+
+class OpenERPModulesForm(forms.ModelForm):
+    class Meta:
+        model=OpenERPModules
+
+class ErpDemoForm(forms.ModelForm):
+    class Meta:
+        model=ErpDemo
+
+class ErpCustomersForm(forms.ModelForm):
+    class Meta:
+        model=ErpCustomers
 
 # Create your models here.
