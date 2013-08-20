@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 status=(
         ('New','N'),
@@ -60,6 +61,9 @@ class Development(models.Model):
         verbose_name='Development'
         verbose_name_plural='Developments'
 
+class DevelopmentForm(forms.ModelForm):
+    class Meta:
+        model=Development
 
     
 
