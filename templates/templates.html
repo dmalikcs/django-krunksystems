@@ -1,11 +1,9 @@
+<script type="text/template" id="about_template">
+    <h1>About Us</h1>
+</script>
+
 <script type="text/template" id="zero_template">
-<section class = "container">
-				<span class = "rectbg span1 homepg">
-					<p>  
-						Krunk Systems is a software development firm, focused on innovating new and sophisticated products to ease life of masses. Developers at Krunk Systems are continuously working on complex technologies yet making it simple to understand and use. We aim at providing 100% client and Customer satisfaction by delivering projects on time to client, keeping in mind customers needs as well```  </p>
-				</span>
-				<img class = "img-circle circlebg homepg"></img>
-			</section>
+    <h1>Zero</h1>
 </script>
 
 <script type="text/template" id="idea_template">
@@ -19,4 +17,310 @@
 <script type="text/template" id="letskrunk_template">
 <h1>Let's Krunk </h1>
 </script>
-				
+
+<script type="text/template" id="service_training_template">
+<div class="tabbable tabs-left"> <!-- tabs div open -->
+    <ul class = "nav nav-tabs">
+        <li class="active">
+        <a data-toggle="tab" href="#CorporateTraining">Corporate</a></li>
+        <li ><a data-toggle="tab" href="#IndustrialTraining">Industrial</a></li>
+        <li ><a data-toggle="tab" href="#AcademyTraining">Acadamy</a></li>
+    </ul>
+    <div class="tab-content span8" > <!--  content div open -->
+        <div class="tab-pane active" id="CorporateTraining""> <!-- tab pane Open ERP div open -->
+            <h1>CorporateTraining </h1>
+            <div class = "span7"> 
+                <a href="#crform" data-toggle="modal">Request</a>
+            </div>
+        </div>  <!-- tab pane Open ERP div closed -->
+        <div class="tab-pane" id="IndustrialTraining">  <!-- tab pane Open Complain div open -->
+            <h1>IndustrialTraining </h1>
+            <div class = "span7"> 
+                <a href="#itform" data-toggle="modal">Request</a>
+            </div>
+        </div> <!-- tab pane Open Complain div closed -->
+        <div class="tab-pane" id="AcademyTraining">  <!-- tab pane DD div open -->
+            <h1>AcademyTraining </h1>
+            <div class = "span7"> 
+                <a href="#atform" data-toggle="modal">Request</a>
+            </div>
+        </div> <!-- tab pane DD div closed -->
+    </div> <!--  content div closed -->
+</div> <!-- tabs div closed -->
+
+
+<div class="modal fade hide" id = "crform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Corp Training </h3>
+    </div>
+    <div class = "modal-body">
+        <form>
+            {% for field in ct_Form%}
+            {{field.label}}
+            {{field}}<br>
+            {{field.error}}
+                <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+
+
+<div class="modal fade hide" id = "itform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Industrial Training </h3>
+    </div>
+    <div class = "modal-body">
+        <form>
+            {% for field in it_Form%}
+            {{field.label}}
+            {{field}}<br>
+            {{field.error}}
+                <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+
+
+<div class="modal fade hide" id = "atform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Acadamy  Training </h3>
+    </div>
+    <div class = "modal-body">
+        <form id="">
+            {% for field in at_Form%}
+            {{field.label}}
+            {{field}}<br>
+            {{field.error}}
+                <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+</script>
+{%comment%}
+##Service Page design 
+## 4 botton 
+##
+{%endcomment%}
+
+<script type="text/template" id="service_consulting_template">
+<div class="tabbable tabs-left"> <!-- tabs div open -->
+    <ul class = "nav nav-tabs">
+        <li class="active">
+        <a data-toggle="tab" href="#PythonConsultancy">Python Consultancy</a></li>
+        <li ><a data-toggle="tab" href="#DjangoConsultancy">Django Consultancy</a></li>
+        <li ><a data-toggle="tab" href="#OpensourceConsultancy">Opensource Consultancy</a></li>
+        <li ><a data-toggle="tab" href="#MidrangeConsultancy">Midrange Consultancy</a></li>
+    </ul>
+    <div class="tab-content span8" > <!--  content div open -->
+        <div class="tab-pane active" id="PythonConsultancy"> <!-- tab pane Open ERP div open -->
+            <h1>Python Consultancy </h1>
+            <div class = "span7">  
+                <a href="#pcform" data-toggle="modal">Request</a>
+            </div>
+        </div>  <!-- tab pane Open ERP div closed -->
+        <div class="tab-pane" id="DjangoConsultancy">  <!-- tab pane Open Complain div open -->
+            <h1>Django Consultancy</h1>
+            <div class = "span7"> 
+                <a href="#dcform" data-toggle="modal">Request</a>
+            </div>
+        </div> <!-- tab pane Open Complain div closed -->
+        <div class="tab-pane" id="OpensourceConsultancy">  <!-- tab pane DD div open -->
+            <h1>Opensource Consultancy </h1>
+            <div class = "span7"> 
+                <a href="#ocform" data-toggle="modal">Request</a>
+            </div>
+        </div> <!-- tab pane DD div closed -->
+        <div class="tab-pane" id="MidrangeConsultancy">  <!-- tab pane DD div open -->
+            <h1>Midrange Consultancy </h1>
+            <div class = "span7"> 
+                <a href="#mcform" data-toggle="modal">Request</a>
+            </div>
+        </div> <!-- tab pane DD div closed -->
+    </div> <!--  content div closed -->
+</div> <!-- tabs div closed -->
+
+
+<div class="modal fade hide" id = "pcform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Python Consultancy </h3>
+    </div>
+    <div class = "modal-body">
+        <form >
+            {{python_Form}}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+<div class="modal fade hide" id = "dcform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Django consultancy </h3>
+    </div>
+    <div class = "modal-body">
+        <form >
+            {{django_Form}}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+
+
+<div class="modal fade hide" id = "ocform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Open Source consultancy</h3>
+    </div>
+    <div class = "modal-body">
+        <form>
+            {{opensource_Form}}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+<div class="modal fade hide" id = "mcform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Midrange Training </h3>
+    </div>
+    <div class = "modal-body">
+        <form>
+            {{midrange_Form}}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+</script>
+
+<script type="text/template" id="service_development_template">
+<div class="tabbable tabs-left"> <!-- tabs div open -->
+    <ul class = "nav nav-tabs">
+        <li class="active">
+        <a data-toggle="tab" href="#Webdevelopment">web Development</a></li>
+        <li ><a data-toggle="tab" href="#Applicationdevelopment">Application Development</a></li>
+    </ul>
+    <div class="tab-content span8" > <!--  content div open -->
+        <div class="tab-pane active" id="Webdevelopment"> <!-- tab pane Open ERP div open -->
+            <h1>Web Development </h1>
+            <div class = "span7"> 
+                <a href="#wdform" data-toggle="modal">Request</a>
+            </div>
+        </div>  <!-- tab pane Open ERP div closed -->
+        <div class="tab-pane" id="Applicationdevelopment">  <!-- tab pane Open Complain div open -->
+            <h1>Application Development</h1>
+            <div class = "span7"> 
+                <a href="#adform" data-toggle="modal">Request</a>
+            </div>
+    </div> <!--  content div closed -->
+</div> <!-- tabs div closed -->
+<div class="modal fade hide" id = "wdform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Web Development </h3>
+    </div>
+    <div class = "modal-body">
+        <form>
+            {{development_Form}}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+<div class="modal fade hide" id = "adform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Application Development </h3>
+    <div class = "modal-body">
+        <form id="">
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+</script>
+
+<script type="text/template" id="service_erp_template">
+<div class="tabbable tabs-left"> <!-- tabs div open -->
+    <ul class = "nav nav-tabs">
+        <li class="active">
+        <a data-toggle="tab" href="#openerp_implementation">Implementation</a></li>
+        <li ><a data-toggle="tab" href="#openerp_customization">customization</a></li>
+    </ul>
+    <div class="tab-content span8" > <!--  content div open -->
+        <div class="tab-pane active" id="openerp_implementation"> <!-- tab pane Open ERP div open -->
+            <h1>openerp implementation </h1>
+            <div class = "span7"> 
+            </div>
+        </div>  <!-- tab pane Open ERP div closed -->
+        <div class="tab-pane" id="openerp_customization">  <!-- tab pane Open Complain div open -->
+            <h1>openerp customization</h1>
+            <div class = "span7"> 
+                <a href="#erpinquiryform" data-toggle="modal">Inquiry</a>|
+                <a href="#demoform" data-toggle="modal">Request for demo</a>
+            </div>
+    </div> <!--  content div closed -->
+</div> <!-- tabs div closed -->
+
+
+<div class="modal fade hide" id = "demoform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3>Demo Request </h3>
+    </div>
+
+    <div class = "modal-body">
+        <form>
+            {{erpdemo_Form}}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+
+<div class="modal fade hide" id = "erpinquiryform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> ERP Inquriy</h3>
+    </div>
+    <div class = "modal-body">
+        {{erpinquiry_Form}}
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+
+</script>
+
+
+<script type="text/template" id="CRTtemplate">
+<div class = "hero-unit">
+    <a href = "#form_modal" class = "btn btn-primary" data-toggle="modal"> Display Form </a>
+</div>
+</script>
