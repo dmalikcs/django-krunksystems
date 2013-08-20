@@ -1,23 +1,24 @@
 from django.db import models
-
+from django import forms
 python_categories=(
-        ('Django','dj'),
-        ('OpenERP','dj'),
+        ('Fi','Fiber'),
+        ('Li','Linux'),
         )
 
 django_categories=(
-        ('Django','dj'),
-        ('OpenERP','dj'),
+        ('dj','Django'),
+        ('Developers','Django developer'),
         )
 
 opensource_categories=(
-        ('Django','dj'),
-        ('OpenERP','dj'),
+        ('django','Django'),
+        ('asterisk','OpenERP'),
+        ('samba','samba'),
         )
 
 midrange_categories=(
-        ('Django','dj'),
-        ('OpenERP','dj'),
+        ('vx','Veritas'),
+        ('sx','Solaris'),
         )
 
 
@@ -100,4 +101,18 @@ class MidrangeConsultancy(models.Model):
         verbose_name_plural="Midrange Consultancies"
 
 
+class PythonConsultancyForm(forms.ModelForm):
+    class Meta:
+        model=PythonConsultancy
 
+class DjangoConsultancyForm(forms.ModelForm):
+    class Meta:
+        model=DjangoConsultancy
+
+class OpensourceConsultancyForm(forms.ModelForm):
+    class Meta:
+        model=OpensourceConsultancy
+
+class MidrangeConsultancyForm(forms.ModelForm):
+    class Meta:
+        model=MidrangeConsultancy
