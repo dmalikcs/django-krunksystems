@@ -1,10 +1,10 @@
 from django.conf.urls import patterns, include, url
 from tastypie.api import Api
-from trainingapp.api.resources import TrainingCourseResource,CorporateTrainingResource,IndustrialTrainingResource,AcademyTrainingResource
+from trainingapp.api.resources import TrainingCoursesResource,CorporateTrainingResource,IndustrialTrainingResource,AcademyTrainingResource
 from Consultancyapp.api.resources import PythonConsultancyResource,DjangoConsultancyResource,OpensourceConsultancyResource,MidrangeConsultancyResource
 from webapp.api.resources import DevelopmentResource
 v1_api=Api(api_name='v1')
-v1_api.register(TrainingCourseResource())
+v1_api.register(TrainingCoursesResource())
 v1_api.register(CorporateTrainingResource())
 v1_api.register(IndustrialTrainingResource())
 v1_api.register(AcademyTrainingResource())
