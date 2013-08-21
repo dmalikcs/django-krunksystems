@@ -4,13 +4,20 @@ from tastypie.authorization import Authorization
 from trainingapp.models import TrainingCourse,CorporateTraining,IndustrialTraining,AcademyTraining,CorporateTrainingForm
 from tastypie.validation import Validation,FormValidation
 
+class TrainingCoursesResource(ModelResource):
+    class Meta:
+        queryset=TrainingCourse.objects.all()
+        #fields=['id','course_name',]
+        resource_name='courses'
+        allowed_methods=['get']
+        #authentication=ApiKeyAuthentication()
+        #authorization=Authorization()
 class TrainingCourseResource(ModelResource):
     class Meta:
         queryset=TrainingCourse.objects.all()
-        resource_name='trainingcource'
-        allowed_methods=['get','post']
-        authentication=ApiKeyAuthentication()
-        #authorization=Authorization()
+        fields=['id',]
+        resource_name='courses'
+        allowed_methods=['get']
 
 class CorporateTrainingResource(ModelResource):
     def hydrate(self,bundle):
