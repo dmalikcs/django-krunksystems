@@ -1,28 +1,28 @@
 <script type="text/template" id="about_template">
-    <h1>About Us</h1>
+    <h3>About Us</h3>
 </script>
 
 <script type="text/template" id="zero_template">
-    <h1>Zero</h1>
+    <h3>Zero</h3>
 </script>
 
 <script type="text/template" id="idea_template">
-<h1>Idea</h1>
+<h3>Idea</h3>
 </script>
 
 <script type="text/template" id="dna_template">
-<h1>DNA</h1>
+<h3>DNA</h3>
 </script>
 
 <script type="text/template" id="letskrunk_template">
-<h1>Let's Krunk </h1>
+<h3>Let's Krunk </h3>
 </script>
 
 <script type="text/template" id="service_training_template">
 <div class="tabbable tabs-left"> <!-- tabs div open -->
     <ul class = "nav nav-tabs">
-        <li class="active">
-        <a data-toggle="tab" href="#CorporateTraining">Corporate</a></li>
+        <li ><a data-toggle="tab" href="#coursetraining" class="test">what we offer</a></li>
+        <li class="active"><a data-toggle="tab" href="#CorporateTraining">Corporate</a></li>
         <li ><a data-toggle="tab" href="#IndustrialTraining">Industrial</a></li>
         <li ><a data-toggle="tab" href="#AcademyTraining">Acadamy</a></li>
     </ul>
@@ -39,6 +39,8 @@
                 <a href="#itform" data-toggle="modal">Request</a>
             </div>
         </div> <!-- tab pane Open Complain div closed -->
+        <div class="tab-pane" id="coursetraining">{#training corse started #}
+        </div> {# Training course closed #}
         <div class="tab-pane" id="AcademyTraining">  <!-- tab pane DD div open -->
             <h1>AcademyTraining </h1>
             <div class = "span7"> 
@@ -267,11 +269,16 @@
 <script type="text/template" id="service_erp_template">
 <div class="tabbable tabs-left"> <!-- tabs div open -->
     <ul class = "nav nav-tabs">
-        <li class="active">
-        <a data-toggle="tab" href="#openerp_implementation">Implementation</a></li>
+        <li class="active"><a data-toggle="tab" href="#openerp_implementation">Implementation</a></li>
         <li ><a data-toggle="tab" href="#openerp_customization">customization</a></li>
+        <li ><a data-toggle="tab" href="#modules">modules</a></li>
     </ul>
     <div class="tab-content span8" > <!--  content div open -->
+        <div class="tab-pane" id="modules"> <!-- tab pane Open ERP div open -->
+            <h1>Modules</h1>
+            <div class = "span7"> 
+            </div>
+        </div>  <!-- tab pane Open ERP div closed -->
         <div class="tab-pane active" id="openerp_implementation"> <!-- tab pane Open ERP div open -->
             <h1>openerp implementation </h1>
             <div class = "span7"> 
@@ -318,9 +325,39 @@
 
 </script>
 
+{%comment%}
+<script type="text/template" id="coursedisplay_template">
+    Course Value
+    <table class="table">
+    <% _.each(people, function(name) { %> 
+        <tr>
+            <td><%= name.id %></td>
+            <td><%= name.course_name %></td>
+            <td><a class="Deepak" id="<%= name.id %>" href=<%=name.resource_uri %> > name</a></td>
+        </tr>
+        <% }); %>
+    </table>
 
-<script type="text/template" id="CRTtemplate">
-<div class = "hero-unit">
-    <a href = "#form_modal" class = "btn btn-primary" data-toggle="modal"> Display Form </a>
+</script>
+{%endcomment%}
+
+<script type="text/template" id="coursedisplay_template">
+<div class="accordion" id="accordion2">
+    <% _.each(people, function(name) { %> 
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class=" accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= name.id %>">
+                <%= name.course_name %>
+            </a>
+        </div>
+        <div id="collapse<%= name.id %>" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <%= name.cource_detail %>
+            </div>
+        </div>
+    </div>
+    <% }); %>
 </div>
 </script>
+
+
