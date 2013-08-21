@@ -30,3 +30,11 @@ sync: function (method, model, options){
     }
 },
 });
+
+var CourseModel=Backbone.Model.extend({
+    url:'/api/v1/courses/?format=json'
+});
+
+var CourseCollection = Backbone.Collection.extend({
+        url:'/api/v1/courses/?format=json',
+});

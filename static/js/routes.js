@@ -10,6 +10,7 @@ AboutusRouter = Backbone.Router.extend({
     'service_consulting':'ConsultingRoute',
     'service_development':'DevelopementRoute',
     'service_erp':'ErpRoute',
+    'trainingcourse':'trainingcourseRoute',
 
       },
     ZeroRoute:function(){
@@ -57,6 +58,11 @@ AboutusRouter = Backbone.Router.extend({
         console.log("called from: ErpRoute");
         new ErpView();
         console.log("called ErpView");
+    },
+    trainingcourseRoute:function(){
+        console.log("Called trainingcourseRoute");
+        new CourseView();
+        console.log("called trainingcourseRoute:success");
     }
 });
 
@@ -64,3 +70,4 @@ aboutrouter=new AboutusRouter();
 Backbone.history.start();
 //aboutrouter.navigate('about', {trigger: true});
 //aboutrouter.navigate('service_training', {trigger: true});
+

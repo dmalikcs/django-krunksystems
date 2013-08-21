@@ -98,12 +98,28 @@ var CRTView=Backbone.View.extend({
                 phone:phone,
                 message:message,
           })
-        data='{"company_name":"Krunk Systems","employee_name":"Depak Malik","personal_email":"dmalikcs@gmail.com","offical_email":"krunksystems@gmail.com","mobile":"79975","phone":"9898989"}'
         console.log("console");
         CRTmodel.save();
         return false;
         },
 });
+
+/*courseView=Backbone.View.extend({
+        el:$('#coursetraining'),
+        initialize:function(){
+            var cc=new CourseCollection()
+            cc.fetch({
+                    success:function(collection,response){
+                    self.render();
+                    },
+        });
+        },
+        render:function(){
+           console.log("render function called from");
+           var zero =_.template("Hello",{});
+           this.$el.html(zero);
+        },
+});*/
 
 TrainingView=Backbone.View.extend({
         el:$('#service_container'),
@@ -115,7 +131,30 @@ TrainingView=Backbone.View.extend({
             var zero =_.template($("#service_training_template").html(),{});
             this.$el.html(zero);
         },
+        CourseDisplayRender:function(response){
+            //var display=_.template($('#coursedisplay_template').html(),{courses:response});
+            var display=_.template($('#coursedisplay_template').html(),{people:response.objects});
+            console.log(response.objects[0]);
+            $('#coursetraining').html(display);
+        },        
+        events:{
+        'click a.test':'CourseDisplay',
+        'click a.Deepak':'SingleCourseDisplay',
+        },
+        SingleCourseDisplay:function(event){
+            
+        },
+        CourseDisplay:function(events){
+            var self=this;
+            var cc=new CourseCollection();
+            cc.fetch({
+                    success:function(collection,response){
+                    self.CourseDisplayRender(response);
+                    },
+        });
+        } ,
 });
+
 ConsultingView=Backbone.View.extend({
         el:$('#service_container'),
         initialize:function(){
@@ -149,3 +188,43 @@ ErpView=Backbone.View.extend({
             this.$el.html(zero);
         },
 });
+
+var CourseView=Backbone.View.extend({
+    el:$('#temp'),
+    initialize:function(){
+        console.log("ListCoursePage called");
+        //_.bindAll(this,'render','ListCoursePage');
+        this.render()
+
+    },
+    render:function(response){
+        console.log("render function called");
+        var temp=_.template($('#crs'),{});
+        this.$el.html(temp);
+    },
+ /*   ListCoursePage:function(querystring){
+        var self = this;
+        var cc=new CourseCollection()
+        cc.fetch({
+            data:querystring,
+            success:function(collection,response){
+            self.render(response);
+        },
+    });
+    },
+*/
+});
+
+
+/*
+    console.log("CourseDisplay function called");
+    var self = this;
+    var cc=new CourseCollection()
+    cc.fetch({
+        success:function(collection,response){
+        var zero =_.template("Hello",{});
+        self.$el.html(zero);
+        self.render_new(response);
+    },
+    });
+*/
