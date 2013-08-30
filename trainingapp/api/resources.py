@@ -15,7 +15,7 @@ class TrainingCoursesResource(ModelResource):
 class TrainingCourseResource(ModelResource):
     class Meta:
         queryset=TrainingCourse.objects.all()
-        fields=['id',]
+        #fields=['id',]
         resource_name='courses'
         allowed_methods=['get']
 
