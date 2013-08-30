@@ -53,7 +53,8 @@
 
 <div class="modal fade hide" id = "crform" aria-hidden = "true">
     <div class = "modal-header">
-        <h3> Corp Training </h3>
+        <h3> Corp form </h3>
+        <div id="saved"></div>
     </div>
     <div class = "modal-body">
         <form>
@@ -61,7 +62,7 @@
             {{field.label}}
             {{field}}<br>
             {{field.error}}
-                <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
             {%endfor%}
         </form>
     </div>
@@ -360,4 +361,11 @@
 </div>
 </script>
 
+
+<script type="text/template" id="alert-success">
+    <div class="alert alert-success">  
+       <a class="close" data-dismiss="alert">&times;</a>  
+        <strong>Success!</strong>You have successfully done it.  
+    </div> 
+</script>
 
