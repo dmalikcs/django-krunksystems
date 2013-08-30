@@ -80,8 +80,17 @@
             <script type = "text/javascript">
                     $(document).ready(function()
                     {
-                        $('#menu').localScroll();
-                        });
+                    $('#menu').localScroll();
+                    });
+                    $(document).bind("ajaxSend", function(){
+                    //  $("#loading").show();
+                    console.log("ajaxSend started");
+                    }).bind("ajaxComplete", function(){
+                    //$("#loading").hide();
+                    console.log("ajaxCompleted started");
+                    }).bind("ajaxSuccess",function(){
+                    console.log("Successfully completed"); 
+                    });
                 </script>
     </body>
     </html>
