@@ -42,7 +42,6 @@
 {
     width:100px;
     height:100px;
-    border:2px solid #343435;
     text-align:center;
 }
 
@@ -55,18 +54,22 @@
 
 .training_circle
 {
-    background-color:#60d7e7;
+    background-color:#6BBAE7;
+    border:2px solid #62ABD4;
 }
 
 .consulting_circle
 {
-    background-color:#de57e4;
+    background-color:#6BBAE7;
+    border:2px solid #62ABD4;
 }
 .development_circle
 {
-    background-color:#00c90b;
+    background-color:#6BBAE7;
+    border:2px solid #62ABD4;
 }
 .erp_circle
 {
-    background-color:#dfa300;
+    background-color:#6BBAE7;
+    border:2px solid #62ABD4;
 }
