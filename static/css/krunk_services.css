@@ -1,6 +1,7 @@
 .service_nav
 {
     padding-top:3%;
+    margin-left:7.5%;
 }
 
 .service_nav .navbar-inner
@@ -21,18 +22,51 @@
     box-shadow:none;
     margin-right:0;
 }
-.training_circle
+
+.services_circle
+{
+    width:150px;
+    height:100px;
+    border:2px solid #343435;
+    text-align:center;
+    margin-top:5%;
+}
+
+.services_circle h4
+{
+    margin-top:25%;
+    text-shadow:none;
+    color:#343435;
+}
+.main_circle
 {
     width:100px;
     height:100px;
-    border:1px solid grey;
+    border:2px solid #343435;
     text-align:center;
-    background-color:skyblue;
 }
 
-.training_circle h5
+.main_circle h5
 {
     margin-top:40%;
+    text-shadow:none;
+    color:#343435;
 }
 
+.training_circle
+{
+    background-color:#60d7e7;
+}
 
+.consulting_circle
+{
+    background-color:#de57e4;
+}
+.development_circle
+{
+    background-color:#00c90b;
+}
+.erp_circle
+{
+    background-color:#dfa300;
+}
