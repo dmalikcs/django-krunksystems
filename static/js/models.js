@@ -6,6 +6,7 @@ sync: function (method, model, options){
                 type:'POST',
                 contentType: 'application/json',
                 url:'/api/v1/cor_training/?username=dmalik5\&api_key=4791c10acb8d425fbab86dc05adc49087d3050c2',
+                global: true,
                 data: JSON.stringify({
                         company_name:(this.get('company_name')|| ''),
                         employee_name:(this.get('employee_name')||''),
@@ -14,10 +15,17 @@ sync: function (method, model, options){
                         mobile:(this.get('mobile')||''),
                         phone:(this.get('phone')||''),
                         message:(this.get('message')||''),
-                }),
+                }
+                ),
+                beforeSend: function(){
+                    $('#id_err_company_name').html('');
+                },
                 success:function(data){
-                  console.log("Account saved");
-                  $('#form_modal').html("<button class = \"btn btn-danger\" data-dismiss=\"modal\" aria-hidden=\"true\"> Close </button>");
+                    //$('#crform').html("<button class = \"btn btn-danger\" data-dismiss=\"modal\" aria-hidden=\"true\"> Close </button>");
+                    var a=_.template($('#crform').html(),{});
+                    $('#crform').html(a);
+                    var alert = _.template($('#alert-success').html(),{});
+                    $('#saved').html(alert);
                 },
                 error:function(jqXHR, textStatus, errorThrown){
                     var errors = JSON.parse(jqXHR.responseText) 
@@ -26,6 +34,7 @@ sync: function (method, model, options){
                         $('#id_err_' + field).html(" " + error + " ");
                     }   
                 },
+                
         });
     }
 },
