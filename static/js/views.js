@@ -140,6 +140,7 @@ TrainingView=Backbone.View.extend({
         events:{
         'click a.test':'CourseDisplay',
         'click a.Deepak':'SingleCourseDisplay',
+        'click button.btn-primary':'CRTAdd',
         },
         SingleCourseDisplay:function(event){
             
@@ -153,6 +154,29 @@ TrainingView=Backbone.View.extend({
                     },
         });
         } ,
+    CRTAdd:function(event){
+            console.log("Workinf");
+            company_name=$('#id_company_name').val();
+            employee_name=$('#id_employee_name').val();
+            personal_email=$('#id_personal_email').val();
+            offical_email=$('#id_offical_email').val();
+            mobile=$('#id_mobile').val();
+            phone=$('#id_phone').val();
+            message=$('#id_message').val();
+    console.log(message);    
+    var CRTmodel=new CRTModel({
+               company_name:company_name,
+                employee_name:employee_name,
+                personal_email:personal_email,
+                offical_email:offical_email,
+                mobile:mobile,
+                phone:phone,
+                message:message,
+          })
+        console.log("console");
+        CRTmodel.save();
+        return false;
+        },
 });
 
 ConsultingView=Backbone.View.extend({
