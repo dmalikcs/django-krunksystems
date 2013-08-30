@@ -1,5 +1,5 @@
 AboutusRouter = Backbone.Router.extend({
-    routes:{
+     routes:{
     'zero':'ZeroRoute',
     'dna':'DnaRoute',
     'idea':'IdeaRoute',
@@ -11,8 +11,7 @@ AboutusRouter = Backbone.Router.extend({
     'service_development':'DevelopementRoute',
     'service_erp':'ErpRoute',
     'trainingcourse':'trainingcourseRoute',
-
-      },
+    },
     ZeroRoute:function(){
         console.log("called from Home");
         new ZeroView();
@@ -63,10 +62,10 @@ AboutusRouter = Backbone.Router.extend({
         console.log("Called trainingcourseRoute");
         new CourseView();
         console.log("called trainingcourseRoute:success");
-    }
+    },
 });
 
-aboutrouter=new AboutusRouter();
+new AboutusRouter();
 Backbone.history.start();
 //aboutrouter.navigate('about', {trigger: true});
 //aboutrouter.navigate('service_training', {trigger: true});
