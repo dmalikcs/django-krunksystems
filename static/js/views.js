@@ -131,12 +131,6 @@ TrainingView=Backbone.View.extend({
             var zero =_.template($("#service_training_template").html(),{});
             this.$el.html(zero);
         },
-        CourseDisplayRender:function(response){
-            //var display=_.template($('#coursedisplay_template').html(),{courses:response});
-            var display=_.template($('#coursedisplay_template').html(),{people:response.objects});
-            console.log(response.objects[0]);
-            $('#coursetraining').html(display);
-        },        
         events:{
         'click a.test':'CourseDisplay',
         'click a.Deepak':'SingleCourseDisplay',
@@ -146,13 +140,13 @@ TrainingView=Backbone.View.extend({
             
         },
         CourseDisplay:function(events){
-            var self=this;
             var cc=new CourseCollection();
             cc.fetch({
                     success:function(collection,response){
-                    self.CourseDisplayRender(response);
+                    var display=_.template($('#coursedisplay_template').html(),{people:response.objects});
+                    $('#coursetraining').html(display);
                     },
-        });
+                    });
         } ,
     CRTAdd:function(event){
             console.log("Workinf");
@@ -172,8 +166,7 @@ TrainingView=Backbone.View.extend({
                 mobile:mobile,
                 phone:phone,
                 message:message,
-          })
-        console.log("console");
+          });
         CRTmodel.save();
         return false;
         },
@@ -201,8 +194,12 @@ DevelopementView=Backbone.View.extend({
             this.$el.html(zero);
         },
 });
+
 ErpView=Backbone.View.extend({
         el:$('#service_container'),
+        events:{
+            'click a.erp_modules':'ERPModulesDisplay',
+        },
         initialize:function(){
             console.log("ERPView called");
             this.render();
@@ -210,6 +207,18 @@ ErpView=Backbone.View.extend({
         render:function(){
             var zero =_.template($("#service_erp_template").html(),{});
             this.$el.html(zero);
+        },
+        ERPModulesDisplay: function(event){
+            console.log("ERPModules Display Called");
+            var modules=new ERPModuleCollection()
+            modules.fetch({
+                        success:function(collection,response){
+                        var data=_.template($('#modules_template').html(),{modules:response.objects});
+                        $('#modules').html(data);
+                        },
+
+            });
+            
         },
 });
 
