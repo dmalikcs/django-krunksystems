@@ -26,6 +26,13 @@
     margin-top:0px;
     margin-bottom:0px;
 }
+.nav_abttxt h4 a
+{
+    color:#fff;
+    text-decoration:none;
+    font-family:tahoma;
+    font-weight:normal;
+}
 .menubar > .navbar > .navbar-inner
 {
     border:0px;
@@ -58,49 +65,105 @@
 {
     margin-top:0px;
     margin-bottom:0px;
-    color:#bbb;
+    color:#343434;
+    font-family:tahoma;
+    font-weight:normal;
+}
+.menubox_size a
+{
+    text-decoration:none;
+    font-family:tahoma;
 }
 .menu_zero
 {
-    background-color:red;
+    background-color:#EB5E5E;
 }
 .menu_dna
 {
-    background-color:blue;
+    background-color:#4CACE7;
 }
 .menu_idea
 {
-    background-color:yellow;
+    background-color:#E7A600;
 }
 .menu_krunk
 {
-    background-color:green;
+    background-color:#2EF888;
 }
 .box-circle .img-circle
 {
     float:clear;
     width:220px;
     height:220px;
-    border:2px solid #9ead8f;
-    margin-top:14%;
-    background-color:#54edac;
+    margin-top:8.5%;
 }
-.box-circle .row-fluid .span4
+.box-circle .img-rounded 
 {
-    margin-left:3%;
-}
-.box-circle .img-rounded
-{
-    width:52%;
-    min-height:450px;
+    width:75%;
+    min-height:400px;
     border:none;
     box-shadow:none;
     webkit-box-shadow:none;
     background-color:#9ead8f;
 }
-.box-circle .row-fluid .span7
+.box-circle .row-fluid .about_circle
 {
-    position:absolute;
-    margin-left:10%;
-    z-index:-1;
+    margin-left:-85%;
+    border:3px solid #9ead8f;
+    background-color:#54f6de;
 }
+.box-circle .row-fluid  .about_box
+{
+    margin-left:5%;
+    background-color:#EB5E5E;
+}
+.box-circle .row-fluid .zero_circle
+{
+    margin-left:-10%;
+    background-color:#EB5E5E;
+    border:4px solid #4CACE7;
+}
+.box-circle .row-fluid  .zero_box
+{
+    margin-left:2%;
+    background-color:#4CACE7;
+}
+.zero_box .zero_text
+{
+    font-family:"Palatino Linotype";
+    font-size:16px;
+}
+.box-circle .row-fluid .dna_circle
+{
+    margin-left:-85%;
+    background-color:#4CACE7;
+    border:4px solid #E7A600;
+}
+.box-circle .row-fluid  .dna_box
+{
+    margin-left:5%;
+    background-color:#E7A600;
+}
+.box-circle .row-fluid .idea_circle
+{
+    margin-left:-10%;
+    background-color:#E7A600;
+    border:4px solid #2EF888;
+}
+.box-circle .row-fluid  .idea_box
+{
+    margin-left:2%;
+    background-color:#2EF888;
+}
+.box-circle .row-fluid .krunk_circle
+{
+    margin-left:-85%;
+    background-color:#2EF888;
+    border:4px solid #EB5E5E;
+}
+.box-circle .row-fluid  .krunk_box
+{
+    margin-left:5%;
+    background-color:#EB5E5E;
+}
+
