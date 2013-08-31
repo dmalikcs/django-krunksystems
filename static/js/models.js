@@ -24,7 +24,12 @@ sync: function (method, model, options){
                     //$('#crform').html("<button class = \"btn btn-danger\" data-dismiss=\"modal\" aria-hidden=\"true\"> Close </button>");
                     var a=_.template($('#crform').html(),{});
                     $('#crform').html(a);
-                    var alert = _.template($('#alert-success').html(),{});
+                    var alert = _.template($('#alert-template').html(),{
+                    type:'success',
+                    error:'Won',
+                    error_message:'Yeh,We wone it',
+                    });
+                    console.log(alert);
                     $('#saved').html(alert);
                 },
                 error:function(jqXHR, textStatus, errorThrown){
@@ -38,7 +43,7 @@ sync: function (method, model, options){
         });
     }
 },
-});
+});//CRTModel Closed
 
 var CourseModel=Backbone.Model.extend({
     url:'/api/v1/courses/?format=json'
@@ -46,4 +51,8 @@ var CourseModel=Backbone.Model.extend({
 
 var CourseCollection = Backbone.Collection.extend({
         url:'/api/v1/courses/?format=json',
+});
+
+var ERPModuleCollection=Backbone.Collection.extend({
+    url:'/api/v1/modules/?format=json',
 });
