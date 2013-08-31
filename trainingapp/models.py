@@ -1,5 +1,12 @@
 from django.db import models
 from django import forms
+from django.core.exceptions import ValidationError
+
+
+def MobileValid(value):
+    if  not (len(str(value))>=6 and len(str(value))<= 10):
+        raise ValidationError(u'incorrect mobile number')
+
 type_of_training=(
         ('Corporate','CT'),
         ('Industrial','IT'),
@@ -67,6 +74,7 @@ class CorporateTraining(models.Model):
     offical_email=models.EmailField(verbose_name='Offical email',
             )
     mobile=models.IntegerField(verbose_name='Mobile',
+            validators=[MobileValid]
             )
     phone=models.IntegerField(verbose_name='phone',
             )
@@ -148,7 +156,6 @@ class AcademyTraining(models.Model):
 class CorporateTrainingForm(forms.ModelForm):
     class Meta:
         model=CorporateTraining
-        #fields=['personal_email',]
         widgets ={ 'personal_email':forms.TextInput(attrs={ }) }
 
 class TrainingCourseFrom(forms.ModelForm):
