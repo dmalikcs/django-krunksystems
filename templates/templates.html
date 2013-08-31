@@ -362,10 +362,10 @@
 </script>
 
 
-<script type="text/template" id="alert-success">
-    <div class="alert alert-success">  
+<script type="text/template" id="alert-template">
+    <div class="alert alert-<%= type %>">  
        <a class="close" data-dismiss="alert">&times;</a>  
-        <strong>Success!</strong>You have successfully done it.  
+       <strong><%= error %>!</strong><%= error_message %>.  
     </div> 
 </script>
 
