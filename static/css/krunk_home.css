@@ -94,6 +94,7 @@
     background:url(/static/images/krunk2.png) 50% 0 no-repeat fixed;
     height:1000px;
     overflow:hidden;
+    z-index:-3;
 }
 
 #services
