@@ -272,7 +272,7 @@
     <ul class = "nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#openerp_implementation">Implementation</a></li>
         <li ><a data-toggle="tab" href="#openerp_customization">customization</a></li>
-        <li ><a data-toggle="tab" href="#modules">modules</a></li>
+        <li ><a data-toggle="tab" href="#modules" class="erp_modules">modules</a></li>
     </ul>
     <div class="tab-content span8" > <!--  content div open -->
         <div class="tab-pane" id="modules"> <!-- tab pane Open ERP div open -->
@@ -367,5 +367,18 @@
        <a class="close" data-dismiss="alert">&times;</a>  
        <strong><%= error %>!</strong><%= error_message %>.  
     </div> 
+</script>
+
+<script type="text/template" id="modules_template">
+    <div class="span8">
+        Modules Tamplate
+        <% _.each(modules, function(module) { %> 
+            <%= module.id %>
+            <%= module.module_name %>
+            <%= module.module_description %>
+            <%= module.module_Features %>
+            <br>
+    <% }); %>
+    </div>
 </script>
 
