@@ -1,42 +1,22 @@
 AboutusRouter = Backbone.Router.extend({
-     routes:{
-    'zero':'ZeroRoute',
-    'dna':'DnaRoute',
-    'idea':'IdeaRoute',
-    'letskrunk':'LetsKrunkRoute',
-    'crtform':'CRTRoute',
-    'about':'AboutRoute',
-    'service_training':'TrainingRoute',
-    'service_consulting':'ConsultingRoute',
-    'service_development':'DevelopementRoute',
-    'service_erp':'ErpRoute',
-    'trainingcourse':'trainingcourseRoute',
-    },
-    ZeroRoute:function(){
-        console.log("called from Home");
-        new ZeroView();
-       },
-    DnaRoute:function(){
-        console.log("called from DNA");
-        new DnaView();
-    },
-    IdeaRoute:function(){
-        console.log("called from idea !");
-        new IdeaView();
-    },
-    LetsKrunkRoute:function(){
-        console.log("called from  Let's Krunk Systems ");
-        new LetskrunkView();
-    },
-    CRTRoute:function(){
-        console.log("called from: Let's CoutRoute");
-        new CRTView();
-        console.log("called CRTView");
+ routes:{
+    'aboutus':'AboutRoute',
     },
     AboutRoute:function(){
         console.log("called from: AboutRoute");
         new AboutView();
         console.log("called AboutView");
+    },
+});
+
+
+ServicesRouter = Backbone.Router.extend({
+     routes:{
+    'service_training':'TrainingRoute',
+    'service_consulting':'ConsultingRoute',
+    'service_development':'DevelopementRoute',
+    'service_erp':'ErpRoute',
+    'trainingcourse':'trainingcourseRoute',
     },
     TrainingRoute:function(){
         console.log("called from: TrainingRoute");
@@ -63,10 +43,12 @@ AboutusRouter = Backbone.Router.extend({
         new CourseView();
         console.log("called trainingcourseRoute:success");
     },
+
 });
 
-new AboutusRouter();
+var aboutview=new AboutusRouter();
+var servicesview=new ServicesRouter();
 Backbone.history.start();
-//aboutrouter.navigate('about', {trigger: true});
-//aboutrouter.navigate('service_training', {trigger: true});
+aboutview.navigate('aboutus', {trigger: true});
+servicesview.navigate('service_erp',{trigger: true});
 
