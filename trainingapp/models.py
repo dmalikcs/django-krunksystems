@@ -37,6 +37,9 @@ class TrainingCourse(models.Model):
             blank=False,
             null=False,
             )
+    course_short_description=models.CharField(verbose_name='Short description',
+            max_length=50,
+            )
     cource_detail=models.TextField(verbose_name='Course description',
             max_length=500,
             blank=False,
@@ -190,6 +193,10 @@ class MentorDetail(models.Model):
     name=models.CharField(verbose_name='mentor name',
             max_length=75,
             )
+    mentor_images=models.ImageField(upload_to='mentor_images/',
+            null=True,
+            blank=True,
+            )
     email=models.EmailField(verbose_name='Email',
             unique=True,
             )
@@ -198,14 +205,29 @@ class MentorDetail(models.Model):
             )
     experience=models.IntegerField(verbose_name='Exprience',
             )
+    linked_in=models.URLField(verbose_name='Linkedin ',
+            )
     description=models.TextField(verbose_name='Description',
             max_length=200,
             )
     def __unicode__(self):
-        return self.training_id.course_name
+        return self.name
     class Meta:
         verbose_name='Mentor'
         verbose_name_plural='Mentors'
+class WhyThisTraining(models.Model):
+    training_id=models.ForeignKey('TrainingCourse',verbose_name='Training id',
+            related_name='whythistraining',
+            )
+    why_this=models.TextField(verbose_name='why',
+            max_length=60,
+            )
+    def __unicode__(self):
+        return self.training_id.course_name
+    class Meta:
+        verbose_name='why'
+        verbose_name_plural='why this Training'
+    
 
 class CorporateTrainingForm(forms.ModelForm):
     class Meta:
