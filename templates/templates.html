@@ -447,7 +447,7 @@
                         <b><%= name.course_name %></b>
                     </div>
                     <div class="span7">
-                        Testing
+                        <%= name.course_short_description %>
                     </div>
                 </div>
             </a>
@@ -470,9 +470,14 @@
             <h3>I am your mantor</h3>
         </div>
         <div class="modal-body">
-        <%  _.each(name.mentors, function(mentor) { %>
-            <%= mentor.name %><br> 
-            <%= mentor.email %><br>
+            {%comment%}
+            linked_in
+            {%endcomment%}
+            <%  _.each(name.mentors, function(mentor) { %>
+            <img class="img-circle" height="50px" width="50px" src="<%= mentor.mentor_images%>"/>
+            <%= mentor.name %>
+            <%= mentor.email %>
+            <br>
         <% });%>
         </div>
     </div>
@@ -505,7 +510,15 @@
 </div>
 
 <div class="modal fade hide" id = "why<%= name.id %>" aria-hidden = "true">
-    why <%= name.id%>
+    <div class = "modal-header">
+        <h3>Why <%=name.course_name%></h3>
+        <a class="close" data-dismiss="modal" >&times;</a>
+    </div>
+    <div class = "modal-body">
+        <%  _.each(name.why, function(y) { %>
+            <%= y.why_this %><br>
+        <% });%>
+    </div>
 </div>
 
     <% }); %>
