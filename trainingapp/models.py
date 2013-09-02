@@ -31,6 +31,10 @@ platforms=(
         ('web Development','WB'),
         )
 class TrainingCourse(models.Model):
+    course_logo=models.ImageField(upload_to='upload/courses/',
+            blank=True,
+            null=True,
+            )
     course_name=models.CharField(verbose_name='Course',
             unique=True,
             max_length=50,
@@ -193,7 +197,7 @@ class MentorDetail(models.Model):
     name=models.CharField(verbose_name='mentor name',
             max_length=75,
             )
-    mentor_images=models.ImageField(upload_to='mentor_images/',
+    mentor_images=models.ImageField(upload_to='upload/mentor_images/',
             null=True,
             blank=True,
             )
