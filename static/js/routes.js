@@ -12,10 +12,10 @@ AboutusRouter = Backbone.Router.extend({
 
 ServicesRouter = Backbone.Router.extend({
      routes:{
-    'service_training':'TrainingRoute',
-    'service_consulting':'ConsultingRoute',
-    'service_development':'DevelopementRoute',
-    'service_erp':'ErpRoute',
+    'training':'TrainingRoute',
+    'consulting':'ConsultingRoute',
+    'development':'DevelopementRoute',
+    'erp':'ErpRoute',
     'trainingcourse':'trainingcourseRoute',
     },
     TrainingRoute:function(){

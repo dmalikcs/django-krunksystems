@@ -126,7 +126,7 @@ var ErpView=Backbone.View.extend({
             var modules=new ERPModuleCollection()
             modules.fetch({
                         success:function(collection,response){
-                        var data=_.template($('#modules_template').html(),{modules:response.objects});
+                        var data=_.template($('#modules_template').html(),{modules:response.objects,meta:response.meta});
                         $('#modules').html(data);
                         },
             });
