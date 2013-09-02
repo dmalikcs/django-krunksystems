@@ -151,7 +151,61 @@ class AcademyTraining(models.Model):
     class Meta:
         verbose_name='Academy Training'
         verbose_name_plural='Academy Trainings'
+class TrainingSuccess(models.Model):
+    training_id=models.ForeignKey('TrainingCourse',
+            related_name='success_stories',
+            )
+    success_stories=models.TextField(verbose_name="Success Story",
+            max_length=200,
+            )
+    def __unicode__(self):
+        return u'%s' % self.training_id.course_name
+    class Meta:
+        verbose_name='Success Story'
+        verbose_name_plural='Success Stories'
 
+class CourseOutline(models.Model):
+    training_id=models.ForeignKey('TrainingCourse',verbose_name='Training id',
+            related_name='Course_outlines',
+            )
+    chapter=models.IntegerField(verbose_name='Chapter')
+    topic=models.CharField(verbose_name='Topics',
+            max_length=75,
+            )
+    hours=models.IntegerField(verbose_name='hours',
+            )
+    description=models.TextField(verbose_name='Description',
+            max_length=200,
+            )
+    def __unicode__(self):
+        return self.training_id.course_name
+    class Meta:
+        verbose_name='Course Outline'
+        verbose_name_plural='Course Outlines'
+
+class MentorDetail(models.Model):
+    training_id=models.ForeignKey('TrainingCourse',verbose_name='Training id',
+            related_name='mentors',
+            )
+    name=models.CharField(verbose_name='mentor name',
+            max_length=75,
+            )
+    email=models.EmailField(verbose_name='Email',
+            unique=True,
+            )
+    phone=models.IntegerField(verbose_name='phone',
+            validators=[MobileValid],
+            )
+    experience=models.IntegerField(verbose_name='Exprience',
+            )
+    description=models.TextField(verbose_name='Description',
+            max_length=200,
+            )
+    def __unicode__(self):
+        return self.training_id.course_name
+    class Meta:
+        verbose_name='Mentor'
+        verbose_name_plural='Mentors'
 
 class CorporateTrainingForm(forms.ModelForm):
     class Meta:
