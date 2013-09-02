@@ -1,7 +1,7 @@
 from tastypie.resources import ModelResource
 from tastypie.authentication import ApiKeyAuthentication
 from tastypie.authorization import Authorization
-from trainingapp.models import TrainingCourse,CorporateTraining,IndustrialTraining,AcademyTraining,CorporateTrainingForm,TrainingSuccess,CourseOutline,MentorDetail
+from trainingapp.models import TrainingCourse,CorporateTraining,IndustrialTraining,AcademyTraining,CorporateTrainingForm,TrainingSuccess,CourseOutline,MentorDetail,WhyThisTraining
 from tastypie.validation import Validation,FormValidation
 from tastypie import fields
 
@@ -9,6 +9,7 @@ class TrainingCoursesResource(ModelResource):
     stories=fields.ToManyField('trainingapp.api.resources.TrainingSuccessResource','success_stories',null=True,full=True)
     course_outline=fields.ToManyField('trainingapp.api.resources.CourseOutlineResource','Course_outlines',null=True,full=True)
     mentors=fields.ToManyField('trainingapp.api.resources.MentorDetailResource','mentors',null=True,full=True)
+    why=fields.ToManyField('trainingapp.api.resources.WhyThisTrainingResource','whythistraining',null=True,full=True)
     class Meta:
         queryset=TrainingCourse.objects.all()
         resource_name='courses'
@@ -34,7 +35,12 @@ class CourseOutlineResource(ModelResource):
 class MentorDetailResource(ModelResource):
     class Meta:
         queryset=MentorDetail.objects.all()
+        allowed_methods=['get']
         resource_name='mentors'
+class WhyThisTrainingResource(ModelResource):
+    class Meta:
+        queryset=WhyThisTraining.objects.all()
+        resource_name='why'
 class TrainingCourseResource(ModelResource):
     class Meta:
         queryset=TrainingCourse.objects.all()
