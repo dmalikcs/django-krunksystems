@@ -1,17 +1,40 @@
 from tastypie.resources import ModelResource
 from tastypie.authentication import ApiKeyAuthentication
 from tastypie.authorization import Authorization
-from trainingapp.models import TrainingCourse,CorporateTraining,IndustrialTraining,AcademyTraining,CorporateTrainingForm
+from trainingapp.models import TrainingCourse,CorporateTraining,IndustrialTraining,AcademyTraining,CorporateTrainingForm,TrainingSuccess,CourseOutline,MentorDetail
 from tastypie.validation import Validation,FormValidation
+from tastypie import fields
 
 class TrainingCoursesResource(ModelResource):
+    stories=fields.ToManyField('trainingapp.api.resources.TrainingSuccessResource','success_stories',null=True,full=True)
+    course_outline=fields.ToManyField('trainingapp.api.resources.CourseOutlineResource','Course_outlines',null=True,full=True)
+    mentors=fields.ToManyField('trainingapp.api.resources.MentorDetailResource','mentors',null=True,full=True)
     class Meta:
         queryset=TrainingCourse.objects.all()
-        #fields=['id','course_name',]
         resource_name='courses'
         allowed_methods=['get']
+        list_allowed_methods = ['get', 'post']
         #authentication=ApiKeyAuthentication()
-        #authorization=Authorization()
+        authorization=Authorization()
+class TrainingSuccessResource(ModelResource):
+    #trainings=fields.ForeignKey(TrainingCoursesResource,'training_id')
+    #def dehydrate(self,bundle):
+    #    print bundle.request
+    #    return bundle
+    class Meta:
+        queryset=TrainingSuccess.objects.all()
+        resource_name='stories'
+        list_allowed_methods = ['get', 'post']
+        allowed_methods=['get']
+        authorization=Authorization()
+class CourseOutlineResource(ModelResource):
+    class Meta:
+        queryset=CourseOutline.objects.all()
+        resource_name='course_outline'
+class MentorDetailResource(ModelResource):
+    class Meta:
+        queryset=MentorDetail.objects.all()
+        resource_name='mentors'
 class TrainingCourseResource(ModelResource):
     class Meta:
         queryset=TrainingCourse.objects.all()
