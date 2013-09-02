@@ -14,6 +14,7 @@ class OpenERPModulesResource(ModelResource):
         resource_name='modules'
         allowed_methods=['get']
         detail_allowed_methods=['get']
+        limit=1
         #authentication=ApiKeyAuthentication()
         #authorization=Authorization()
         #validation=FormValidation(form_class=CorporateTrainingForm)
