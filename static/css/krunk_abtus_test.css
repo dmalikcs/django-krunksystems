@@ -1,7 +1,7 @@
 .nav_abtus
 {
     padding-top:3%;
-    margin-left:5.75%;
+    margin-left:9.5%;
 }
 .nav_abtus .navbar-inner
 {
@@ -114,7 +114,7 @@
 }
 .box-circle .row-fluid  .about_box
 {
-    margin-left:5%;
+    margin-left:1%;
     background-color:#EB5E5E;
 }
 .box-circle .row-fluid .zero_circle
@@ -125,7 +125,7 @@
 }
 .box-circle .row-fluid  .zero_box
 {
-    margin-left:2%;
+    margin-left:-2%;
     background-color:#4CACE7;
 }
 .zero_box .zero_text
@@ -141,7 +141,7 @@
 }
 .box-circle .row-fluid  .dna_box
 {
-    margin-left:5%;
+    margin-left:1%;
     background-color:#E7A600;
 }
 .box-circle .row-fluid .idea_circle
@@ -152,7 +152,7 @@
 }
 .box-circle .row-fluid  .idea_box
 {
-    margin-left:2%;
+    margin-left:-2%;
     background-color:#2EF888;
 }
 .box-circle .row-fluid .krunk_circle
@@ -163,7 +163,7 @@
 }
 .box-circle .row-fluid  .krunk_box
 {
-    margin-left:5%;
+    margin-left:1%;
     background-color:#EB5E5E;
 }
 
