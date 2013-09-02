@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from krunksystems import settings
 from tastypie.api import Api
 from trainingapp.api.resources import TrainingCoursesResource,CorporateTrainingResource,IndustrialTrainingResource,AcademyTrainingResource,TrainingSuccessResource
 from Consultancyapp.api.resources import PythonConsultancyResource,DjangoConsultancyResource,OpensourceConsultancyResource,MidrangeConsultancyResource
@@ -34,3 +35,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/',include(v1_api.urls)),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+    url(r'%s(?P<path>.*)' % settings.MEDIA_URL[1:], 'django.views.static.serve', {'document_root':settings.MEDIA_ROOT}),
+    )
