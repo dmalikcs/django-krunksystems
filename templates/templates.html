@@ -438,16 +438,76 @@
     <% _.each(people, function(name) { %> 
     <div class="accordion-group">
         <div class="accordion-heading">
-            <a class=" accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= name.id %>">
-                <%= name.course_name %>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= name.id %>">
+                <div class="row-fluid">
+                    <div class="span1">
+                        <i class="icon-home"></i>
+                    </div>
+                    <div class="span4">
+                        <b><%= name.course_name %></b>
+                    </div>
+                    <div class="span7">
+                        Testing
+                    </div>
+                </div>
             </a>
         </div>
         <div id="collapse<%= name.id %>" class="accordion-body collapse">
             <div class="accordion-inner">
                 <%= name.cource_detail %>
+                <div class="row-fluid span12">
+                    <a href="#courseoutline<%= name.id%>" class="btn btn-success span3" data-toggle="modal" >Course outline</a>
+                    <a href="#meetyourmentor<%= name.id%>" class="btn btn-danger span3" data-toggle="modal" >Meet your mantor</a>
+                    <a href="#successstories<%= name.id%>" class="btn btn-info span3" data-toggle="modal" >Success stories </a>
+                    <a href="#why<%= name.id %>" class="btn btn-primary span3" data-toggle="modal" > Why </a>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade hide" id = "meetyourmentor<%= name.id %>" aria-hidden = "true">
+        <div class="modal-header">
+            <h3>I am your mantor</h3>
+        </div>
+        <div class="modal-body">
+        <%  _.each(name.mentors, function(mentor) { %>
+            <%= mentor.name %><br> 
+            <%= mentor.email %><br>
+        <% });%>
+        </div>
+    </div>
+
+<div class="modal fade hide" id = "courseoutline<%= name.id %>" aria-hidden = "true">
+    <div class="modal-header">
+        <h3><%= name.course_name %>&nbsp;Course outline</b>
+        <a class="close" data-dismiss="modal" >&times;</a>
+    </div>
+    <div class="modal-body">
+        <%  _.each(name.course_outline, function(outline) { %>
+            <%= outline.chapter %><br> <%= outline.topic %><br>
+            <%= outline.hours %><br>
+        <% });%>
+
+    </div>
+
+</div>
+<div class="modal fade hide" id = "successstories<%= name.id %>" aria-hidden = "true">
+    <div class = "modal-header">
+        Success stories
+        <b><%= name.course_name %></b>
+        <a class="close" data-dismiss="modal" >&times;</a>
+    </div>
+    <div class = "modal-body">
+        <%  _.each(name.stories, function(story) { %>
+            <%= story.success_stories %><br>
+        <% });%>
+    </div>
+</div>
+
+<div class="modal fade hide" id = "why<%= name.id %>" aria-hidden = "true">
+    why <%= name.id%>
+</div>
+
     <% }); %>
 </div>
 </script>
@@ -463,6 +523,7 @@
 <script type="text/template" id="modules_template">
     <div class="span8">
         Modules Tamplate
+        <a href="<%= meta.next %>">next</a>
         <% _.each(modules, function(module) { %> 
             <%= module.id %>
             <%= module.module_name %>
