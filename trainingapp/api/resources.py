@@ -1,7 +1,7 @@
 from tastypie.resources import ModelResource
 from tastypie.authentication import ApiKeyAuthentication
 from tastypie.authorization import Authorization
-from trainingapp.models import TrainingCourse,CorporateTraining,IndustrialTraining,AcademyTraining,CorporateTrainingForm,TrainingSuccess,CourseOutline,MentorDetail,WhyThisTraining
+from trainingapp.models import TrainingCourse,CorporateTraining,IndustrialTraining,AcademyTraining,CorporateTrainingForm,TrainingSuccess,CourseOutline,MentorDetail,WhyThisTraining,IndustrialTrainingForm,AcademyTrainingForm
 from tastypie.validation import Validation,FormValidation
 from tastypie import fields
 
@@ -62,12 +62,27 @@ class CorporateTrainingResource(ModelResource):
         validation=FormValidation(form_class=CorporateTrainingForm)
 
 class IndustrialTrainingResource(ModelResource):
+    def hydrate(self,bundle):
+        print bundle.request.POST
+        return bundle
+    class Meta:
+        queryset=CorporateTraining.objects.all()
+        resource_name='cor_training'
+        allowed_methods=['get','post']
+        detail_allowed_methods=['post']
+        authentication=ApiKeyAuthentication()
+        authorization=Authorization()
+        validation=FormValidation(form_class=CorporateTrainingForm)
+
+class IndustrialTrainingResource(ModelResource):
     class Meta:
         queryset=IndustrialTraining.objects.all()
         resource_name='id_training'
         allowed_methods=['get','post']
+        detail_allowed_methods=['post']
         authentication=ApiKeyAuthentication()
         authorization=Authorization()
+        validation=FormValidation(form_class=IndustrialTrainingForm)
 
 class AcademyTrainingResource(ModelResource):
     class Meta:
@@ -76,5 +91,6 @@ class AcademyTrainingResource(ModelResource):
         allowed_methods=['get','post']
         authentication=ApiKeyAuthentication()
         authorization=Authorization()
+        validation=FormValidation(form_class=AcademyTrainingForm)
 
 
