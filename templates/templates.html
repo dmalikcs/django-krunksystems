@@ -112,7 +112,7 @@
 <script type="text/template" id="service_training_template">
 <div class="tabbable tabs-left"> <!-- tabs div open -->
     <ul class = "nav nav-tabs">
-        <li ><a data-toggle="tab" href="#coursetraining" class="test">what we offer</a></li>
+        <li ><a data-toggle="tab" href="#coursetraining" class="coursedisplay">what we offer</a></li>
         <li class="active"><a data-toggle="tab" href="#CorporateTraining">Corporate</a></li>
         <li ><a data-toggle="tab" href="#IndustrialTraining">Industrial</a></li>
         <li ><a data-toggle="tab" href="#AcademyTraining">Acadamy</a></li>
@@ -145,7 +145,7 @@
 <div class="modal fade hide" id = "crform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Corp form </h3>
-        <div id="saved"></div>
+        <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
         <form>
@@ -159,7 +159,7 @@
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="crform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 
@@ -167,20 +167,20 @@
 <div class="modal fade hide" id = "itform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Industrial Training </h3>
+        <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
         <form>
             {% for field in it_Form%}
             {{field.label}}
             {{field}}<br>
-            {{field.error}}
-                <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
             {%endfor%}
         </form>
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="itform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 
@@ -188,20 +188,20 @@
 <div class="modal fade hide" id = "atform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Acadamy  Training </h3>
+        <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
-        <form id="">
+        <form>
             {% for field in at_Form%}
             {{field.label}}
             {{field}}<br>
-            {{field.error}}
-                <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
             {%endfor%}
         </form>
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="atform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 </script>
@@ -260,7 +260,7 @@
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="pcform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 <div class="modal fade hide" id = "dcform" aria-hidden = "true">
@@ -274,7 +274,7 @@
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="dcform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 
@@ -290,7 +290,7 @@
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="ocform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 <div class="modal fade hide" id = "mcform" aria-hidden = "true">
@@ -304,7 +304,7 @@
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="mcform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 </script>
@@ -341,7 +341,7 @@
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="wdform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 <div class="modal fade hide" id = "adform" aria-hidden = "true">
@@ -353,7 +353,7 @@
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="adform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 </script>
@@ -398,7 +398,7 @@
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="demoform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 
@@ -411,7 +411,7 @@
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button href="#submit_reuqest" class = "btn btn-primary" >submit your requst </button>
+        <button id="erpinquiryform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 
@@ -529,7 +529,7 @@
 <script type="text/template" id="alert-template">
     <div class="alert alert-<%= type %>">  
        <a class="close" data-dismiss="alert">&times;</a>  
-       <strong><%= error %>!</strong><%= error_message %>.  
+       <strong><%= bold_message %>!</strong><%= general_message %>.  
     </div> 
 </script>
 
