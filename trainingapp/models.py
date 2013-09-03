@@ -108,13 +108,13 @@ class IndustrialTraining(models.Model):
             )
     degree=models.CharField(verbose_name='Degree',
             choices=degrees,
-            max_length=10,
+            max_length=20,
             )
     intership_period=models.IntegerField(verbose_name='Intership Period',
             )
     platform=models.CharField(verbose_name='platform',
             choices=platforms,
-            max_length=10,
+            max_length=50,
             )
     message=models.TextField(verbose_name='Messgae',
             max_length=200,
