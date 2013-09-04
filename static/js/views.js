@@ -147,15 +147,63 @@ ConsultingView=Backbone.View.extend({
         },
         PCAdd:function(event){
             console.log('PCAdd consultancy');
+            name=$('#pcform #id_name').val();
+            email=$('#pcform #id_email').val();
+            category=$('#pcform #id_category').val();
+            message=$('#pcform #id_message').val();
+            var PCmodel=new PCModel({
+            name:name,
+            email:email,
+            category:category,
+            message:message,
+            });
+            PCmodel.save();
+            return false;
         },
         DCAdd:function(event){
             console.log('DCAdd consultancy');
+            name=$('#dcform #id_name').val();
+            email=$('#dcform #id_email').val();
+            category=$('#dcform #id_category').val();
+            message=$('#dcform #id_message').val();
+            var DCmodel=new DCModel({
+            name:name,
+            email:email,
+            category:category,
+            message:message,
+            });
+            DCmodel.save();
+            return false;
         },
         OCAdd:function(event){
             console.log('OCAdd consultancy');
+            name=$('#ocform #id_name').val();
+            email=$('#ocform #id_email').val();
+            category=$('#ocform #id_category').val();
+            message=$('#ocform #id_message').val();
+            var OCmodel=new OCModel({
+            name:name,
+            email:email,
+            category:category,
+            message:message,
+            });
+            OCmodel.save();
+            return false;
         },
         MCAdd:function(event){
             console.log('MCAdd consultancy');
+            name=$('#mcform #id_name').val();
+            email=$('#mcform #id_email').val();
+            category=$('#mcform #id_category').val();
+            message=$('#mcform #id_message').val();
+            var MCmodel=new MCModel({
+            name:name,
+            email:email,
+            category:category,
+            message:message,
+            });
+            MCmodel.save();
+            return false;
         },
         render:function(){
             var zero =_.template($("#service_consulting_template").html(),{});
@@ -177,6 +225,27 @@ DevelopementView=Backbone.View.extend({
         },
         WDAdd:function(event){
             console.log('WDAdd Click')
+            name=$('#wdform #id_name').val();
+            email=$('#wdform #id_email').val();
+            country=$('#wdform #id_country').val();
+            mobile=$('#wdform #id_mobile').val();
+            project_budget=$('#wdform #id_project_budget').val();
+            project_start_date=$('#wdform #id_project_start_date').val();
+            project_file=$('#wdform #id_project_file').val();
+            project_message=$('#wdform #id_project_message').val();
+            console.log(project_message);
+        var WDmodel=new WDModel({
+            name:name,
+            email:email,
+            country:country,
+            mobile:mobile,
+            project_budget:project_budget,
+            project_start_date:project_start_date,
+            project_file:project_file,
+            project_message:project_message,
+            });
+            WDmodel.save();
+            return false;
         },
         render:function(){
             var zero =_.template($("#service_development_template").html(),{});
@@ -192,10 +261,47 @@ var ErpView=Backbone.View.extend({
             'click a.erp_modules':'ERPModulesDisplay',
         },
         ErpInquiryAdd:function(event){
-            console.log('ERP Inquiry submited')
+            name=$('#erpinquiryform #id_name').val();
+            job_title=$('#erpinquiryform #id_job_title').val();
+            phone=$('#erpinquiryform #id_phone').val();
+            email=$('#erpinquiryform #id_email').val();
+            company_name=$('#erpinquiryform #id_company_name').val();
+            company_website=$('#erpinquiryform #id_company_website').val();
+            product=$('#erpinquiryform #id_product').val();
+            message=$('#erpinquiryform #id_message').val();
+        var ErpInquirymodel= new ErpInquiryModel({
+            name:name,
+            job_title:job_title,
+            phone:phone,
+            email:email,
+            company_name:company_name,
+            company_website:company_website,
+            product:product,
+            message:message,
+        });
+        ErpInquirymodel.save();
+        return false;
         },
         DemoAdd:function(event){
             console.log('Demo Called')
+            name=$('#demoform #id_name').val();
+            mobile=$('#demoform #id_mobile').val();
+            email=$('#demoform #id_email').val();
+            modules=$('#demoform #id_modules').val();
+            Type_of_demo=$('#demoform #id_Type_of_demo').val();
+            date=$('#demoform #id_date').val();
+            time=$('#demoform #id_time').val();
+            var Demomodel=new DemoModel({
+                name:name,
+                mobile:mobile,
+                email:email,
+                modules:modules,
+                Type_of_demo:Type_of_demo,
+                date:date,
+                time:time,
+            });
+            Demomodel.save();
+            return false;
         },
         initialize:function(){
             console.log("ERPView called");
