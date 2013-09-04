@@ -126,7 +126,6 @@ sync: function (method, model, options){
                     message:(this.get('message')|| ''),
                 }),
                 beforeSend: function(){
-                
                     $('#atform #id_err_student_name').html('');
                     $('#atform #id_err_email').html('');
                     $('#atform #id_err_degree').html('');
@@ -161,6 +160,352 @@ sync: function (method, model, options){
 },//sync function closed
 });//ATModel Closed
 
+var PCModel=Backbone.Model.extend({     
+sync: function (method, model, options){
+    if (method === 'create'){
+         return $.ajax({
+                datatype:'json',
+                type:'POST',
+                contentType: 'application/json',
+                url:'/api/v1/python/?username=dmalik5\&api_key=4791c10acb8d425fbab86dc05adc49087d3050c2',
+                global: true,
+                data: JSON.stringify({
+                    name:(this.get('name')|| ''),
+                    email:(this.get('email')|| ''),
+                    category:(this.get('category')|| ''),
+                    message:(this.get('message')|| ''),
+                }),
+                beforeSend: function(){
+                    $('#pcform #id_err_name').html('');
+                    $('#pcform #id_err_email').html('');
+                    $('#pcform #id_err_category').html('');
+                    $('#pcform #id_err_message').html('');
+                },
+                success:function(data){
+                    var a=_.template($('#pcform').html(),{});
+                    $('#pcform').html(a);
+                    var alert = _.template($('#alert-template').html(),{ //loading from templates.html
+                    type:'success',
+                    bold_message:'Thanks ',
+                    general_message:' Yeh,We wone it',
+                    });
+                    $('#pcform #success-saved').html(alert);
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    var errors = JSON.parse(jqXHR.responseText) 
+                    console.log(errors);
+                    for (field in errors.python) {
+                        var error = errors['python'][field];
+                        console.log('#id_err_'+field);
+                        $('#pcform #id_err_' + field).html(" " + error + " ");
+                    }   
+                },//error function closed
+        });
+    }//if loop closed
+},//sync function closed
+});//PCModel Closed
+
+
+var DCModel=Backbone.Model.extend({     
+sync: function (method, model, options){
+    if (method === 'create'){
+         return $.ajax({
+                datatype:'json',
+                type:'POST',
+                contentType: 'application/json',
+                url:'/api/v1/django/?username=dmalik5\&api_key=4791c10acb8d425fbab86dc05adc49087d3050c2',
+                global: true,
+                data: JSON.stringify({
+                    name:(this.get('name')|| ''),
+                    email:(this.get('email')|| ''),
+                    category:(this.get('category')|| ''),
+                    message:(this.get('message')|| ''),
+                }),
+                beforeSend: function(){
+                    $('#dcform #id_err_name').html('');
+                    $('#dcform #id_err_email').html('');
+                    $('#dcform #id_err_category').html('');
+                    $('#dcform #id_err_message').html('');
+                },
+                success:function(data){
+                    var a=_.template($('#dcform').html(),{});
+                    $('#dcform').html(a);
+                    var alert = _.template($('#alert-template').html(),{ //loading from templates.html
+                    type:'success',
+                    bold_message:'Thanks ',
+                    general_message:' Yeh,We wone it',
+                    });
+                    console.log(alert);
+                    $('#dcform #success-saved').html(alert);
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    var errors = JSON.parse(jqXHR.responseText) 
+                    console.log(errors);
+                    for (field in errors.django) {
+                        var error = errors['django'][field];
+                        console.log('#id_err_'+field);
+                        $('#dcform #id_err_' + field).html(" " + error + " ");
+                    }   
+                },//error function closed
+        });
+    }//if loop closed
+},//sync function closed
+});//DCModel Closed
+
+var OCModel=Backbone.Model.extend({     
+sync: function (method, model, options){
+    if (method === 'create'){
+         return $.ajax({
+                datatype:'json',
+                type:'POST',
+                contentType: 'application/json',
+                url:'/api/v1/os/?username=dmalik5\&api_key=4791c10acb8d425fbab86dc05adc49087d3050c2',
+                global: true,
+                data: JSON.stringify({
+                    name:(this.get('name')|| ''),
+                    email:(this.get('email')|| ''),
+                    category:(this.get('category')|| ''),
+                    message:(this.get('message')|| ''),
+                }),
+                beforeSend: function(){
+                    $('#ocform #id_err_name').html('');
+                    $('#ocform #id_err_email').html('');
+                    $('#ocform #id_err_category').html('');
+                    $('#ocform #id_err_message').html('');
+                },
+                success:function(data){
+                    var a=_.template($('#ocform').html(),{});
+                    $('#ocform').html(a);
+                    var alert = _.template($('#alert-template').html(),{ //loading from templates.html
+                    type:'success',
+                    bold_message:'Thanks ',
+                    general_message:'Your request has been submitted',
+                    });
+                    console.log(alert);
+                    $('#ocform #success-saved').html(alert);
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    var errors = JSON.parse(jqXHR.responseText) 
+                    console.log(errors);
+                    for (field in errors.os) {
+                        var error = errors['os'][field];
+                        console.log('#id_err_'+field);
+                        $('#ocform #id_err_' + field).html(" " + error + " ");
+                    }   
+                },//error function closed
+        });
+    }//if loop closed
+},//sync function closed
+});//OCModel Closed
+
+var MCModel=Backbone.Model.extend({     
+sync: function (method, model, options){
+    if (method === 'create'){
+         return $.ajax({
+                datatype:'json',
+                type:'POST',
+                contentType: 'application/json',
+                url:'/api/v1/midrange/?username=dmalik5\&api_key=4791c10acb8d425fbab86dc05adc49087d3050c2',
+                global: true,
+                data: JSON.stringify({
+                    name:(this.get('name')|| ''),
+                    email:(this.get('email')|| ''),
+                    category:(this.get('category')|| ''),
+                    message:(this.get('message')|| ''),
+                }),
+                beforeSend: function(){
+                    $('#mcform #id_err_name').html('');
+                    $('#mcform #id_err_email').html('');
+                    $('#mcform #id_err_category').html('');
+                    $('#mcform #id_err_message').html('');
+                },
+                success:function(data){
+                    var a=_.template($('#mcform').html(),{});
+                    $('#mcform').html(a);
+                    var alert = _.template($('#alert-template').html(),{ //loading from templates.html
+                    type:'success',
+                    bold_message:'Thanks ',
+                    general_message:' Yeh,We wone it',
+                    });
+                    console.log(alert);
+                    $('#mcform #success-saved').html(alert);
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    var errors = JSON.parse(jqXHR.responseText) 
+                    console.log(errors);
+                    for (field in errors.midrange) {
+                        var error = errors['midrange'][field];
+                        console.log('#id_err_'+field);
+                        $('#mcform #id_err_' + field).html(" " + error + " ");
+                    }   
+                },//error function closed
+        });
+    }//if loop closed
+},//sync function closed
+});//MCModel Closed
+
+var WDModel=Backbone.Model.extend({     
+sync: function (method, model, options){
+    if (method === 'create'){
+         return $.ajax({
+                datatype:'json',
+                type:'POST',
+                contentType: 'application/json',
+                url:'/api/v1/development/?username=dmalik5\&api_key=4791c10acb8d425fbab86dc05adc49087d3050c2',
+                enctype: 'multipart/form-data',
+                global: true,
+                data: JSON.stringify({
+                    name:(this.get('name')|| ''),
+                    email:(this.get('email')|| ''),
+                    country:(this.get('country')|| ''),
+                    mobile:(this.get('mobile')|| ''),
+                    project_budget:(this.get('project_budget')|| ''),
+                    project_start_date:(this.get('project_start_date')|| ''),
+                    project_file:(this.get('project_file')|| ''),
+                    project_message:(this.get('project_message')|| ''),
+                }),
+                beforeSend: function(){
+                    $('#wdform #id_err_name').html('');
+                    $('#wdform #id_err_email').html('');
+                    $('#wdform #id_err_country').html('');
+                    $('#wdform #id_err_mobile').html('');
+                    $('#wdform #id_err_project_budget').html('');
+                    $('#wdform #id_err_project_start_date').html('');
+                    $('#wdform #id_err_project_file').html('');
+                    $('#wdform #id_err_project_message').html('');
+                },
+                success:function(data){
+                    var a=_.template($('#wdform').html(),{});
+                    $('#wdform').html(a);
+                    var alert = _.template($('#alert-template').html(),{ //loading from templates.html
+                    type:'success',
+                    bold_message:'Thanks ',
+                    general_message:' Yeh,We wone it',
+                    });
+                    console.log(alert);
+                    $('#wdform #success-saved').html(alert);
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    var errors = JSON.parse(jqXHR.responseText) 
+                    console.log(errors);
+                    for (field in errors.development) {
+                        var error = errors['development'][field];
+                        console.log('#id_err_'+field);
+                        $('#wdform #id_err_' + field).html(" " + error + " ");
+                    }   
+                },//error function closed
+        });
+    }//if loop closed
+},//sync function closed
+});//WDModel Closed
+
+var ErpInquiryModel=Backbone.Model.extend({     
+sync: function (method, model, options){
+    if (method === 'create'){
+         return $.ajax({
+                datatype:'json',
+                type:'POST',
+                contentType: 'application/json',
+                url:'/api/v1/inquiry/?username=dmalik5\&api_key=4791c10acb8d425fbab86dc05adc49087d3050c2',
+                enctype: 'multipart/form-data',
+                global: true,
+                data: JSON.stringify({
+                    name:(this.get('name')|| ''),
+                    job_title:(this.get('job_title')|| ''),
+                    phone:(this.get('phone')|| ''),
+                    email:(this.get('email')|| ''),
+                    company_name:(this.get('company_name')|| ''),
+                    company_website:(this.get('company_website')|| ''),
+                    product:(this.get('product')|| ''),
+                    message:(this.get('message')|| ''),
+                }),
+                beforeSend: function(){
+                    $('#erpinquiryform #id_err_name').html('');
+                    $('#erpinquiryform #id_err_job_title').html('');
+                    $('#erpinquiryform #id_err_phone').html('');
+                    $('#erpinquiryform #id_err_email').html('');
+                    $('#erpinquiryform #id_err_company_name').html('');
+                    $('#erpinquiryform #id_err_company_website').html('');
+                    $('#erpinquiryform #id_err_product').html('');
+                    $('#erpinquiryform #id_err_message').html('');
+                },
+                success:function(data){
+                    var a=_.template($('#erpinquiryform').html(),{});
+                    $('#erpinquiryform').html(a);
+                    var alert = _.template($('#alert-template').html(),{ //loading from templates.html
+                    type:'success',
+                    bold_message:'Thanks ',
+                    general_message:' Yeh,We wone it',
+                    });
+                    console.log(alert);
+                    $('#erpinquiryform #success-saved').html(alert);
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    var errors = JSON.parse(jqXHR.responseText) 
+                    console.log(errors);
+                    for (field in errors.inquiry) {
+                        var error = errors['inquiry'][field];
+                        console.log('#id_err_'+field);
+                        $('#erpinquiryform #id_err_' + field).html(" " + error + " ");
+                    }   
+                },//error function closed
+        });
+    }//if loop closed
+},//sync function closed
+});//ErpInquiryModel Closed
+
+
+var DemoModel=Backbone.Model.extend({     
+sync: function (method, model, options){
+    if (method === 'create'){
+         return $.ajax({
+                datatype:'json',
+                type:'POST',
+                contentType: 'application/json',
+                url:'/api/v1/demorequest/?username=dmalik5\&api_key=4791c10acb8d425fbab86dc05adc49087d3050c2',
+                global: true,
+                data: JSON.stringify({
+                    name:(this.get('name')|| ''),
+                    mobile:(this.get('mobile')|| ''),
+                    email:(this.get('email')|| ''),
+                    modules:(this.get('modules')|| ''),
+                    Type_of_demo:(this.get('Type_of_demo')|| ''),
+                    date:(this.get('date')|| ''),
+                    time:(this.get('time')|| ''),
+                }),
+                beforeSend: function(){
+                    $('#demoform #id_err_name').html('');
+                    $('#demoform #id_err_mobile').html('');
+                    $('#demoform #id_err_email').html('');
+                    $('#demoform #id_err_modules').html('');
+                    $('#demoform #id_err_Type_of_demo').html('');
+                    $('#demoform #id_err_date').html('');
+                    $('#demoform #id_err_time').html('');
+                },
+                success:function(data){
+                    var a=_.template($('#demoform').html(),{});
+                    $('#demoform').html(a);
+                    var alert = _.template($('#alert-template').html(),{ //loading from templates.html
+                    type:'success',
+                    bold_message:'Thanks ',
+                    general_message:' Yeh,We wone it',
+                    });
+                    console.log(alert);
+                    $('#demoform #success-saved').html(alert);
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    var errors = JSON.parse(jqXHR.responseText) 
+                    console.log(errors);
+                    for (field in errors.demorequest) {
+                        var error = errors['demorequest'][field];
+                        console.log('#id_err_'+field);
+                        $('#demoform #id_err_' + field).html(" " + error + " ");
+                    }   
+                },//error function closed
+        });
+    }//if loop closed
+},//sync function closed
+});//DemoModel Closed
 
 
 var CourseModel=Backbone.Model.extend({
