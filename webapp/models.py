@@ -2,10 +2,10 @@ from django.db import models
 from django import forms
 
 status=(
-        ('New','N'),
-        ('review','R'),
-        ('closed','C'),
-        ('Followup','F'),
+        ('N','N'),
+        ('r','R'),
+        ('c','C'),
+        ('F','F'),
         )
 
 class Development(models.Model):
@@ -37,7 +37,7 @@ class Development(models.Model):
             blank=True,
             null=True,
             )
-    project_message=models.CharField(
+    project_message=models.TextField(
             verbose_name='Message',
             max_length=200,
             )
@@ -64,6 +64,7 @@ class Development(models.Model):
 class DevelopmentForm(forms.ModelForm):
     class Meta:
         model=Development
+        exclude=['status',]
 
     
 
