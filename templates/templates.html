@@ -252,10 +252,15 @@
 <div class="modal fade hide" id = "pcform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Python Consultancy </h3>
+        <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
         <form >
-            {{python_Form}}
+            {% for field in python_Form%}
+            {{field.label}}
+            {{field}}<br>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
         </form>
     </div>
     <div class= "modal-footer">
@@ -266,10 +271,15 @@
 <div class="modal fade hide" id = "dcform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Django consultancy </h3>
+        <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
         <form >
-            {{django_Form}}
+            {% for field in django_Form%}
+            {{field.label}}
+            {{field}}<br>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
         </form>
     </div>
     <div class= "modal-footer">
@@ -282,10 +292,15 @@
 <div class="modal fade hide" id = "ocform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Open Source consultancy</h3>
+        <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
         <form>
-            {{opensource_Form}}
+            {% for field in opensource_Form%}
+            {{field.label}}
+            {{field}}<br>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
         </form>
     </div>
     <div class= "modal-footer">
@@ -296,10 +311,15 @@
 <div class="modal fade hide" id = "mcform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Midrange Training </h3>
+        <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
         <form>
-            {{midrange_Form}}
+            {% for field in midrange_Form%}
+            {{field.label}}
+            {{field}}<br>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
         </form>
     </div>
     <div class= "modal-footer">
@@ -333,10 +353,15 @@
 <div class="modal fade hide" id = "wdform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Web Development </h3>
+        <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
-        <form>
-            {{development_Form}}
+        <form enctype="multipart/form-data">
+            {% for field in development_Form%}
+            {{field.label}}
+            {{field}}<br>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
         </form>
     </div>
     <div class= "modal-footer">
@@ -389,11 +414,16 @@
 <div class="modal fade hide" id = "demoform" aria-hidden = "true">
     <div class = "modal-header">
         <h3>Demo Request </h3>
+        <div id="success-saved"></div>
     </div>
 
     <div class = "modal-body">
         <form>
-            {{erpdemo_Form}}
+            {% for field in erpdemo_Form%}
+            {{field.label}}
+            {{field}}<br>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
         </form>
     </div>
     <div class= "modal-footer">
@@ -405,9 +435,16 @@
 <div class="modal fade hide" id = "erpinquiryform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> ERP Inquriy</h3>
+        <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
-        {{erpinquiry_Form}}
+            <form>
+            {% for field in erpinquiry_Form%}
+            {{field.label}}
+            {{field}}<br>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
+            </form>
     </div>
     <div class= "modal-footer">
         <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
