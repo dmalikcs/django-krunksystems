@@ -86,4 +86,13 @@
 {
     padding-left:4%;
 }
-
+.tabs-left > .nav-tabs .active > #training_border, .tabs-left > .nav-tabs .active > #training_border:hover, .tabs-left > .nav-tabs .active > #training_border:focus
+{
+    border-color:#D35454 #D35454 #D35454 #D35454;
+    background-color:#eb5e5e;
+    color:#fff;
+}
+.tabs-left > .training_tabs
+{
+    border-right:0px;
+}
