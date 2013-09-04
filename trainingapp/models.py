@@ -31,6 +31,10 @@ platforms=(
         ('web Development','WB'),
         )
 class TrainingCourse(models.Model):
+    course_logo=models.ImageField(upload_to='upload/courses/',
+            blank=True,
+            null=True,
+            )
     course_name=models.CharField(verbose_name='Course',
             unique=True,
             max_length=50,
@@ -104,13 +108,13 @@ class IndustrialTraining(models.Model):
             )
     degree=models.CharField(verbose_name='Degree',
             choices=degrees,
-            max_length=10,
+            max_length=20,
             )
     intership_period=models.IntegerField(verbose_name='Intership Period',
             )
     platform=models.CharField(verbose_name='platform',
             choices=platforms,
-            max_length=10,
+            max_length=50,
             )
     message=models.TextField(verbose_name='Messgae',
             max_length=200,
@@ -193,7 +197,7 @@ class MentorDetail(models.Model):
     name=models.CharField(verbose_name='mentor name',
             max_length=75,
             )
-    mentor_images=models.ImageField(upload_to='mentor_images/',
+    mentor_images=models.ImageField(upload_to='upload/mentor_images/',
             null=True,
             blank=True,
             )

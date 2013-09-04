@@ -55,20 +55,34 @@ class OpenERPModules(models.Model):
         verbose_name_plural='Modules'
 
 class ErpDemo(models.Model):
-    customer_id=models.ForeignKey(ERPInquiry,
-            verbose_name='Customer',
-            related_name='customer_erpdemo',
+    name=models.CharField(verbose_name='Name',
+            max_length=60,
             )
-    modules=models.ForeignKey(OpenERPModules,
+    mobile=models.IntegerField(verbose_name='Mobile',
+            )
+    email=models.EmailField(verbose_name='email',
+            unique=True,
+            )
+    modules=models.ManyToManyField(OpenERPModules,
             verbose_name='modules',
             related_name='customer_modules_demo',
+            )
+    Type_of_demo=models.CharField(verbose_name='Demo',
+            max_length=20,
+            choices=(('R','Remote'),('S','On-site')),
             )
     date=models.DateField(verbose_name='Demo Date'
             )
     time=models.TimeField(verbose_name='Demo Time',
             )
+    requested_date=models.DateField(auto_now_add=True
+            )
+    status=models.CharField(verbose_name='Status',
+            max_length=30,
+            default='New',
+            )
     def __unicode__(self):
-        return  self.customer_id.name
+        return  self.name
     class Meta:
         verbose_name='Erp Demo'
         verbose_name='Erp Demos'
@@ -110,6 +124,10 @@ class OpenERPModulesForm(forms.ModelForm):
 class ErpDemoForm(forms.ModelForm):
     class Meta:
         model=ErpDemo
+        exclude=['status']
+        widgets ={ 
+                    'modules':forms.SelectMultiple(),
+                }
 
 class ErpCustomersForm(forms.ModelForm):
     class Meta:
