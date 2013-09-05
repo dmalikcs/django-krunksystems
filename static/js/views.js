@@ -43,6 +43,7 @@ ContactusView=Backbone.View.extend({
         el:$('#contactus_page'),
         events:{
         'click button#submit_request':'ContactSubmitView',
+        'click button#clear_form':'FormClear',
         },
         initialize:function(){
             console.log("ContactView called");
@@ -51,6 +52,16 @@ ContactusView=Backbone.View.extend({
         render:function(){
             var contactus =_.template($("#contactus_template").html(),{});
             this.$el.html(contactus);
+        },
+        FormClear:function(event){
+            $('#contactus_form #id_name').val('');
+            $('#contactus_form #id_err_name').html('');
+            $('#contactus_form #id_mobile').val('');
+            $('#contactus_form #id_err_mobile').html('');
+            $('#contactus_form #id_Email').val('');
+            $('#contactus_form #id_err_Email').html('');
+            $('#contactus_form #id_Message').val('');
+            $('#contactus_form #id_err_Message').html('');
         },
         ContactSubmitView:function(event){
             name=$('#contactus_form #id_name').val();
