@@ -39,8 +39,14 @@ class ERPInquiry(models.Model):
         verbose_name_plural='OpenERP Inquiries'
 
 class OpenERPModules(models.Model):
-    module_name=models.CharField(verbose_name='Models',
+    module_image=models.ImageField(verbose_name='Module image',
+            upload_to='upload/openerp_images/'
+            )
+    module_name=models.CharField(verbose_name='Module name',
             max_length=70,
+            )
+    module_short_description=models.TextField(verbose_name='Brief description',
+            max_length=100,
             )
     module_description=models.TextField(verbose_name='Description',
             max_length=100,

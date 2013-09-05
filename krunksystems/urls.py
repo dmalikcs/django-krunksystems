@@ -5,6 +5,7 @@ from trainingapp.api.resources import TrainingCoursesResource,CorporateTrainingR
 from Consultancyapp.api.resources import PythonConsultancyResource,DjangoConsultancyResource,OpensourceConsultancyResource,MidrangeConsultancyResource
 from webapp.api.resources import DevelopmentResource
 from erpapp.api.resources import OpenERPModulesResource,ERPInquiryResource,ErpDemoResource
+from contactus.api.resources import ContactusResource
 v1_api=Api(api_name='v1')
 v1_api.register(TrainingCoursesResource())
 v1_api.register(CorporateTrainingResource())
@@ -19,6 +20,7 @@ v1_api.register(OpenERPModulesResource())
 v1_api.register(TrainingSuccessResource())
 v1_api.register(ERPInquiryResource())
 v1_api.register(ErpDemoResource())
+v1_api.register(ContactusResource())
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
