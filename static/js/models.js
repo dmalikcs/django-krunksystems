@@ -508,6 +508,53 @@ sync: function (method, model, options){
 });//DemoModel Closed
 
 
+var ContactusModel=Backbone.Model.extend({     
+sync: function (method, model, options){
+    if (method === 'create'){
+         return $.ajax({
+                datatype:'json',
+                type:'POST',
+                contentType: 'application/json',
+                url:'/api/v1/contactus/?username=dmalik5\&api_key=4791c10acb8d425fbab86dc05adc49087d3050c2',
+                global: true,
+                data: JSON.stringify({
+                    name:(this.get('name')|| ''),
+                    mobile:(this.get('mobile')|| ''),
+                    Email:(this.get('Email')|| ''),
+                    Message:(this.get('Message')|| ''),
+                }),
+                beforeSend: function(){
+                    $('#contactus_form #id_err_name').html('');
+                    $('#contactus_form #id_err_mobile').html('');
+                    $('#contactus_form #id_err_Email').html('');
+                    $('#contactus_form #id_err_Message').html('');
+                },
+                success:function(data){
+                    var a=_.template($('#contactus_form').html(),{});
+                    $('#contactus_form').html(a);
+                    var alert = _.template($('#alert-template').html(),{ //loading from templates.html
+                    type:'success',
+                    bold_message:'Thanks ',
+                    general_message:' Yeh,We wone it',
+                    });
+                    console.log(alert);
+                    $('#contactus_form #success-saved').html(alert);
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    var errors = JSON.parse(jqXHR.responseText) 
+                    console.log(errors);
+                    for (field in errors.contactus) {
+                        var error = errors['contactus'][field];
+                        console.log('#id_err_'+field);
+                        $('#contactus_form #id_err_' + field).html(" " + error + " ");
+                    }   
+                },//error function closed
+        });
+    }//if loop closed
+},//sync function closed
+});//ContactusModel Closed
+
+
 var CourseModel=Backbone.Model.extend({
     url:'/api/v1/courses/?format=json'
 });
