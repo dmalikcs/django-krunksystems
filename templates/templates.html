@@ -394,6 +394,7 @@
         <div class="tab-pane" id="modules"> <!-- tab pane Open ERP div open -->
             <h1>Modules</h1>
             <div class = "span7"> 
+                ddd
             </div>
         </div>  <!-- tab pane Open ERP div closed -->
         <div class="tab-pane active" id="openerp_implementation"> <!-- tab pane Open ERP div open -->
@@ -571,16 +572,39 @@
 </script>
 
 <script type="text/template" id="modules_template">
-    <div class="span8">
-        Modules Tamplate
-        <a href="<%= meta.next %>">next</a>
+    <div class="span12">
+        {%comment %}
+            <div class="accordion" id="accordion2">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                    Collapsible Group Item #1
+                  </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse in">
+                  <div class="accordion-inner">
+                    Anim pariatur cliche...
+                  </div>
+              </div>
+          </div>
+          {%endcomment%}
+
+        <ul class="thumbnails">
         <% _.each(modules, function(module) { %> 
-            <%= module.id %>
-            <%= module.module_name %>
-            <%= module.module_description %>
-            <%= module.module_Features %>
-            <br>
+            <li class="span4">
+            <div class="thumbnail">
+                <img src="<%= module.module_image %>">
+                  <h3><%= module.module_name %></h3>
+                  <p> <%= module.module_description %> </p>
+              </div>
+        </li>
     <% }); %>
+    </ul>
     </div>
+</script>
+
+
+<script type="text/template" id="service_template">
+    <div class="span12"> Closed </div>
 </script>
 
