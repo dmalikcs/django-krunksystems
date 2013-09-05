@@ -14,9 +14,9 @@
 }
 .nav_abtus .nav_abttxt
 {
-    width:9.7%;
+    width:10.5%;
     padding:.5% 0;
-    margin-top:3.3%;
+    margin-top:3.8%;
     background-color:grey;
     -webkit-transform:rotate(-90deg);
     -moz-transform:rotate(-90deg); 
@@ -40,7 +40,8 @@
     -moz-box-shadow:none;
     background-image:none;
     background-color:grey;
-    border-radius:0
+    border-radius:0;
+    min-height:110px;
 }
 .menubar > .navbar
 {
@@ -66,8 +67,16 @@
     margin-top:0px;
     margin-bottom:0px;
     color:#343434;
-    font-family:tahoma;
+    font-family:"tahoma";
     font-weight:normal;
+}
+.menubox_size h2
+{
+    font-size:28px;
+}
+.menubox_size h6
+{
+    font-size:11px;
 }
 .menubox_size a
 {
@@ -77,18 +86,51 @@
 .menu_zero
 {
     background-color:#EB5E5E;
+    -webkit-transform:rotate(10deg);
+    -moz-transform:rotate(10deg);
+}
+
+.menu_zero:hover
+{
+    border:2px solid #D35454;
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
 }
 .menu_dna
 {
     background-color:#4CACE7;
+    -webkit-transform:rotate(-10deg);
+    -moz-transform:rotate(-10deg);
+}
+.menu_dna:hover
+{
+    border:2px solid #459DD3;
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
 }
 .menu_idea
 {
     background-color:#E7A600;
+    -webkit-transform:rotate(10deg);
+    -moz-transform:rotate(10deg);
+}
+.menu_idea:hover
+{
+    border:2px solid #D39700;
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
 }
 .menu_krunk
 {
     background-color:#2EF888;
+    -webkit-transform:rotate(-10deg);
+    -moz-transform:rotate(-10deg);
+}
+.menu_krunk:hover
+{
+    border:2px solid #27D876;
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
 }
 .box-circle .img-circle
 {
@@ -109,8 +151,8 @@
 .box-circle .row-fluid .about_circle
 {
     margin-left:-85%;
-    border:3px solid #9ead8f;
-    background-color:#54f6de;
+    border:3px solid #eb5e5e;
+    background-color:grey;
 }
 .box-circle .row-fluid  .about_box
 {
