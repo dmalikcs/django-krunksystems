@@ -215,17 +215,13 @@
 <div class="tabbable tabs-left"> <!-- tabs div open -->
     <ul class = "nav nav-tabs consulting_tabs span2">
         <li class="active">
-        <a data-toggle="tab" href="#PythonConsultancy" id="consulting_border">Python <i class = "icon-chevron-right icon-white pull-right"> </i></a></li>
+        <a data-toggle="tab" href="#PythonConsultancy" class="python" id="consulting_border">Python <i class = "icon-chevron-right icon-white pull-right"> </i></a></li>
         <li ><a data-toggle="tab" href="#DjangoConsultancy" id="consulting_border">Django  <i class = "icon-chevron-right icon-white pull-right"> </i></a></li>
         <li ><a data-toggle="tab" href="#OpensourceConsultancy" id="consulting_border">Opensource  <i class = "icon-chevron-right icon-white pull-right"> </i></a></li>
         <li ><a data-toggle="tab" href="#MidrangeConsultancy" id="consulting_border">Midrange  <i class = "icon-chevron-right icon-white pull-right"> </i> </a></li>
     </ul>
     <div class="tab-content span9" > <!--  content div open -->
         <div class="tab-pane active" id="PythonConsultancy"> <!-- tab pane Open ERP div open -->
-            <h1>Python Consultancy </h1>
-            <div class = "span7">  
-                <a href="#pcform" data-toggle="modal">Request</a>
-            </div>
         </div>  <!-- tab pane Open ERP div closed -->
         <div class="tab-pane" id="DjangoConsultancy">  <!-- tab pane Open Complain div open -->
             <h1>Django Consultancy</h1>
@@ -249,25 +245,6 @@
 </div> <!-- tabs div closed -->
 
 
-<div class="modal fade hide" id = "pcform" aria-hidden = "true">
-    <div class = "modal-header">
-        <h3> Python Consultancy </h3>
-        <div id="success-saved"></div>
-    </div>
-    <div class = "modal-body">
-        <form >
-            {% for field in python_Form%}
-            {{field.label}}
-            {{field}}<br>
-            <div id="id_err_{{field.html_name}}" class="invalid"></div>
-            {%endfor%}
-        </form>
-    </div>
-    <div class= "modal-footer">
-        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button id="pcform_submit" class = "btn btn-primary" >submit your requst </button>
-    </div>
-</div>
 <div class="modal fade hide" id = "dcform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Django consultancy </h3>
@@ -583,7 +560,7 @@
                 </div>
                 <div id="collapseOne" class="accordion-body collapse in">
                   <div class="accordion-inner">
-                    Anim pariatur cliche...
+                        Anim pariatur cliche...
                   </div>
               </div>
           </div>
@@ -608,3 +585,34 @@
     <div class="span12"> Closed </div>
 </script>
 
+<script type="text/template" id="python_template">
+            <h1>Python Consultancy </h1>
+            <div class = "span7">  
+                <a href="#pcform" data-toggle="modal">Request</a>
+                <button class="btn" id="show" >show</button>
+            </div>
+<div class="modal fade hide" id = "pcform" aria-hidden = "true">
+    <div class = "modal-header">
+        <h3> Python Consultancy </h3>
+        <div id="success-saved"></div>
+    </div>
+    <div class = "modal-body">
+        <form >
+            {% for field in python_Form%}
+            {{field.label}}
+            {{field}}<br>
+            <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            {%endfor%}
+        </form>
+    </div>
+    <div class= "modal-footer">
+        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+        <button id="pcform_submit" class = "btn btn-primary" >submit your requst </button>
+    </div>
+</div>
+</script>
+
+
+<script type="text/template" id="show_template">
+    <button id="close">Closed</button>
+</script>

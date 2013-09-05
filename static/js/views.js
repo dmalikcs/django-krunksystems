@@ -184,6 +184,9 @@ ConsultingView=Backbone.View.extend({
         'click #dcform_submit':'DCAdd',
         'click #ocform_submit':'OCAdd',
         'click #mcform_submit':'MCAdd',
+        'click a.python':'PythonView',
+        'click button#show':'ShowView',
+        'click button#close':'PythonView',
         },
         PCAdd:function(event){
             console.log('PCAdd consultancy');
@@ -244,6 +247,14 @@ ConsultingView=Backbone.View.extend({
             });
             MCmodel.save();
             return false;
+        },
+        PythonView:function(event){
+            var python =_.template($('#python_template').html(),{});
+            $('#PythonConsultancy').html(python);
+        },
+        ShowView:function(event){
+            var python =_.template($('#show_template').html(),{});
+            $('#PythonConsultancy').html(python);
         },
         render:function(){
             var zero =_.template($("#service_consulting_template").html(),{});
