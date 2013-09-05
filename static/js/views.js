@@ -39,6 +39,35 @@ AboutView=Backbone.View.extend({
         },
 });
 
+ContactusView=Backbone.View.extend({
+        el:$('#contactus_page'),
+        events:{
+        'click button#submit_request':'ContactSubmitView',
+        },
+        initialize:function(){
+            console.log("ContactView called");
+            this.render();
+        },
+        render:function(){
+            var contactus =_.template($("#contactus_template").html(),{});
+            this.$el.html(contactus);
+        },
+        ContactSubmitView:function(event){
+            name=$('#contactus_form #id_name').val();
+            mobile=$('#contactus_form #id_mobile').val();
+            Email=$('#contactus_form #id_Email').val();
+            Message=$('#contactus_form #id_Message').val();
+            var Contactusmodel=new ContactusModel({
+                name:name,
+                mobile:mobile,
+                Email:Email,
+                Message:Message,
+            });
+            Contactusmodel.save();
+            return false;
+        },
+});
+
 TrainingView=Backbone.View.extend({
         el:$('#service_container'),
         initialize:function(){
@@ -322,7 +351,7 @@ var ErpView=Backbone.View.extend({
             });
         },
 });
-
+/*
 var CourseView=Backbone.View.extend({
     el:$('#temp'),
     initialize:function(){
@@ -335,3 +364,16 @@ var CourseView=Backbone.View.extend({
         this.$el.html(temp);
     },
 });
+*/
+
+var ServiceView=Backbone.View.extend({
+    el:$('#service_container'),
+    initialize:function(){
+        console.log("Deepak Malik");
+        this.render();
+    },
+    render:function(){
+        var service =_.template($("#service_template").html(),{});
+        this.$el.html(service);
+    },
+});//serviceview closed

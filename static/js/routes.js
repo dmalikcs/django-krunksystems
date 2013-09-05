@@ -8,10 +8,21 @@ AboutusRouter = Backbone.Router.extend({
         console.log("called AboutView");
     },
 });
+ContactusRouter = Backbone.Router.extend({
+    routes:{
+    '':'ContactusRoute',
+    },
+    ContactusRoute:function(){
+    console.log('called');
+    new ContactusView();
+    },
+});
+
 
 
 ServicesRouter = Backbone.Router.extend({
      routes:{
+    'services':'ServicesRoute',
     'training':'TrainingRoute',
     'consulting':'ConsultingRoute',
     'development':'DevelopementRoute',
@@ -43,12 +54,15 @@ ServicesRouter = Backbone.Router.extend({
         new CourseView();
         console.log("called trainingcourseRoute:success");
     },
-
+    ServicesRoute:function(){
+        console.log('Services Page called');
+        new ServiceView();
+    }
 });
 
 var aboutview=new AboutusRouter();
 var servicesview=new ServicesRouter();
+var contactus=new ContactusRouter();
 Backbone.history.start();
 aboutview.navigate('aboutus', {trigger: true});
-servicesview.navigate('service_erp',{trigger: true});
-
+contactus.navigate('',{trigger: true});
