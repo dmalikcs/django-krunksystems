@@ -96,3 +96,33 @@
 {
     border-right:0px;
 }
+.tabs-left > .nav-tabs .active > #consulting_border, .tabs-left > .nav-tabs .active > #consulting_border:hover, .tabs-left > .nav-tabs .active > #consulting_border:focus
+{
+    border-color:#4CACE7 #4CACE7 #4CACE7 #4CACE7;
+    background-color:#459DD3;
+    color:#fff;
+}
+.tabs-left > .consulting_tabs
+{
+    border-right:0px;
+}
+.tabs-left > .nav-tabs .active > #development_border, .tabs-left > .nav-tabs .active > #development_border:hover, .tabs-left > .nav-tabs .active > #development_border:focus
+{
+    border-color:#E7A600 #E7A600 #E7A600 #E7A600;
+    background-color:#D39700;
+    color:#fff;
+}
+.tabs-left > .development_tabs
+{
+    border-right:0px;
+}
+.tabs-left > .nav-tabs .active > #erp_border, .tabs-left > .nav-tabs .active > #erp_border:hover, .tabs-left > .nav-tabs .active > #erp_border:focus
+{
+    border-color:#2EF888 #2EF888 #2EF888 #2EF888;
+    background-color:#27D876;
+    color:#fff;
+}
+.tabs-left > .erp_tabs
+{
+    border-right:0px;
+}
