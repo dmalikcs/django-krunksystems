@@ -160,6 +160,10 @@
     background-color:#459DD3;
     color:#fff;
 }
+.tabs-left > .consulting_tabs
+{
+    border-right:0px;
+}
 #PythonConsultancy .python_icon
 {
     border-bottom:1px inset #4CACE7;
@@ -232,10 +236,6 @@
     color:#605D68;
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
-.tabs-left > .consulting_tabs
-{
-    border-right:0px;
-}
 .tabs-left > .nav-tabs .active > #development_border, .tabs-left > .nav-tabs .active > #development_border:hover, .tabs-left > .nav-tabs .active > #development_border:focus
 {
     border-color:#E7A600 #E7A600 #E7A600 #E7A600;
@@ -245,6 +245,42 @@
 .tabs-left > .development_tabs
 {
     border-right:0px;
+}
+#Webdevelopment .web_icon
+{
+    border-bottom:1px inset #E7A600;
+    margin-bottom:10px;
+    padding-bottom:8px;
+    font-size:20px;
+    color:#4A4850;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+#Webdevelopment .web_icon .icon-cog
+{
+    margin-top:.7%;
+}
+#Webdevelopment .lorem_web_para
+{
+    color:#605D68;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+#Applicationdevelopment .app_icon
+{
+    border-bottom:1px inset #E7A600;
+    margin-bottom:10px;
+    padding-bottom:8px;
+    font-size:20px;
+    color:#4A4850;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+#Applicationdevelopment .app_icon .icon-cog
+{
+    margin-top:.7%;
+}
+#Applicationdevelopment .lorem_app_para
+{
+    color:#605D68;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .tabs-left > .nav-tabs .active > #erp_border, .tabs-left > .nav-tabs .active > #erp_border:hover, .tabs-left > .nav-tabs .active > #erp_border:focus
 {
@@ -256,4 +292,39 @@
 {
     border-right:0px;
 }
-
+#openerp_implementation .erp_implement_icon
+{
+    border-bottom:1px inset #2EF888;
+    margin-bottom:10px;
+    padding-bottom:8px;
+    font-size:20px;
+    color:#4A4850;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+#openerp_implementation .erp_implement_icon .icon-cog
+{
+    margin-top:.7%;
+}
+#openerp_implementation .lorem_erp_implement_para
+{
+    color:#605D68;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+#openerp_customization .erp_customize_icon
+{
+    border-bottom:1px inset #2EF888;
+    margin-bottom:10px;
+    padding-bottom:8px;
+    font-size:20px;
+    color:#4A4850;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+#openerp_customization .erp_customize_icon .icon-cog
+{
+    margin-top:.7%;
+}
+#openerp_customization .lorem_erp_customize_para
+{
+    color:#605D68;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
