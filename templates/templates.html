@@ -214,16 +214,16 @@
 <script type="text/template" id="service_consulting_template">
 <div class="tabbable tabs-left"> <!-- tabs div open -->
     <ul class = "nav nav-tabs consulting_tabs span2">
-        <li class="active">
+        <li>
         <a data-toggle="tab" href="#PythonConsultancy" class="python" id="consulting_border">Python <i class = "icon-chevron-right icon-white pull-right"> </i></a></li>
-        <li ><a data-toggle="tab" href="#DjangoConsultancy" id="consulting_border">Django  <i class = "icon-chevron-right icon-white pull-right"> </i></a></li>
+        <li class="active"><a data-toggle="tab" href="#DjangoConsultancy" id="consulting_border">Django  <i class = "icon-chevron-right icon-white pull-right"> </i></a></li>
         <li ><a data-toggle="tab" href="#OpensourceConsultancy" id="consulting_border">Opensource  <i class = "icon-chevron-right icon-white pull-right"> </i></a></li>
         <li ><a data-toggle="tab" href="#MidrangeConsultancy" id="consulting_border">Midrange  <i class = "icon-chevron-right icon-white pull-right"> </i> </a></li>
     </ul>
     <div class="tab-content span9" > <!--  content div open -->
-        <div class="tab-pane active" id="PythonConsultancy"> <!-- tab pane Open ERP div open -->
+        <div class="tab-pane" id="PythonConsultancy"> <!-- tab pane Open ERP div open -->
         </div>  <!-- tab pane Open ERP div closed -->
-        <div class="tab-pane" id="DjangoConsultancy">  <!-- tab pane Open Complain div open -->
+        <div class="tab-pane active" id="DjangoConsultancy">  <!-- tab pane Open Complain div open -->
             <h1>Django Consultancy</h1>
             <div class = "span7"> 
                 <a href="#dcform" data-toggle="modal">Request</a>
@@ -549,7 +549,7 @@
 </script>
 
 <script type="text/template" id="modules_template">
-    <div class="span12">
+    <div class="span12" >
         {%comment %}
             <div class="accordion" id="accordion2">
               <div class="accordion-group">
@@ -565,7 +565,16 @@
               </div>
           </div>
           {%endcomment%}
-
+          <div class="span12 well">
+              <% if (meta.next) {%>
+              <button id="next"class="btn pull-right">Next</button> 
+              <input id="next" value="<%= meta.next %>" type="hidden"/>
+              <%}%>
+              <% if (meta.previous) {%>
+              <button id="previous" value="<%= meta.previous %>"class="btn pull-left">Pre</button>
+              <input id="previous" value="<%= meta.previous %>" type="hidden"/>
+              <%}%>
+          </div>
         <ul class="thumbnails">
         <% _.each(modules, function(module) { %> 
             <li class="span4">
@@ -573,6 +582,7 @@
                 <img src="<%= module.module_image %>">
                   <h3><%= module.module_name %></h3>
                   <p> <%= module.module_description %> </p>
+                  <button id="module_detail_id">Details</button>
               </div>
         </li>
     <% }); %>
@@ -589,6 +599,8 @@
             <h1>Python Consultancy </h1>
             <div class = "span7">  
                 <a href="#pcform" data-toggle="modal">Request</a>
+                <button class="btn" id="show" >show</button>
+                <button class="btn" id="show" >show</button>
                 <button class="btn" id="show" >show</button>
             </div>
 <div class="modal fade hide" id = "pcform" aria-hidden = "true">
@@ -614,5 +626,7 @@
 
 
 <script type="text/template" id="show_template">
-    <button id="close">Closed</button>
+    <a class="close" id="close" >&times;</a>
+    <h1>Thanks for choces</h1>
+    <p>welcoms to Deepak Malik</p>
 </script>

@@ -186,7 +186,7 @@ ConsultingView=Backbone.View.extend({
         'click #mcform_submit':'MCAdd',
         'click a.python':'PythonView',
         'click button#show':'ShowView',
-        'click button#close':'PythonView',
+        'click a#close':'PythonView',
         },
         PCAdd:function(event){
             console.log('PCAdd consultancy');
@@ -310,6 +310,9 @@ var ErpView=Backbone.View.extend({
             'click #erpinquiryform_submit':'ErpInquiryAdd',
             'click #demoform_submit':'DemoAdd',
             'click a.erp_modules':'ERPModulesDisplay',
+            'click button#module_detail_id':'ModuleDetailDisplay',
+            'click button#next':'ERPModulesDisplay',
+            'click button#previous':'ERPModulesDisplay',
         },
         ErpInquiryAdd:function(event){
             name=$('#erpinquiryform #id_name').val();
@@ -365,12 +368,29 @@ var ErpView=Backbone.View.extend({
         ERPModulesDisplay: function(event){
             console.log("ERPModules Display Called");
             var modules=new ERPModuleCollection()
+            if(event.currentTarget.id === 'next'){
+                console.log("called from from next");
+                var u=$('input#next').val()
+                modules.url=u;
+                console.log(modules);
+            }
+            else if (event.currentTarget.id === 'previous'){
+                console.log("Called from previus");
+                var u=$('input#previous').val()
+                modules.url=u;
+                console.log(modules);
+            }else{
+            modules.url='/api/v1/modules/?format=json';
+            }
             modules.fetch({
                         success:function(collection,response){
                         var data=_.template($('#modules_template').html(),{modules:response.objects,meta:response.meta});
                         $('#modules').html(data);
                         },
             });
+        },
+        ModuleDetailDisplay:function(event){
+            console.log($('input#next').val());
         },
 });
 /*
