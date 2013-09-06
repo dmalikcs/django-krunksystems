@@ -1,3 +1,4 @@
+{% load webdesign %}
 <script type="text/template" id="about_template">
 <div class = "box-circle span11">
     <div class = "row-fluid">
@@ -118,24 +119,35 @@
             <li ><a data-toggle="tab" href="#AcademyTraining" id="training_border">Acadamy <i class= "icon-chevron-right icon-white pull-right"></i></a></li>
     </ul>
     <div class="tab-content span8" > <!--  content div open -->
-        <div class="tab-pane active" id="CorporateTraining""> <!-- tab pane Open ERP div open -->
-            <h1>CorporateTraining </h1>
-            <div class = "span7"> 
-                <a href="#crform" data-toggle="modal">Request</a>
-            </div>
+        <div class="tab-pane active" id="CorporateTraining"> <!-- tab pane Open ERP div open -->
+            <div>
+                <div class = "corporate_icon"><i class = "icon-list"> </i> &nbsp;  Corporate Training </div>
+                <div class = "lorem_training_para">
+                    {% lorem 4 p %}
+                </div>
+                <div class = "corporate_btn">
+                    <a href="#crform" data-toggle="modal" class="btn btn-danger"> <i class = "icon-bookmark icon-white"> </i>Request</a>
+                </div>
+        </div>
         </div>  <!-- tab pane Open ERP div closed -->
         <div class="tab-pane" id="IndustrialTraining">  <!-- tab pane Open Complain div open -->
-            <h1>IndustrialTraining </h1>
-            <div class = "span7"> 
-                <a href="#itform" data-toggle="modal">Request</a>
+                <div class = "industrial_icon"><i class = "icon-italic"> </i>  Industrial Training </div>
+                <div class = "lorem_industry_para">
+                    {% lorem 4 p %}
+                </div>
+            <div class = "industrial_btn"> 
+                <a href="#itform" data-toggle="modal" class="btn btn-danger"><i class = "icon-bookmark icon-white"> </i> Request</a>
             </div>
         </div> <!-- tab pane Open Complain div closed -->
         <div class="tab-pane" id="coursetraining">{#training corse started #}
         </div> {# Training course closed #}
         <div class="tab-pane" id="AcademyTraining">  <!-- tab pane DD div open -->
-            <h1>AcademyTraining </h1>
-            <div class = "span7"> 
-                <a href="#atform" data-toggle="modal">Request</a>
+                <div class = "academy_icon"><i class = "icon-book"> </i>  Academy Training </div>
+                <div class = "lorem_academy_para">
+                    {% lorem 4 p %}
+                </div>
+            <div class = "academy_btn"> 
+                <a href="#atform" data-toggle="modal" class = "btn btn-danger"><i class = "icon-bookmark icon-white"> </i>Request</a>
             </div>
         </div> <!-- tab pane DD div closed -->
     </div> <!--  content div closed -->
@@ -220,29 +232,41 @@
         <li ><a data-toggle="tab" href="#OpensourceConsultancy" id="consulting_border">Opensource  <i class = "icon-chevron-right icon-white pull-right"> </i></a></li>
         <li ><a data-toggle="tab" href="#MidrangeConsultancy" id="consulting_border">Midrange  <i class = "icon-chevron-right icon-white pull-right"> </i> </a></li>
     </ul>
-    <div class="tab-content span9" > <!--  content div open -->
-        <div class="tab-pane active" id="PythonConsultancy"> <!-- tab pane Open ERP div open -->
-            <h1>Python Consultancy </h1>
-            <div class = "span7">  
-                <a href="#pcform" data-toggle="modal">Request</a>
-            </div>
-        </div>  <!-- tab pane Open ERP div closed -->
+    <div class="tab-content span8" > <!--  content div open -->
+        <div class="tab-pane active" id="PythonConsultancy"> <!-- tab pane Python Consultancy div open -->
+            <div class = "python_icon"><i class = "icon-edit"> </i> Python Consultancy </div>
+                <div class = "lorem_python_para">
+                    {% lorem 4 p %}
+                </div>
+                <div class = "python_btn">
+                    <a href="#pcform" data-toggle="modal" class = "btn btn-primary"> <i class = "icon-bookmark icon-white"> </i>Request</a>
+                </div>
+            </div>  <!-- tab pane Open ERP div closed -->
         <div class="tab-pane" id="DjangoConsultancy">  <!-- tab pane Open Complain div open -->
-            <h1>Django Consultancy</h1>
-            <div class = "span7"> 
-                <a href="#dcform" data-toggle="modal">Request</a>
+            <div class = "django_icon"><i class = "icon-wrench"> </i> Django Consultancy </div>
+                <div class = "lorem_django_para">
+                    {% lorem 4 p %}
+                </div>
+            <div class = "django_btn"> 
+                <a href="#dcform" data-toggle="modal" class = "btn btn-primary"><i class = "icon-bookmark icon-white"> </i>Request</a>
             </div>
         </div> <!-- tab pane Open Complain div closed -->
         <div class="tab-pane" id="OpensourceConsultancy">  <!-- tab pane DD div open -->
-            <h1>Opensource Consultancy </h1>
-            <div class = "span7"> 
-                <a href="#ocform" data-toggle="modal">Request</a>
+            <div class = "opensource_icon"><i class = "icon-adjust"> </i> OpenSource Consultancy </div>
+                <div class = "lorem_opensource_para">
+                    {% lorem 4 p %}
+                </div>
+            <div class = "opensource_btn"> 
+                <a href="#ocform" data-toggle="modal" class = "btn btn-primary"><i class = "icon-bookmark icon-white"> </i>Request</a>
             </div>
         </div> <!-- tab pane DD div closed -->
         <div class="tab-pane" id="MidrangeConsultancy">  <!-- tab pane DD div open -->
-            <h1>Midrange Consultancy </h1>
-            <div class = "span7"> 
-                <a href="#mcform" data-toggle="modal">Request</a>
+            <div class = "midrange_icon"><i class = "icon-cog"> </i> Midrange Consultancy </div>
+                <div class = "lorem_midrange_para">
+                    {% lorem 4 p %}
+                </div>
+            <div class = "midrange_btn"> 
+                <a href="#mcform" data-toggle="modal" class = "btn btn-primary"><i class = "icon-bookmark icon-white"> </i>Request</a>
             </div>
         </div> <!-- tab pane DD div closed -->
     </div> <!--  content div closed -->
