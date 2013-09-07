@@ -484,11 +484,11 @@
 {%endcomment%}
 
 <script type="text/template" id="coursedisplay_template">
-<div class="accordion" id="accordion2">
+<div class="accordion course_accordion" id="accordion2">
     <% _.each(people, function(name) { %> 
-    <div class="accordion-group">
+    <div class="accordion-group training_course_display">
         <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= name.id %>">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= name.id %>" id="course_link">
                 <div class="row-fluid">
                     <div class="span1">
                         <i class="icon-home"></i>
@@ -627,7 +627,17 @@
 
 
 <script type="text/template" id="service_template">
-    <div class="span12"> Closed </div>
+    <div class="span10"> 
+        <div class = "service_heading">
+            <span class = "service_provide">Services,</span> We Provide 
+        </div>
+        <div class = "service_head_border">
+        </div>
+        <div class = " service_content">
+            <center>
+                {%lorem 1 p %}
+            </center>
+        </div>
 </script>
 
 <script type="text/template" id="python_template">

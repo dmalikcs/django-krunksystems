@@ -86,6 +86,37 @@
 {
     padding-left:4%;
 }
+#service_container .service_heading
+{
+    font-size:35px;
+    color:#4A4850;
+    margin-top:1%;
+    margin-bottom:6%;
+    margin-left:35%;
+    font-family:'Droid Serif', serif;
+    font-weight:100;
+}
+#service_container .service_heading .service_provide
+{
+    font-weight:600;
+    font-size:38px;
+}
+#service_container  .service_head_border
+{
+    margin-left:40%;
+    margin-right:35%;
+    border-bottom : 3px solid #4A4850;
+}
+#service_container .service_content
+{
+    margin-top:6%;
+    margin-left:10%;
+    font-size:20px;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color:#605d68;
+    letter-spacing: .9px;
+    line-height:150%;
+}
 .tabs-left > .nav-tabs .active > #training_border, .tabs-left > .nav-tabs .active > #training_border:hover, .tabs-left > .nav-tabs .active > #training_border:focus
 {
     border-color:#D35454 #D35454 #D35454 #D35454;
@@ -95,6 +126,26 @@
 .tabs-left > .training_tabs
 {
     border-right:0px;
+}
+#training_border
+{
+    color:#605d68;
+}
+.course_accordion .accordion-group
+{
+    border:0px;
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+    border-radius:0px;  
+    background-color:#eee;
+}
+.course_accordion .training_course_display
+{
+    border-bottom:.8px solid #eb5e5e
+}
+.course_accordion .training_course_display #course_link
+{
+    color:#605d68;
 }
 #CorporateTraining .corporate_icon
 {
@@ -163,6 +214,10 @@
 .tabs-left > .consulting_tabs
 {
     border-right:0px;
+}
+#consulting_border
+{
+    color:#605D68;
 }
 #PythonConsultancy .python_icon
 {
@@ -238,13 +293,17 @@
 }
 .tabs-left > .nav-tabs .active > #development_border, .tabs-left > .nav-tabs .active > #development_border:hover, .tabs-left > .nav-tabs .active > #development_border:focus
 {
-    border-color:#E7A600 #E7A600 #E7A600 #E7A600;
-    background-color:#D39700;
+    border-color:#D39700 #D39700 #D39700 #D39700;
+    background-color:#e7a600;
     color:#fff;
 }
 .tabs-left > .development_tabs
 {
     border-right:0px;
+}
+#development_border
+{
+    color:#605d68;
 }
 #Webdevelopment .web_icon
 {
@@ -291,6 +350,10 @@
 .tabs-left > .erp_tabs
 {
     border-right:0px;
+}
+#erp_border
+{
+    color:#605d68;
 }
 #openerp_implementation .erp_implement_icon
 {
