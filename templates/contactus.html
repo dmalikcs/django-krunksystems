@@ -5,17 +5,33 @@
     <div id="contactus_form">
         <div class="span5 pull-right">
             <div id="success-saved"></div>
-            <span class="span5"><h1>Contact US</h1></span>
-            <form>
-                {% for field in form%}
-                {{field.label}}
-                {{field}}<br>
-                <div id="id_err_{{field.html_name}}" class="invalid"></div>
-                {%endfor%}
+            <h3>Contact US</h3>
+            <form >
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-user"></i></span>
+                     {{form.name}}
+                 </div>
+                 <div id="id_err_{{form.name.html_name}}" class="invalid"></div>
+                <div class="input-prepend">
+                    <span class="add-on btn-large">@</span>
+                     {{form.mobile}}
+                </div>
+                <div id="id_err_{{form.mobile.html_name}}" class="invalid"></div>
+                <div class="input-prepend">
+                    <span class="add-on">@</span>
+                     {{form.Email}}
+                </div>
+                <div id="id_err_{{form.Email.html_name}}" class="invalid"></div>
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                     {{form.Message}}
+                </div>
+                <div id="id_err_{{form.Message.html_name}}" class="invalid"></div>
             </form>
-                <button id="submit_request" class="btn btn-success" >Submit</button>
-                <button id="clear_form" class="btn" >cancel</button>
+            <div class="btn-group control-group">
+                <button id="submit_request" class="btn btn-success span2" >Submit</button>
+                <button id="clear_form" class="btn span2" >cancel</button>
+            </div>
         </div>
-
 </div>
 </script>
