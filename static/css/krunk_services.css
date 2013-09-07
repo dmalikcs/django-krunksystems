@@ -391,3 +391,29 @@
     color:#605D68;
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+.modules_head
+{
+    border-bottom:1px inset #2EF888;
+    margin-bottom:10px;
+    padding-bottom:8px;
+    font-size:20px;
+    color:#4A4850;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.modules_head .icon-cog
+{
+    margin-top:.7%;
+    width:20px;
+}
+.thumbnails_move
+{
+    padding-top:3%;
+}
+.thumbnails_move .thumbnail_move_left
+{
+    margin-top:8.5%;
+}
+.thumbnails_move .thumbnail_move_right
+{
+    margin-top:8.5%;
+}
