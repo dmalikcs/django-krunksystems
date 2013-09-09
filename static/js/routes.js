@@ -14,10 +14,10 @@ ContactusRouter = Backbone.Router.extend({
     '':'ContactusRoute',
     },
     ContactusRoute:function(){
-    console.log('called');
-    new ContactusView();
-    new ServiceView();
-    new AboutView();
+        console.log('called');
+        new ContactusView();
+        new ServiceView();
+        new AboutView();
     },
 });
 
@@ -34,34 +34,53 @@ ServicesRouter = Backbone.Router.extend({
     'trainingcourse':'trainingcourseRoute',
     },
     TrainingRoute:function(){
-        console.log("called from: TrainingRoute");
-        new TrainingView();
-        console.log("called TrainingView");
+        if (typeof this.training != 'undefined'){
+            console.log("thi.erp called");
+            this.training.close();
+        }
+        this.training=new TrainingView();
+        $('#MainServiceContainer').html(this.training.el)
     },
     ConsultingRoute:function(){
-        console.log("called from: ConsultingRoute");
-        new ConsultingView();
-        console.log("called AboutView");
+        if (typeof this.consultancy != 'undefined'){
+            console.log("thi.erp called");
+            this.consultancy.close();
+        }
+        this.consultancy =new ConsultingView();
+        $('#MainServiceContainer').html(this.consultancy.el)
     },
     DevelopementRoute:function(){
-        console.log("called from: DevelopementRoute");
-        new DevelopementView();
-        console.log("called AboutView");
+        if (typeof this.development != 'undefined'){
+            console.log("thi.erp called");
+            this.development.close();
+        }
+        this.development=new DevelopementView();
+        $('#MainServiceContainer').html(this.development.el)
     },
     ErpRoute:function(){
         console.log("called from: ErpRoute");
-        new ErpView();
-        console.log("called ErpView");
+        if (typeof this.erp != 'undefined'){
+            console.log("thi.erp called");
+            this.erp.close();
+        }
+        this.erp=new ErpView();
+        $('#MainServiceContainer').html(this.erp.el)
     },
     trainingcourseRoute:function(){
-        console.log("Called trainingcourseRoute");
-        new CourseView();
-        console.log("called trainingcourseRoute:success");
+        if (typeof this.course != 'undefined'){
+            console.log("thi.erp called");
+            this.course.close();
+        }
+        this.course=new ServiceView();
     },
     ServicesRoute:function(){
-        console.log('Services Page called');
-        new ServiceView();
-    }
+        if (typeof this.service != 'undefined'){
+            console.log("thi.erp called");
+            this.service.close();
+        }
+        this.service=new ServiceView();
+        $('#MainServiceContainer').html(this.service.el)
+    },
 });
 
 var aboutview=new AboutusRouter();

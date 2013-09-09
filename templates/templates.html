@@ -123,7 +123,7 @@
             <div>
                 <div class = "corporate_icon"><i class = "icon-list"> </i> &nbsp;  Corporate Training </div>
                 <div class = "lorem_training_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
                 <div class = "corporate_btn">
                     <a href="#crform" data-toggle="modal" class="btn btn-danger"> <i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -133,7 +133,7 @@
         <div class="tab-pane" id="IndustrialTraining">  <!-- tab pane Open Complain div open -->
                 <div class = "industrial_icon"><i class = "icon-italic"> </i>  Industrial Training </div>
                 <div class = "lorem_industry_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "industrial_btn"> 
                 <a href="#itform" data-toggle="modal" class="btn btn-danger"><i class = "icon-bookmark icon-white"> </i> Request</a>
@@ -144,7 +144,7 @@
         <div class="tab-pane" id="AcademyTraining">  <!-- tab pane DD div open -->
                 <div class = "academy_icon"><i class = "icon-book"> </i>  Academy Training </div>
                 <div class = "lorem_academy_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "academy_btn"> 
                 <a href="#atform" data-toggle="modal" class = "btn btn-danger"><i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -239,7 +239,7 @@
         <div class="tab-pane active" id="DjangoConsultancy">  <!-- tab pane Open Complain div open -->
             <div class = "django_icon"><i class = "icon-wrench"> </i> Django Consultancy </div>
                 <div class = "lorem_django_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "django_btn"> 
                 <a href="#dcform" data-toggle="modal" class = "btn btn-primary"><i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -249,7 +249,7 @@
         <div class="tab-pane" id="OpensourceConsultancy">  <!-- tab pane DD div open -->
             <div class = "opensource_icon"><i class = "icon-adjust"> </i> OpenSource Consultancy </div>
                 <div class = "lorem_opensource_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "opensource_btn"> 
                 <a href="#ocform" data-toggle="modal" class = "btn btn-primary"><i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -258,7 +258,7 @@
         <div class="tab-pane" id="MidrangeConsultancy">  <!-- tab pane DD div open -->
             <div class = "midrange_icon"><i class = "icon-cog"> </i> Midrange Consultancy </div>
                 <div class = "lorem_midrange_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "midrange_btn"> 
                 <a href="#mcform" data-toggle="modal" class = "btn btn-primary"><i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -340,7 +340,7 @@
         <div class="tab-pane active" id="Webdevelopment"> <!-- tab pane Open ERP div open -->
             <div class = "web_icon"><i class = "icon-cog"> </i> Web Development </div>
                 <div class = "lorem_web_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "web_btn"> 
                 <a href="#wdform" data-toggle="modal" class="btn btn-warning"><i class="icon-bookmark icon-white"></i>Request</a>
@@ -349,7 +349,7 @@
         <div class="tab-pane" id="Applicationdevelopment">  <!-- tab pane Open Complain div open -->
             <div class = "app_icon"><i class = "icon-cog"> </i> Application Development </div>
                 <div class = "lorem_app_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "app_btn"> 
                 <a href="#adform" data-toggle="modal" class="btn btn-warning"><i class="icon-bookmark icon-white"> </i>Request</a>
@@ -402,7 +402,7 @@
         <div class="tab-pane active" id="openerp_implementation"> <!-- tab pane Open ERP div open -->
             <div class = "erp_implement_icon"><i class = "icon-cog"> </i> OpenERP Implementation </div>
                 <div class = "lorem_erp_implement_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "erp_implement_btn"> 
             </div>
@@ -410,7 +410,7 @@
         <div class="tab-pane" id="openerp_customization">  <!-- tab pane Open Complain div open -->
             <div class = "erp_customize_icon"><i class = "icon-cog"> </i> OpenERP Customization </div>
                 <div class = "lorem_erp_customize_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "customize_btn"> 
                 <a href="#erpinquiryform" data-toggle="modal" class="btn btn-success">Inquiry</a>
@@ -582,34 +582,46 @@
 <script type="text/template" id="modules_template">
         <div class="modules_head">
              <i class = "icon-cog"></i>Modules
-             {%comment%}         
-              <% if (meta.next) {%>
-              <button id="next"class="pull-right">&rsaquo;</button> 
-              <input id="next" value="<%= meta.next %>" type="hidden"/>
-              <%}%>
-              <% if (meta.previous) {%>
-              <button id="previous" value="<%= meta.previous %>"class="btn pull-left">Pre</button>
-              <input id="previous" value="<%= meta.previous %>" type="hidden"/>
-              <%}%>
-          {%endcomment%}
       </div>
+    <input type="hidden" value="<%= url %>" id="modules_url"/>
       <div class = " row-fluid thumbnails_move">
-          <div><i class="icon-chevron-left pull-left thumbnail_move_left"> </i></div>
+              <% if (meta.previous) {%>
+                  <div id="previous">
+                    <i class="icon-chevron-left pull-left thumbnail_move_left"> </i>
+                  </div>
+              <input id="previous" value="<%= meta.previous %>" type="hidden"/>
+              <%}else {%>
+                  <div id="previous">
+                    <i class="icon-chevron-left pull-left thumbnail_move_left icon-white"> </i>
+                  </div>
+              <%}%>
           <div class = "span11 pull-left thumbnail_define">
         <ul class="thumbnails">
-        <% _.each(modules, function(module) { %> 
+            <% var i=1 %>
+            <% _.each(modules, function(module) { %> 
             <li class="span4">
             <div class="thumbnail">
                 <img src="<%= module.module_image %>">
                   <h3><%= module.module_name %></h3>
                   <p> <%= module.module_description %> </p>
-                  <button id="module_detail_id">Details</button>
+                  <button class="btn btn-success" id="module_detail_<%=i%>">module_detail_<%=i%></button>
+                  <input type="hidden"id="module_detail_<%= i %>" value=<%= module.id%> >
+                  <% i=i+1 %>
               </div>
         </li>
     <% }); %>
     </ul>
 </div>
-<div>   <i class="icon-chevron-right pull-right thumbnail_move_right"></i></div>
+  <% if (meta.next) {%>
+      <div id="next">
+        <i class="icon-chevron-right pull-right thumbnail_move_right"></i>
+      </div> 
+  <input id="next" value="<%= meta.next %>" type="hidden"/>
+  <%}else {%>
+      <div id="next">
+        <i class="icon-chevron-right pull-right thumbnail_move_right icon-white"></i>
+      </div> 
+  <%}%>
      </div> 
 </script>
 
@@ -631,7 +643,7 @@
 <script type="text/template" id="python_template">
             <div class = "python_icon"><i class = "icon-edit"> </i> Python Consultancy </div>
                 <div class = "lorem_python_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
                 <div class = "python_btn">
                     <a href="#pcform" data-toggle="modal" class = "btn btn-primary"> <i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -666,3 +678,30 @@
     <h1>Thanks for choces</h1>
     <p>welcoms to Deepak Malik</p>
 </script>
+
+<script type="text/template" id="module_detail_template">
+        <button class="btn pull-right btn-danger" id="back"><i class="icon-circle-arrow-left icon-white"></i></button>
+        <input type="hidden" id="back" value="<%= url %>"/>
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
+            <li><a href="#feature" data-toggle="tab">Feature</a></li>
+            <li><a href="#messages" data-toggle="tab">Trainings</a></li>
+            <li><a href="#settings" data-toggle="tab">Kind Words</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="overview">
+              <%= module.module_name %>
+            </div>
+            <div class="tab-pane" id="feature">
+              <%=  module.module_Features%>
+            </div>
+            <div class="tab-pane" id="messages">
+                Messages
+            </div>
+            <div class="tab-pane" id="settings">
+                Settings
+            </div>
+        </div>
+</script>
+

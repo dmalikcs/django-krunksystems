@@ -310,9 +310,12 @@ var ErpView=Backbone.View.extend({
             'click #erpinquiryform_submit':'ErpInquiryAdd',
             'click #demoform_submit':'DemoAdd',
             'click a.erp_modules':'ERPModulesDisplay',
-            'click button#module_detail_id':'ModuleDetailDisplay',
-            'click button#next':'ERPModulesDisplay',
-            'click button#previous':'ERPModulesDisplay',
+            'click button#module_detail_1':'ModuleDetail_1',
+            'click button#module_detail_2':'ModuleDetail_2',
+            'click button#module_detail_3':'ModuleDetail_3',
+            'click div#next':'ERPModulesDisplay',
+            'click div#previous':'ERPModulesDisplay',
+            'click button#back':'ERPModulesDisplay',
         },
         ErpInquiryAdd:function(event){
             name=$('#erpinquiryform #id_name').val();
@@ -362,8 +365,9 @@ var ErpView=Backbone.View.extend({
             this.render();
         },
         render:function(){
-            var zero =_.template($("#service_erp_template").html(),{});
+            var zero = $("#service_erp_template").html();
             this.$el.html(zero);
+            console.log(this.$el);
         },
         ERPModulesDisplay: function(event){
             console.log("ERPModules Display Called");
@@ -379,18 +383,48 @@ var ErpView=Backbone.View.extend({
                 var u=$('input#previous').val()
                 modules.url=u;
                 console.log(modules);
-            }else{
+            }else if (event.currentTarget.id === 'back'){
+            //modules.url=url;
+            var u=$('input#back').val();
+            modules.url=u;
+            console.log('back button called');
+            }
+            else{
             modules.url='/api/v1/modules/?format=json';
             }
             modules.fetch({
                         success:function(collection,response){
-                        var data=_.template($('#modules_template').html(),{modules:response.objects,meta:response.meta});
+                        var data=_.template($('#modules_template').html(),{modules:response.objects,meta:response.meta,url:modules.url});
                         $('#modules').html(data);
                         },
             });
         },
-        ModuleDetailDisplay:function(event){
-            console.log($('input#next').val());
+        ModuleDetail_1:function(event){
+            id=$('input#module_detail_1').val();
+            console.log(id);
+            url=$('input#modules_url').val();
+            this.ModuleDetailDisplay(id,url);
+        },
+        ModuleDetail_2:function(event){
+            id=$('input#module_detail_2').val();
+            url=$('input#modules_url').val();
+            console.log(id);
+            this.ModuleDetailDisplay(id,url);
+        },
+        ModuleDetail_3:function(event){
+            id=$('input#module_detail_3').val();
+            url=$('input#modules_url').val();
+            console.log(id);
+            this.ModuleDetailDisplay(id,url);
+        },
+        ModuleDetailDisplay:function(id,url){
+            var module = new ERPModuleDetailCollection({id:id});
+            module.fetch({
+                    success:function(collection,response){
+                    var data=_.template($('#module_detail_template').html(),{module:response,id:id,url:url});
+                    $('#modules').html(data);
+                },
+           } );
         },
 });
 /*
@@ -419,3 +453,8 @@ var ServiceView=Backbone.View.extend({
         this.$el.html(service);
     },
 });//serviceview closed
+
+Backbone.View.prototype.close = function () {
+    this.remove();
+    this.unbind();
+};

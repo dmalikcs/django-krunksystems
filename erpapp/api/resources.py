@@ -8,9 +8,6 @@ import json
 
 
 class OpenERPModulesResource(ModelResource):
-    def hydrate(self,bundle):
-        print bundle.request.POST
-        return bundle
     class Meta:
         queryset=OpenERPModules.objects.all()
         resource_name='modules'
@@ -46,3 +43,10 @@ class ErpDemoResource(ModelResource):
         authentication=ApiKeyAuthentication()
         authorization=Authorization()
         validation=FormValidation(form_class=ErpDemoForm)
+
+class ERPModuleDetailResource(ModelResource):
+    class Meta:
+        queryset=OpenERPModules.objects.all()
+        resource_name='modules_detail'
+        allowed_methods=['get']
+        detail_allowed_methods=['get']
