@@ -49,6 +49,9 @@ class TrainingCourse(models.Model):
             blank=False,
             null=False,
             )
+    prerequisite=models.TextField(verbose_name='prerequisite',
+            max_length=200,
+            )
     hours=models.IntegerField(verbose_name='Hours',
             )
     created=models.DateField(verbose_name='Created',
@@ -63,6 +66,7 @@ class TrainingCourse(models.Model):
     class Meta:
         verbose_name='Training Course'
         verbose_name_plural='Training Courses'
+
 
 class CorporateTraining(models.Model):
     company_name=models.CharField(verbose_name='Company Name',
@@ -162,6 +166,15 @@ class TrainingSuccess(models.Model):
     training_id=models.ForeignKey('TrainingCourse',
             related_name='success_stories',
             )
+    customer_logo=models.ImageField(verbose_name='Image',
+            upload_to='upload/training_success/',
+            default='upload/training_success/ghaziabad100x100.jpg',
+            )
+    customer_name=models.CharField(verbose_name='Customer name',
+            max_length=70
+            )
+    customer_email=models.EmailField(verbose_name='Email',
+            )
     success_stories=models.TextField(verbose_name="Success Story",
             max_length=200,
             )
@@ -181,6 +194,15 @@ class CourseOutline(models.Model):
             )
     hours=models.IntegerField(verbose_name='hours',
             )
+    basics=models.TextField(verbose_name='Basics',
+            max_length=200,
+            )
+    intermediate=models.TextField(verbose_name='intermediate' ,
+            max_length=200,
+            )
+    Advance=models.TextField(verbose_name='Advance',
+            max_length=200,
+            )
     description=models.TextField(verbose_name='Description',
             max_length=200,
             )
@@ -191,7 +213,7 @@ class CourseOutline(models.Model):
         verbose_name_plural='Course Outlines'
 
 class MentorDetail(models.Model):
-    training_id=models.ForeignKey('TrainingCourse',verbose_name='Training id',
+    training_id=models.ManyToManyField('TrainingCourse',verbose_name='Training id',
             related_name='mentors',
             )
     name=models.CharField(verbose_name='mentor name',
