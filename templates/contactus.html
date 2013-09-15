@@ -1,9 +1,58 @@
 <div id="contactus_page">
 </div>
 
+
 <script type="text/template" id="contactus_template">
-    <div id="contactus_form">
-        <div class="span5 pull-right">
+    <div class = "row-fluid"> <!-- row-fluid div contact open -->
+        <div class = "span12"> <!-- span5 class for contact_connect open -->
+            <div class = "contact_connect"><span style="color:#666;">We'd love</span> to hear from you</div>
+            <div class = "contact_border"> 
+            </div>
+            <div class = "contact_content">
+                No matter how much we are busy, we always await your presence and welcome your queries...
+            </div>
+            <div class = "row-fluid"> <!-- row fluid for icons open -->
+                <div class = "span12 contact_images_span"> <!-- span 12 for icons open -->
+                    <div class = "contact_icon span2" id="add_icon">
+                    </div>
+                    <div class = "contact_icon span2" id="phone_icon">
+                    </div>
+                    <div class = "contact_icon span2" id="email_icon">
+                    </div>
+                    <div class = "contact_icon span2" id="fb_icon">
+                    </div>
+                    <div class = "contact_icon span2" id="tw_icon">
+                    </div>
+                    <div class = "contact_icon span2" id="linked_icon">
+                    </div>
+                </div> <!-- span 12 for icons closed -->
+            </div> <!-- row fluid for icons closed -->
+        </div> <!-- span5 class for connect us closed -->
+        <!--
+        <div class = "contact_or span1"> OR </div> 
+        <div class = "span5">
+            <div class = "contact_direct">Send your query ...
+            </div>
+            <div class = "contact_direct_border"> 
+            </div>
+            <form class="contact_form pull-right">
+                <fieldset>
+                    <i class ="icon-pencil"> </i>
+                    <input type ="text" placeholder = "Please enter your name" id="form_text"> </input><br>
+                    <i class ="icon-pencil"> </i>
+                    <input type ="text" placeholder = "Please enter your email ID" id="form_text" > </input><br>
+                    <i class ="icon-pencil"> </i>
+                    <input type ="text" placeholder = "Please enter your phone number" id="form_text"></input> <br>
+                    <i class ="icon-pencil"> </i>
+                    <textarea placeholder = "please enter your message" rows="3" id="form_text"></textarea><br>
+                    <button type = "submit" class = "btn btn-primary pull-right"><i class = "icon-ok icon-white"></i>  Submit </button>
+                </fieldset>
+            </form>
+        </div>
+        -->
+    </div> <!-- row fluid div contact closed --> 
+        {% comment %}
+        <div id="contactus_form" class="span5"> <!-- span 5 class opened for form -->
             <div id="success-saved"></div>
             <h3>Contact US</h3>
             <form >
@@ -32,6 +81,6 @@
                 <button id="submit_request" class="btn btn-success span2" >Submit</button>
                 <button id="clear_form" class="btn span2" >cancel</button>
             </div>
-        </div>
-</div>
+        </div> <!-- span5 class closed for form -->
+        {%endcomment %}
 </script>

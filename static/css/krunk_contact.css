@@ -1,0 +1,106 @@
+.contact_connect
+{
+    font-size: 45px;
+    font-family: DINWeb-CondBlack,sans-serif;
+/*    font-weight: bold;*/
+    line-height: 1.4;
+    text-align:center;
+    /*text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.2), -2px -2px 0px transparent, 1px 1px 0px rgba(0, 0, 0, 0.2);*/
+    padding-top:8%;
+    text-transform: lower;
+    padding-bottom:1%;
+    color:#ccc
+}
+.contact_border
+{
+    border-bottom:1px inset #555758;
+    background-image: -moz-linear-gradient(left center , rgba(102, 102, 102, 0.1), rgba(102, 102, 102, 0.75), rgba(102, 102, 102, 0.1));
+    margin-left:33%;
+    margin-right:34%;
+    margin-top:4px;
+}
+.contact_content
+{
+    font-size: 22px;
+    font-family: "DINWeb-CondLight","DINWeb-Cond";
+    font-weight: lighter;
+    line-height: 1.4;
+    text-shadow: none;
+    padding-top:2%;
+    padding-bottom:2%;
+    margin-left:15%;
+    margin-right:15%;
+    text-align:center;
+    color:#666;
+}
+.contact_images_span
+{
+    padding-top:1%;
+}
+.row-fluid .contact_images_span[class*="span"]:first-child {
+    margin-left:70px;
+}
+.row-fluid .contact_images_span .span2
+{
+    margin-left:4px;
+    width:14%;
+}
+.contact_icon
+{
+    height:160px;
+}
+#phone_icon
+{
+    background:url('/static/images/contactus_page/phone_icon_160.png') no-repeat;
+}
+#email_icon
+{
+    background:url('/static/images/contactus_page/email_icon_160.png') no-repeat;
+}
+#add_icon
+{
+    background:url('/static/images/contactus_page/home_icon_160.png') no-repeat;
+}
+#fb_icon
+{
+    background:url('/static/images/contactus_page/fb_icon_160.png') no-repeat;
+}
+#linked_icon
+{
+    background:url('/static/images/contactus_page/linkedin_icon_160.png') no-repeat;
+}
+#tw_icon
+{
+    background:url('/static/images/contactus_page/twitter_icon_160.png') no-repeat;
+}
+.contact_or
+{
+    font-size:45px;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding-top:27%;
+    padding-left:40px;
+}
+.contact_direct
+{
+    padding-top:35%;
+    font-size:45px;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding-bottom:5%;
+    text-align:center;
+}
+.contact_direct_border
+{
+    margin-bottom:3%;
+    border-bottom:2px inset #343434;
+}
+.contact_form
+{
+    margin-right:20%;
+    padding:4%;
+    border-radius:5px;
+}
+.contact_form #form_text
+{
+    width:240px;
+}
+

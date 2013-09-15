@@ -55,20 +55,16 @@ class A2F1_contactus(forms.ModelForm):
         widgets={
                 'name':forms.TextInput(
                     attrs={
-                        'class':'span4',
 
                         }),
                 'mobile':forms.TextInput(
                     attrs={
-                        'class':'span4',
                         }),
                 'Email':forms.TextInput(
                     attrs={
-                        'class':'span4',
                         }),
                 'Message':forms.Textarea(
                     attrs={
-                        'class':'span4',
                         }),
                 }
 

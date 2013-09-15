@@ -24,7 +24,8 @@
         </div>
        </div> 
 </section>
- <section>
+{%comment%}
+<section>
 <div id = "projects">
     <div class = "container">
         <div  class="inview">
@@ -32,7 +33,8 @@
         </div>
     </div>
 </div>
-</section>
+</section> 
+{%endcomment%}
  <section>
         <div id = "contact">
             <div class = "container">
@@ -42,11 +44,13 @@
              </div>
         </div>
 </section>
- <section>
+{%comment%}
+<section>
         <div id = "footer">
                  <div  class="inview">
             {%include 'footer.html' with form=contactus_form %}
                  </div>
         </div>
-</section>
+</section> 
+{%endcomment%}
 {%endblock content%}
