@@ -103,6 +103,8 @@ class ErpCustomers(models.Model):
             )
     logo=models.ImageField(verbose_name='logo',
             upload_to='logs/',
+            null=True,
+            blank=True,
             )
     testimonials=models.TextField(verbose_name='testimonials',
             max_length=200,
@@ -118,6 +120,22 @@ class ErpCustomers(models.Model):
     class Meta:
         verbose_name='ERP Customer'
         verbose_name_plural='ERP Customers'
+
+class ERPTraining(models.Model):
+    modules=models.OneToOneField(OpenERPModules,verbose_name='Modules',
+            related_name='ERP_trainings'
+            )
+    technical_training=models.TextField(verbose_name='Technical Training',
+            max_length=500,
+            )
+    Functional_training=models.TextField(verbose_name='Functional Training',
+            max_length=500,
+            )
+    def __unicode__(self):
+        return self.modules.module_name
+    class Meta:
+        verbose_name='Erp Training'
+        verbose_name_plural='Erp Trainings'
 
 class ERPInquiryForm(forms.ModelForm):
     class Meta:
