@@ -4,7 +4,7 @@ from tastypie.api import Api
 from trainingapp.api.resources import TrainingCoursesResource,CorporateTrainingResource,IndustrialTrainingResource,AcademyTrainingResource,TrainingSuccessResource
 from Consultancyapp.api.resources import PythonConsultancyResource,DjangoConsultancyResource,OpensourceConsultancyResource,MidrangeConsultancyResource
 from webapp.api.resources import DevelopmentResource
-from erpapp.api.resources import OpenERPModulesResource,ERPInquiryResource,ErpDemoResource
+from erpapp.api.resources import OpenERPModulesResource,ERPInquiryResource,ErpDemoResource,ERPModuleDetailResource
 from contactus.api.resources import ContactusResource
 v1_api=Api(api_name='v1')
 v1_api.register(TrainingCoursesResource())
@@ -21,6 +21,7 @@ v1_api.register(TrainingSuccessResource())
 v1_api.register(ERPInquiryResource())
 v1_api.register(ErpDemoResource())
 v1_api.register(ContactusResource())
+v1_api.register(ERPModuleDetailResource())
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin

@@ -566,3 +566,11 @@ var CourseCollection = Backbone.Collection.extend({
 var ERPModuleCollection=Backbone.Collection.extend({
     url:'/api/v1/modules/?format=json',
 });
+var ERPModuleDetailCollection=Backbone.Model.extend({
+    initialize:function(){
+        console.log(this.id);
+    },
+    url:function(){
+            return '/api/v1/modules_detail/'+this.id+'/?format=json'
+            }
+});

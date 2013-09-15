@@ -7,12 +7,7 @@ class A2M1_contactus(models.Model):
             max_length=50,
             unique=False,
             null=False,
-            error_messages={
-                'required':'Kindly enter the first name',
-                'max_length':'Please enter first name below 50 char',
-                'min_length':'Kindly provide min charter',
-
-                }
+            error_messages={'required': 'Please enter your name'},
 #            help_text="Kindly enter the First Name"
             )
     mobile=models.CharField(
@@ -55,16 +50,24 @@ class A2F1_contactus(forms.ModelForm):
         widgets={
                 'name':forms.TextInput(
                     attrs={
-
-                        }),
+                        'class':'input-xlarge',
+                        'placeholder':'Your Name',
+                        },
+                    ),
                 'mobile':forms.TextInput(
                     attrs={
+                        'class':'input-xlarge',
+                        'placeholder':'What is your mobile ?',
                         }),
                 'Email':forms.TextInput(
                     attrs={
+                        'class':'input-xlarge',
+                        'placeholder':'What is your email ?',
                         }),
                 'Message':forms.Textarea(
                     attrs={
+                        'class':'input-xlarge',
+                        'placeholder':'What do you have in your mind ?',
                         }),
                 }
 

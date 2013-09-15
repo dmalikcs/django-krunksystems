@@ -123,7 +123,7 @@
             <div>
                 <div class = "corporate_icon"><i class = "icon-list"> </i> &nbsp;  Corporate Training </div>
                 <div class = "lorem_training_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
                 <div class = "corporate_btn">
                     <a href="#crform" data-toggle="modal" class="btn btn-danger"> <i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -133,7 +133,7 @@
         <div class="tab-pane" id="IndustrialTraining">  <!-- tab pane Open Complain div open -->
                 <div class = "industrial_icon"><i class = "icon-italic"> </i>  Industrial Training </div>
                 <div class = "lorem_industry_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "industrial_btn"> 
                 <a href="#itform" data-toggle="modal" class="btn btn-danger"><i class = "icon-bookmark icon-white"> </i> Request</a>
@@ -144,7 +144,7 @@
         <div class="tab-pane" id="AcademyTraining">  <!-- tab pane DD div open -->
                 <div class = "academy_icon"><i class = "icon-book"> </i>  Academy Training </div>
                 <div class = "lorem_academy_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "academy_btn"> 
                 <a href="#atform" data-toggle="modal" class = "btn btn-danger"><i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -155,23 +155,29 @@
 
 
 <div class="modal fade hide" id = "crform" aria-hidden = "true">
-    <div class = "modal-header">
-        <h3> Corp form </h3>
+    <div class = "modal-header" style="background-color: rgb(235, 94, 94);">
+        <h1>Cor Name</h1>
         <div id="success-saved"></div>
     </div>
     <div class = "modal-body">
-        <form>
+        <form class="form-horizontal">
             {% for field in ct_Form%}
-            {{field.label}}
-            {{field}}<br>
-            {{field.error}}
-            <div id="id_err_{{field.html_name}}" class="invalid"></div>
+            <div class="control-group">
+                <div class="control-label">
+                    <b>{{field.label}}:</b>
+                </div>
+                <div class="controls">
+                    {{field}}
+                    {{field.error}}
+                    <div id="id_err_{{field.html_name}}" class="invalid text-error"></div>
+                </div>
+            </div>
             {%endfor%}
         </form>
     </div>
     <div class= "modal-footer">
-        <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
-        <button id="crform_submit" class = "btn btn-primary" >submit your requst </button>
+            <button class = "btn btn-danger" data-dismiss="modal" aria-hidden="true"> Close </button>
+            <button id="crform_submit" class = "btn btn-primary" >submit your requst </button>
     </div>
 </div>
 
@@ -239,7 +245,7 @@
         <div class="tab-pane active" id="DjangoConsultancy">  <!-- tab pane Open Complain div open -->
             <div class = "django_icon"><i class = "icon-wrench"> </i> Django Consultancy </div>
                 <div class = "lorem_django_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "django_btn"> 
                 <a href="#dcform" data-toggle="modal" class = "btn btn-primary"><i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -249,7 +255,7 @@
         <div class="tab-pane" id="OpensourceConsultancy">  <!-- tab pane DD div open -->
             <div class = "opensource_icon"><i class = "icon-adjust"> </i> OpenSource Consultancy </div>
                 <div class = "lorem_opensource_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "opensource_btn"> 
                 <a href="#ocform" data-toggle="modal" class = "btn btn-primary"><i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -258,7 +264,7 @@
         <div class="tab-pane" id="MidrangeConsultancy">  <!-- tab pane DD div open -->
             <div class = "midrange_icon"><i class = "icon-cog"> </i> Midrange Consultancy </div>
                 <div class = "lorem_midrange_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "midrange_btn"> 
                 <a href="#mcform" data-toggle="modal" class = "btn btn-primary"><i class = "icon-bookmark icon-white"> </i>Request</a>
@@ -340,7 +346,7 @@
         <div class="tab-pane active" id="Webdevelopment"> <!-- tab pane Open ERP div open -->
             <div class = "web_icon"><i class = "icon-cog"> </i> Web Development </div>
                 <div class = "lorem_web_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "web_btn"> 
                 <a href="#wdform" data-toggle="modal" class="btn btn-warning"><i class="icon-bookmark icon-white"></i>Request</a>
@@ -349,7 +355,7 @@
         <div class="tab-pane" id="Applicationdevelopment">  <!-- tab pane Open Complain div open -->
             <div class = "app_icon"><i class = "icon-cog"> </i> Application Development </div>
                 <div class = "lorem_app_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "app_btn"> 
                 <a href="#adform" data-toggle="modal" class="btn btn-warning"><i class="icon-bookmark icon-white"> </i>Request</a>
@@ -402,7 +408,7 @@
         <div class="tab-pane active" id="openerp_implementation"> <!-- tab pane Open ERP div open -->
             <div class = "erp_implement_icon"><i class = "icon-cog"> </i> OpenERP Implementation </div>
                 <div class = "lorem_erp_implement_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "erp_implement_btn"> 
             </div>
@@ -410,7 +416,7 @@
         <div class="tab-pane" id="openerp_customization">  <!-- tab pane Open Complain div open -->
             <div class = "erp_customize_icon"><i class = "icon-cog"> </i> OpenERP Customization </div>
                 <div class = "lorem_erp_customize_para">
-                    {% lorem 4 p %}
+                    {% lorem 2 p %}
                 </div>
             <div class = "customize_btn"> 
                 <a href="#erpinquiryform" data-toggle="modal" class="btn btn-success">Inquiry</a>
@@ -500,8 +506,21 @@
         </div>
         <div id="collapse<%= name.id %>" class="accordion-body collapse">
             <div class="accordion-inner">
-                <%= name.cource_detail %>
-                <div class="row-fluid span12">
+                <div class="row-fluid">
+                    <p>
+                    <h5>What We offer</h5>
+                    <%= name.cource_detail %>
+                    </p>
+                    <p>
+                    <h5>Prerequiste </h5>
+                    <%= name.prerequisite %>
+                    </p>
+                    <p>
+                    <h5>Hours</h5>
+                    <%= name.hours%>
+                    </p>
+                </div>
+                <div>
                     <a href="#courseoutline<%= name.id%>" class="btn btn-success span3" data-toggle="modal" >Course outline</a>
                     <a href="#meetyourmentor<%= name.id%>" class="btn btn-danger span3" data-toggle="modal" >Meet your mantor</a>
                     <a href="#successstories<%= name.id%>" class="btn btn-info span3" data-toggle="modal" >Success stories </a>
@@ -513,104 +532,201 @@
 
     <div class="modal fade hide" id = "meetyourmentor<%= name.id %>" aria-hidden = "true">
         <div class="modal-header">
-            <h3>I am your mantor</h3>
+            <div class="row-fluid">
+                <div class="span11">
+                    <center><h2>Let's meet your mentor</h2></center>
+                    <center><p>{%lorem 20 w %}</p></center>
+                </div>
+                    <a class="close pull-right" data-dismiss="modal" >&times;</a>
+            </div>
         </div>
         <div class="modal-body">
             {%comment%}
             linked_in
             {%endcomment%}
             <%  _.each(name.mentors, function(mentor) { %>
-            <img class="img-circle" height="50px" width="50px" src="<%= mentor.mentor_images%>"/>
-            <%= mentor.name %>
-            <%= mentor.email %>
-            <br>
-        <% });%>
+            <div class="row-fluid">
+                <div class="row-fuild span12">
+                            <div class="span2">
+                                <img class="img-circle" height="50px" width="50px" src="<%= mentor.mentor_images%>"/>
+                            </div>
+                            <div class="span10">
+                                <h5><%= mentor.name %> | 9 Years | Lets bright light</h5>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                <div class="row-fluid">
+                    <%= mentor.description%>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="pull-right">
+                        <a class="btn btn-success" href="mailto:<%= mentor.email %>" >
+                            <i class="icon-comment icon-white"></i> Say Hi
+                        </a>
+                        <a class="btn btn-danger" target="_blank" href="<%= mentor.linked_in %>"> Linked in
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <% });%>
         </div>
     </div>
 
 <div class="modal fade hide" id = "courseoutline<%= name.id %>" aria-hidden = "true">
     <div class="modal-header">
-        <h3><%= name.course_name %>&nbsp;Course outline</b>
-        <a class="close" data-dismiss="modal" >&times;</a>
+            <div class="row-fluid">
+                <div class="span11">
+                    <center><h2>Path we follow <%= name.course_name %> </h2></center>
+                    <center><p>{%lorem 20 w %}</p></center>
+                </div>
+                    <a class="close pull-right" data-dismiss="modal" >&times;</a>
+            </div>
+                    
+        
     </div>
     <div class="modal-body">
+
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#basic" data-toggle="tab">Basic</a></li>
+            <li><a href="#inter" data-toggle="tab">Intermediate</a></li>
+            <li><a href="#advance" data-toggle="tab">Advance</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="basic">
         <%  _.each(name.course_outline, function(outline) { %>
             <%= outline.chapter %><br> <%= outline.topic %><br>
             <%= outline.hours %><br>
         <% });%>
-
+            </div>
+            <div class="tab-pane" id="inter">
+            </div>
+            <div class="tab-pane" id="advance">
+            </div>
+        </div>
     </div>
 
 </div>
 <div class="modal fade hide" id = "successstories<%= name.id %>" aria-hidden = "true">
     <div class = "modal-header">
-        Success stories
-        <b><%= name.course_name %></b>
-        <a class="close" data-dismiss="modal" >&times;</a>
+            <div class="row-fluid">
+                <div class="span11">
+                    <center><h2>Your success story</h2></center>
+                    <center><p>{%lorem 20 w %}</p></center>
+                </div>
+                    <a class="close pull-right" data-dismiss="modal" >&times;</a>
+            </div>
     </div>
     <div class = "modal-body">
         <%  _.each(name.stories, function(story) { %>
-            <%= story.success_stories %><br>
+        <div class="row-fluid">
+            <p><%= story.success_stories %></p>
+        </div>
+        <div class="row-fluid">
+            <div class="span2">
+                <img src="<%= story.customer_logo%>" class="img-circle"></img>
+            </div>
+            <div class="span10">
+                <blockquote class="pull-right">
+                    <h5><%= story.customer_name %></h5>
+                    <small><%= story.customer_email %></small>
+                </blockquote>
+            </div>
+        </div>
+        <hr>
         <% });%>
     </div>
 </div>
 
 <div class="modal fade hide" id = "why<%= name.id %>" aria-hidden = "true">
     <div class = "modal-header">
-        <h3>Why <%=name.course_name%></h3>
-        <a class="close" data-dismiss="modal" >&times;</a>
+            <div class="row-fluid">
+                <div class="span11">
+                    <center><h2>Why <%=name.course_name%> </h2></center>
+                    <center><p>{%lorem 20 w %}</p></center>
+                </div>
+                    <a class="close pull-right" data-dismiss="modal" >&times;</a>
+            </div>
     </div>
     <div class = "modal-body">
+        <% var reason = 1%>
         <%  _.each(name.why, function(y) { %>
-            <%= y.why_this %><br>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="span1">
+                    <h3><%= reason%></h3>
+                </div>
+                <div class="span11">
+                    <p><%= y.why_this %></p>
+                </div>
+            </div>
+        </div>
+        <% reason=reason+1 %>
+        <hr>
         <% });%>
     </div>
 </div>
 
-    <% }); %>
+<% }); %>
 </div>
 </script>
 
 
 <script type="text/template" id="alert-template">
     <div class="alert alert-<%= type %>">  
-       <a class="close" data-dismiss="alert">&times;</a>  
-       <strong><%= bold_message %>!</strong><%= general_message %>.  
+        <a class="close" data-dismiss="alert">&times;</a>  
+        <strong><%= bold_message %>!</strong><%= general_message %>.  
     </div> 
 </script>
 
 <script type="text/template" id="modules_template">
-        <div class="modules_head">
-             <i class = "icon-cog"></i>Modules
-             {%comment%}         
-              <% if (meta.next) {%>
-              <button id="next"class="pull-right">&rsaquo;</button> 
-              <input id="next" value="<%= meta.next %>" type="hidden"/>
-              <%}%>
-              <% if (meta.previous) {%>
-              <button id="previous" value="<%= meta.previous %>"class="btn pull-left">Pre</button>
-              <input id="previous" value="<%= meta.previous %>" type="hidden"/>
-              <%}%>
-          {%endcomment%}
-      </div>
-      <div class = " row-fluid thumbnails_move">
-          <div><i class="icon-chevron-left pull-left thumbnail_move_left"> </i></div>
-          <div class = "span11 pull-left thumbnail_define">
-        <ul class="thumbnails">
-        <% _.each(modules, function(module) { %> 
-            <li class="span4">
-            <div class="thumbnail">
-                <img src="<%= module.module_image %>">
-                  <h3><%= module.module_name %></h3>
-                  <p> <%= module.module_description %> </p>
-                  <button id="module_detail_id">Details</button>
-              </div>
-        </li>
-    <% }); %>
-    </ul>
-</div>
-<div>   <i class="icon-chevron-right pull-right thumbnail_move_right"></i></div>
-     </div> 
+    <div class="modules_head">
+        <i class = "icon-cog"></i>Modules
+    </div>
+    <input type="hidden" value="<%= url %>" id="modules_url"/>
+    <div class = " row-fluid thumbnails_move">
+        <% if (meta.previous) {%>
+            <div id="previous">
+                <i class="icon-chevron-left pull-left thumbnail_move_left"> </i>
+            </div>
+            <input id="previous" value="<%= meta.previous %>" type="hidden"/>
+            <%}else {%>
+            <div id="previous">
+                <i class="icon-chevron-left pull-left thumbnail_move_left icon-white"> </i>
+            </div>
+            <%}%>
+        <div class = "span11 pull-left thumbnail_define">
+            <ul class="thumbnails">
+                <% var i=1 %>
+                <% _.each(modules, function(module) { %> 
+                    <li class="span4">
+                    <div class="thumbnail">
+                        <img src="<%= module.module_image %>">
+                        <h3><%= module.module_name %></h3>
+                        <p> <%= module.module_description %> </p>
+                        <button class="btn btn-success" id="module_detail_<%=i%>">module_detail_<%=i%></button>
+                        <input type="hidden"id="module_detail_<%= i %>" value=<%= module.id%> >
+                        <% i=i+1 %>
+                    </div>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+        <% if (meta.next) {%>
+            <div id="next">
+                <i class="icon-chevron-right pull-right thumbnail_move_right"></i>
+            </div> 
+            <input id="next" value="<%= meta.next %>" type="hidden"/>
+            <%}else {%>
+            <div id="next">
+                <i class="icon-chevron-right pull-right thumbnail_move_right icon-white"></i>
+            </div> 
+            <%}%>
+    </div> 
 </script>
 
 
@@ -626,19 +742,19 @@
                 {%lorem 1 p %}
             </center>
         </div>
-</script>
+    </script>
 
-<script type="text/template" id="python_template">
-            <div class = "python_icon"><i class = "icon-edit"> </i> Python Consultancy </div>
-                <div class = "lorem_python_para">
-                    {% lorem 4 p %}
-                </div>
-                <div class = "python_btn">
-                    <a href="#pcform" data-toggle="modal" class = "btn btn-primary"> <i class = "icon-bookmark icon-white"> </i>Request</a>
-                <button class="btn" id="show" >show</button>
-                <button class="btn" id="show" >show</button>
-                <button class="btn" id="show" >show</button>
-                </div>
+    <script type="text/template" id="python_template">
+        <div class = "python_icon"><i class = "icon-edit"> </i> Python Consultancy </div>
+        <div class = "lorem_python_para">
+            {% lorem 2 p %}
+        </div>
+        <div class = "python_btn">
+            <a href="#pcform" data-toggle="modal" class = "btn btn-primary"> <i class = "icon-bookmark icon-white"> </i>Request</a>
+            <button class="btn" id="show" >show</button>
+            <button class="btn" id="show" >show</button>
+            <button class="btn" id="show" >show</button>
+        </div>
 <div class="modal fade hide" id = "pcform" aria-hidden = "true">
     <div class = "modal-header">
         <h3> Python Consultancy </h3>
@@ -666,3 +782,34 @@
     <h1>Thanks for choces</h1>
     <p>welcoms to Deepak Malik</p>
 </script>
+
+<script type="text/template" id="module_detail_template">
+        <button class="btn pull-right btn-danger" id="back"><i class="icon-circle-arrow-left icon-white"></i></button>
+        <input type="hidden" id="back" value="<%= url %>"/>
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
+            <li><a href="#feature" data-toggle="tab">Feature</a></li>
+            <li><a href="#messages" data-toggle="tab">Trainings</a></li>
+            <li><a href="#settings" data-toggle="tab">Kind Words</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="overview">
+              <%= module.module_name %>
+            </div>
+            <div class="tab-pane" id="feature">
+              <%=  module.module_Features%>
+            </div>
+            <div class="tab-pane" id="messages">
+                <%= module.trainings.Functional_training%><br>
+                <%= module.trainings.technical_training%>
+            </div>
+            <div class="tab-pane" id="settings">
+                <% _.each(module.customer_kind_words, function(customer) { %> 
+                    <%= customer.company_name %>
+                    <br>
+                <%});%>
+            </div>
+        </div>
+</script>
+

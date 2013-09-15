@@ -3,14 +3,11 @@ from tastypie.authentication import ApiKeyAuthentication
 from tastypie.authorization import Authorization
 from tastypie.validation import Validation,FormValidation
 from tastypie import fields
-from ..models import OpenERPModules,ERPInquiry,ERPInquiryForm,ErpDemo,ErpDemoForm
+from ..models import OpenERPModules,ERPInquiry,ERPInquiryForm,ErpDemo,ErpDemoForm,ERPTraining,ErpCustomers
 import json
 
 
 class OpenERPModulesResource(ModelResource):
-    def hydrate(self,bundle):
-        print bundle.request.POST
-        return bundle
     class Meta:
         queryset=OpenERPModules.objects.all()
         resource_name='modules'
@@ -46,3 +43,24 @@ class ErpDemoResource(ModelResource):
         authentication=ApiKeyAuthentication()
         authorization=Authorization()
         validation=FormValidation(form_class=ErpDemoForm)
+
+class ERPTrainingResource(ModelResource):
+    class Meta:
+        queryset=ERPTraining.objects.all()
+        resource_name='erp_training'
+        allowed_methods=['get',]
+
+class ErpCustomersResource(ModelResource):
+    class Meta:
+        queryset=ErpCustomers.objects.all()
+        resource_name='erp_customers'
+        allowed_methods=['get',]
+
+class ERPModuleDetailResource(ModelResource):
+    trainings=fields.ToOneField(ERPTrainingResource,'ERP_trainings',full=True,null=True)
+    customer_kind_words=fields.ToManyField(ErpCustomersResource,'modules_client',full=True,null=True)
+    class Meta:
+        queryset=OpenERPModules.objects.all()
+        resource_name='modules_detail'
+        allowed_methods=['get']
+        detail_allowed_methods=['get']

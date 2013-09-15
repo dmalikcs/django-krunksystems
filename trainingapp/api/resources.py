@@ -1,7 +1,7 @@
 from tastypie.resources import ModelResource
 from tastypie.authentication import ApiKeyAuthentication
 from tastypie.authorization import Authorization
-from trainingapp.models import TrainingCourse,CorporateTraining,IndustrialTraining,AcademyTraining,CorporateTrainingForm,TrainingSuccess,CourseOutline,MentorDetail,WhyThisTraining,IndustrialTrainingForm,AcademyTrainingForm
+from trainingapp.models import TrainingCourse,CorporateTraining,IndustrialTraining,AcademyTraining,CorporateTrainingForm,TrainingSuccess,CourseOutline,MentorDetail,WhyThisTraining,IndustrialTrainingForm,AcademyTrainingForm,CourseOutline
 from tastypie.validation import Validation,FormValidation
 from tastypie import fields
 
@@ -17,6 +17,7 @@ class TrainingCoursesResource(ModelResource):
         list_allowed_methods = ['get', 'post']
         #authentication=ApiKeyAuthentication()
         authorization=Authorization()
+
 class TrainingSuccessResource(ModelResource):
     #trainings=fields.ForeignKey(TrainingCoursesResource,'training_id')
     #def dehydrate(self,bundle):
