@@ -153,6 +153,7 @@
     margin-left:-85%;
     border:3px solid #eb5e5e;
     background-color:grey;
+    background:url(/static/images/krunk_guy_240x240.png) no-repeat;
 }
 .box-circle .row-fluid  .about_box
 {
@@ -164,6 +165,7 @@
     margin-left:-10%;
     background-color:#EB5E5E;
     border:4px solid #4CACE7;
+    background:url(/static/images/idea240x240.png) no-repeat;
 }
 .box-circle .row-fluid  .zero_box
 {
