@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'webapp',
     'erpapp',
     'tastypie',
+    'feedback',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
 )

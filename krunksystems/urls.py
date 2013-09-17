@@ -1,5 +1,7 @@
 from django.conf.urls import patterns, include, url
 from krunksystems import settings
+from feedback.views import feedbackView
+from django.views.generic import TemplateView
 from tastypie.api import Api
 from trainingapp.api.resources import TrainingCoursesResource,CorporateTrainingResource,IndustrialTrainingResource,AcademyTrainingResource,TrainingSuccessResource
 from Consultancyapp.api.resources import PythonConsultancyResource,DjangoConsultancyResource,OpensourceConsultancyResource,MidrangeConsultancyResource
@@ -31,6 +33,9 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'landingapp.views.A1V1_landing', name='A1V1_landing_url'),
     url(r'^contactus/$', 'contactus.views.A2V1_contactus', name='contactus_url'),
+    url(r'^feedback/$',feedbackView.as_view(), name='feedback_url'),
+    url(r'^feedback/$',feedbackView.as_view(), name='feedback_url'),
+    url(r'^thanks/$',TemplateView.as_view(template_name='thanks.html'), name='thanks_url'),
     # url(r'^krunksystems/', include('krunksystems.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
