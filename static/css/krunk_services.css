@@ -29,16 +29,13 @@
     margin-left:-1%;
 }
 
-.services_circle
+.services_circle img
 {
-    width:115px;
-    height:40px;
-    text-align:center;
-    margin-top:27%;
-    background-color:grey;
-    -webkit-transform:rotate(-90deg);
-    -moz-transform:rotate(-90deg);
-    margin-left:30px;
+    /*width:115px;
+    height:40px;*/
+    padding-bottom:5%;
+/*    -webkit-transform:rotate(-90deg);
+    -moz-transform:rotate(-90deg);*/
 }
 
 .services_circle h4
@@ -54,13 +51,24 @@
     text-align:center;
 }
 
-.main_circle h5
+.main_circle img
+{
+    margin-top:12%;
+}
+
+.main_circle .erp_icon
+{
+    margin-top:0;
+}
+
+/*
+ .main_circle h5
 {
     margin-top:40%;
     text-shadow:none;
     color:#343435;
 }
-
+*/
 .training_circle
 {
     background-color:#EB5E5E;

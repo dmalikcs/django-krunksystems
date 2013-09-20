@@ -11,6 +11,7 @@
     width:30px;
     height:30px;
 }
+
 .title
 {
    margin-top:15%;
@@ -19,69 +20,10 @@
 
 #home
 {
-   overflow:hidden;
-}
-.row-fluid .slide1
-{
-    background:url(/static/images/firstBG.jpg) no-repeat;
-    height:1000px;
     overflow:hidden;
+    width:100%;
 }
 
-  .possible
-{
-    margin:15% 0 0 2%;
-}
-.slide1  .possible > h1
-{
-    font:120px Georgia;
-    color:yellow;
-}
-.possible .inline > p{
-    font:55px Georgia;
-    color:white;
-}
-
-.row-fluid .slide2
-{
-
-    background:url(/static/images/secondBG.jpg) no-repeat;
-    height:1000px;
-    overflow:hidden;
-}
-
-.slide2  h1 {
-    color:cyan;
-    font:120px Georgia;
-    text-decoration:bold;
-}
-
-.slide2  p {
-    color:black;
-    font-size:40px;
-    text-decoration:bold;
-    text-transform:uppercase;
-}
-
-.row-fluid .slide3
-{
-    background:url(/static/images/thirdBG.jpg) no-repeat;
-    height:1000px;
-    overflow:hidden;
-}
-
-.slide3  h1 {
-    color:cyan;
-    font:120px Georgia;
-    text-decoration:bold;
-}
-
-.slide3  p {
-    color:black;
-    font-size:40px;
-    text-decoration:bold;
-    text-transform:uppercase;
-}
 
 .title h1
 {
@@ -91,16 +33,14 @@
 
 #about
 {   
-    background:url(/static/images/krunk2.png) 50% 0 no-repeat fixed;
-    height:1000px;
+    /*background:url(/static/images/krunk2.png) 50% 0 no-repeat fixed;*/
+    width:100%;
     overflow:hidden;
-    z-index:-3;
 }
 
 #services
 {
     /*background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;*/
-    height:1000px;
     width:100%;
     overflow:hidden;
 }
@@ -119,7 +59,6 @@
 #contact
 {
     /*background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;*/
-    height:1000px;
     width:100%;
     overflow:hidden;
 }

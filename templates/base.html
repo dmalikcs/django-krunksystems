@@ -21,7 +21,7 @@
                 <li> <a href = "#home" class="txtcol"><img src="/static/images/homepg_icon_100.png" id="homebtn" data-trigger="hover" data-toggle="tooltip" data-placement="left" title="Home" > </a> </li> <br>
                 <li> <a href = "#about" class="txtcol"><img src="/static/images/aboutpg_icon_100.png" id="abtbtn" data-trigger="hover" data-toggle="tooltip" data-placement="left" title="About" > </a> </li> <br>
                 <li> <a href = "#services" class="txtcol"><img src="/static/images/servicespg_icon_100.png" id="servicebtn" data-trigger="hover" data-toggle="tooltip" data-placement="left" title="Services" ></a> </li><br>
-              <li> <a href = "#contact" class="txtcol"><img src="/static/images/mauve_cir.jpg" id="contactbtn" data-trigger="hover" data-toggle="tooltip" data-placement="left" title="Contact" ></a> </li><br>
+              <li> <a href = "#contact" class="txtcol"><img src="/static/images/contactpg_icon_100.png" id="contactbtn" data-trigger="hover" data-toggle="tooltip" data-placement="left" title="Contact" ></a> </li><br>
                 <!--    <li> <a href = "#blog" class="txtcol"><h5> Blog </h5> </a> </li> -->
               <!--   <li> <a href = "#projects" class="txtcol"><img src="/static/images/mauve_cir.jpg" id="projbtn" data-trigger="hover" data-toggle="tooltip" data-placement="left" title="Projects" > </a> </li><br>
                 <li> <a href = "#team" class="txtcol"><h5> The Team </h5> </a> </li> -->
@@ -41,6 +41,7 @@
                             console.log(width);
                             console.log(height);
                             $('#home').css({'height':height,'width':width});
+                            $('.item img').css({'height':height,'width':width});
                             $('#about').css({'height':height,'width':width});
                             $('#services').css({'height':height,'width':width});
                             $('#contact').css({'height':height,'width':width});

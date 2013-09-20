@@ -49,31 +49,127 @@
 {
     height:160px;
 }
+/* css for phone icon */
+.contact_icon #phone_content
+{
+    opacity:0;
+    padding-top:170px;
+}
 #phone_icon
 {
     background:url('/static/images/contactus_page/phone_icon_160.png') no-repeat;
+    cursor:pointer;
+}
+#phone_icon:hover 
+{
+    background:url('/static/images/phone_icon_160_wShadow.png') no-repeat;
+    cursor:pointer;
+}
+#phone_icon:hover > #phone_content 
+{
+    opacity:1;
+}
+/*css for email icon */
+.contact_icon #email_content
+{
+    opacity:0;
+    padding-top:170px;
 }
 #email_icon
 {
     background:url('/static/images/contactus_page/email_icon_160.png') no-repeat;
+    cursor:pointer;
+}
+#email_icon:hover
+{
+    background:url('/static/images/email_icon_160_wShadow.png') no-repeat;
+    cursor:pointer;
+}
+#email_icon:hover > #email_content 
+{
+    opacity:1;
+}
+/*css for address icon */
+.contact_icon #add_content
+{
+    opacity:0;
+    padding-top:170px;
 }
 #add_icon
 {
     background:url('/static/images/contactus_page/home_icon_160.png') no-repeat;
+    cursor:pointer;
+}
+#add_icon:hover
+{
+    background:url('/static/images/home_icon_160_wShadow.png') no-repeat;
+    cursor:pointer;
+}
+#add_icon:hover > #add_content 
+{
+    opacity:1;
+}
+/*css for fb icon */
+.contact_icon #fb_content
+{
+    opacity:0;
+    padding-top:170px;
 }
 #fb_icon
 {
     background:url('/static/images/contactus_page/fb_icon_160.png') no-repeat;
+    cursor:pointer;
+}
+#fb_icon:hover
+{
+    background:url('/static/images/fb_icon_160_wShadow.png') no-repeat;
+    cursor:pointer;
+}
+#fb_icon:hover > #fb_content
+{
+    opacity:1;
+}
+/*css for linked icon */
+.contact_icon #linked_content
+{
+    opacity:0;
+    padding-top:170px;
 }
 #linked_icon
 {
     background:url('/static/images/contactus_page/linkedin_icon_160.png') no-repeat;
+    cursor:pointer;
+}
+#linked_icon:hover
+{
+    background:url('/static/images/linked_icon_160_wShadow.png') no-repeat;
+    cursor:pointer;
+}
+#linked_icon:hover > #linked_content
+{
+    opacity:1;
+}
+/*css for twitter icon */
+.contact_icon #tw_content
+{
+    opacity:0;
+    padding-top:170px;
 }
 #tw_icon
 {
     background:url('/static/images/contactus_page/twitter_icon_160.png') no-repeat;
+    cursor:pointer;
 }
-.contact_or
+#tw_icon:hover
+{
+    background:url('/static/images/tw_icon_160_wShadow.png') no-repeat;
+    cursor:pointer;
+}
+#tw_icon:hover > #tw_content
+{
+    opacity:1;
+}
+/* .contact_or
 {
     font-size:45px;
     font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -103,4 +199,4 @@
 {
     width:240px;
 }
-
+*/
