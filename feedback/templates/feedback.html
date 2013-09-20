@@ -1,0 +1,146 @@
+{%load webdesign%}
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title> Krunk Systems </title>
+        <link rel = "stylesheet" href = "/static/css/bootstrap.css">
+        <link rel = "stylesheet" href = "/static/css/base.css">
+        <link rel = "stylesheet" href = "/static/css/bootstrap-responsive.css">
+    </head>
+    <body>
+        <div class="container">
+            <p class="ks_heading text-center">We want to improve our services for you</p>
+            <hr>
+        </div>
+        <div class="row-fluid">
+            <div class="container">
+            <div class="offset1 span5">
+                <div class="row-fluid">
+                    <div class="span5 b-border">
+                        <h3 class="text-left c-gray">We are happy</h3>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <h4 class="ks_subheading">
+                        {%lorem 40 w%}
+                    </h4>
+                </div>
+                <div class="row-fluid">
+                    <p >
+                    <h5 class="c-gray">Cost</h5>
+                    <span>{%lorem 1 p%} </span>
+                    <h5 class="c-gray">Cost</h5>
+                    <span>{%lorem 1 p%} </span>
+                    </p>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="row-fluid">
+                    <div class"span4 cb-red">
+                    </div>
+                </div>
+                <form action={%url 'feedback_url'%} method='POST' class="form-horizontal" >
+                    {%csrf_token%}
+                    <div class="control-group">
+                        <div class="control-label">
+                            {{form.name.label}}
+                        </div>
+                        <div class="controls">
+                            {{form.name}}
+                            {{form.name.errors|removetags:"ul li"|rjust:"10"}}
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="control-label">
+                            {{form.email.label}}
+                        </div>
+                        <div class="controls">
+                            {{form.email}}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            {{form.website.label}}
+                        </div>
+                        <div class="controls">
+                            {{form.website}}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            {{form.budget.label}}
+                        </div>
+                        <div class="controls">
+                            {{form.budget}}
+                            {%comment%}
+                            {%for b in form.budget%}
+                            <label class="checkbox inline">
+                            {{b.choice_label}}
+                            {{b.tag}}
+                            </label>
+                            {%endfor%}
+                            {%endcomment%}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            {{form.experience.label}}
+                        </div>
+                        <div class="controls">
+                            {{form.experience}}
+                            {%comment%}
+                            {%for f in form.experience%}
+                            <label class="checkbox inline">
+                            {{f.choice_label}}
+                            {{f.tag}}
+                            </label>
+                            {%endfor%}
+                            {%endcomment%}
+                        </div>
+                    </div>
+                    <div class="control-group ">
+                        <div class="control-label">
+                            {{form.portfolio.label}}
+                        </div>
+                        <div class="controls">
+                            {{form.portfolio}}
+                            {%comment%}
+                            {%for port in form.portfolio %}
+                            <label class="checkbox inline">
+                            {{port.choice_label}}
+                            {{port.tag}}
+                            </label>
+                            {%endfor%}
+                            {%endcomment%}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            {{form.jobportal.label }}
+                        </div>
+                        <div class="controls">
+                            {{form.jobportal }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="control-label">
+                            {{form.suggestion.label}}
+                        </div>
+                        <div class="controls">
+                            {{form.suggestion}}
+                        </div>
+                    </div>
+                     <div class="control-group">
+                        <div class="controls">
+                            <input class="btn btn-primary" type="submit" value="Submit" />
+                        </div>
+                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>
+
