@@ -3,7 +3,9 @@
     <head>
             <title> Krunk Systems </title>
             <link rel = "stylesheet" href = "/static/css/bootstrap.css">
+            <link rel = "stylesheet" href = "/static/font-awesome/css/font-awesome.css">
             <link rel = "stylesheet" href = "/static/css/bootstrap-responsive.css">
+            {%block customcss %}
             <link rel = "stylesheet" href = "/static/css/krunk_home.css">
             <link rel = "stylesheet" href = "/static/css/base.css">
             <link rel = "stylesheet" href = "/static/css/krunk_abtus_test.css">
@@ -11,9 +13,12 @@
             <!-- <link rel = "stylesheet" href = "/static/css/footer.css">-->
             <link rel = "stylesheet" href = "/static/css/krunk_contact.css">
             <!--<link href="http://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">-->
+            {%endblock customcss %}
     </head>
     <body>
+        {%block templates%}
         {%include "templates.html"%}
+        {%endblock templates%}
         {%block menu%}
         <section>
         <ul class = "nav nav-stacked menuitem " id="menu">
@@ -33,6 +38,7 @@
         {%endblock menu%}
         {%block content %}
         {%endblock content%}
+        {%block script%}
             <script type="text/javascript" src="/static/js/jquery.js"></script>
             <script type="text/javascript">
                      $(window).load(function(){
@@ -99,5 +105,6 @@
                         $('#myTab a:last').tab('show');
                     })*/
                 </script>
+                {%endblock script%}
     </body>
     </html>

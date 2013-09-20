@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{%block customcss%}
+{%endblock customcss%}
+
+{%block templates%}
+{%endblock templates%}
+
+{%block menu%}
+{%endblock%}
+
+{%block script%}
+{%endblock%}
+
+{%block content%}
+<div class="row-fluid">
+    <div class="container">
+<p class="text-center"> <h3>Casestudy about development @ Krunk Systems </h3></p>
+<hr>
+</div>
+
+    <div class="container">
+<table class="table table-hover">
+<thead>
+        <tr>
+        <th>Sr.</th>
+        <th>Project Name</th>
+        <th>Brief</th>
+        <th>Famework</th>
+        <th>Laguages</th>
+</tr>
+        {%for casestudy in casestudies%}
+    <tr>
+        <td>{{casestudy.id}}</td>
+        <td><a href='{%url "casestudydetail_url" casestudy.id %}'>{{casestudy.project_name}}</a> </td>
+        <td>{{casestudy.brief}} </td>
+        <td>frameworks</td>
+        <td> Lagugaes</td>
+    </tr>
+        {%endfor%}
+</table>
+    </div>
+</div>
+
+{%endblock%}

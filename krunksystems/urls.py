@@ -8,6 +8,8 @@ from Consultancyapp.api.resources import PythonConsultancyResource,DjangoConsult
 from webapp.api.resources import DevelopmentResource
 from erpapp.api.resources import OpenERPModulesResource,ERPInquiryResource,ErpDemoResource,ERPModuleDetailResource
 from contactus.api.resources import ContactusResource
+from casestudy.views import CaseStudyView,CaseStudyDetailView
+
 v1_api=Api(api_name='v1')
 v1_api.register(TrainingCoursesResource())
 v1_api.register(CorporateTrainingResource())
@@ -35,6 +37,8 @@ urlpatterns = patterns('',
     url(r'^contactus/$', 'contactus.views.A2V1_contactus', name='contactus_url'),
     url(r'^feedback/$',feedbackView.as_view(), name='feedback_url'),
     url(r'^feedback/$',feedbackView.as_view(), name='feedback_url'),
+    url(r'^casestudy/$',CaseStudyView.as_view(), name='casestudy_url'),
+    url(r'^casestudy/(?P<pk>\d+)/$',CaseStudyDetailView.as_view(),name='casestudydetail_url'),
     url(r'^thanks/$',TemplateView.as_view(template_name='thanks.html'), name='thanks_url'),
     # url(r'^krunksystems/', include('krunksystems.foo.urls')),
 

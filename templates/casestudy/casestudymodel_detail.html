@@ -1,0 +1,140 @@
+{%extends 'base.html'%}
+{%block customcss%}
+{%endblock customcss%}
+
+{%block templates%}
+{%endblock templates%}
+
+{%block menu%}
+{%endblock%}
+
+
+{%block content%}
+<div class="row-fluid">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span3">
+                <h4>Kunk Systems</h4>
+            </div>
+            <div class="offset6 span1">
+                <button class="btn btn-large btn-danger"><i class="icon-white icon-home"></i>Home</button>
+            </div>
+            <div class="span1">
+                <button class="btn btn-large btn-success"><i class="icon-home icon-white"></i>Home</button>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="container">
+        <div class="span9"> 
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a href="#" class="brand">{{casestudy.project_name}}</a>
+                <ul class="nav nav-tabs">
+                    <li><a href="#"><i class="icon-github icon-2x"></i></a></li>
+                    <li><a href="#"><i class="icon-share icon-2x"></i></a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="pull-right"> <h6>{{casestudy.end_date}}</h6></li>
+                </ul>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <ul class="thumbnails">
+                    <li class="span4">
+                    <div class="thumbnail">
+                        <h5>Framework</h4>
+                        {%for framework in casestudy.frameworks.all%}
+                        <p>{{framework.framework_name}}</p>
+                        {%endfor%}
+                    </div>
+                    </li>
+                    <li class="span4">
+                    <div class="thumbnail">
+                        <h5> Languages </h5>
+                        {%for language in casestudy.languages.all %}
+                        <p>{{language.language}} </p>
+                        {%endfor%}
+                        </div>
+                    </li>
+                    <li class="span4">
+                    <div class="thumbnail">
+                        <h5>Django in-build framework</h5>
+                    {%for dj_framework in casestudy.dj_frameworks.all%} 
+                        {{dj_framework}}
+                        {%endfor%}
+                    </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="row-fluid">
+                <h5>Brief</h5>
+                <p>
+                {{casestudy.brief}}
+                </p>
+            </div>
+            <div class="row-fluid">
+                <h5>Description</h5>
+                <p>
+                {{casestudy.description}}
+                </p>
+            </div>
+            <div class="row-fluid">
+                <h5>Challanges</h5>
+                <div class="accordion" id="accordion2">
+                {%for problem in casestudy.problems.all%}
+                <div class="accordion-group">
+                <div class="accordion-heading">
+                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse{{problem.id}}">
+                {{problem.problem}}
+                    </a>
+                </div>
+                <div id="collapse{{problem.id}}" class="accordion-body collapse">
+                     <div class="accordion-inner">
+                {{problem.solution}}
+                    </div>
+                </div>
+                </div>
+                {%endfor%}
+                </div>
+            </div>
+        </div>
+        <div class="span3"> 
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand"><i class="icon-file"></i>&nbspFiles</a>
+                </div>
+                <table class="table">
+                    {%for doc in docs%}
+                    <tr>
+                    <td>{{doc.doc_name}}</td>
+                    <td><i class="icon-download-alt"></i></td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand"><i class="icon-home"></i>We are live</a>
+                </div>
+                <table class="table">
+                    <tr>
+                        <td>Our code is live</td>
+                        <td><i class="icon-github icon-2x"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Our code is live</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
