@@ -54,10 +54,11 @@
 {
     opacity:0;
     padding-top:170px;
+    text-align:center;
 }
 #phone_icon
 {
-    background:url('/static/images/contactus_page/phone_icon_160.png') no-repeat;
+    background:url('/static/images/phone_icon_160.png') no-repeat;
     cursor:pointer;
 }
 #phone_icon:hover 
@@ -68,16 +69,18 @@
 #phone_icon:hover > #phone_content 
 {
     opacity:1;
+    text-align:center;
 }
 /*css for email icon */
 .contact_icon #email_content
 {
     opacity:0;
     padding-top:170px;
+    text-align:center;
 }
 #email_icon
 {
-    background:url('/static/images/contactus_page/email_icon_160.png') no-repeat;
+    background:url('/static/images/email_icon_160.png') no-repeat;
     cursor:pointer;
 }
 #email_icon:hover
@@ -94,10 +97,11 @@
 {
     opacity:0;
     padding-top:170px;
+    text-align:center;
 }
 #add_icon
 {
-    background:url('/static/images/contactus_page/home_icon_160.png') no-repeat;
+    background:url('/static/images/home_icon_160.png') no-repeat;
     cursor:pointer;
 }
 #add_icon:hover
@@ -114,10 +118,11 @@
 {
     opacity:0;
     padding-top:170px;
+    text-align:center;
 }
 #fb_icon
 {
-    background:url('/static/images/contactus_page/fb_icon_160.png') no-repeat;
+    background:url('/static/images/fb_icon_160.png') no-repeat;
     cursor:pointer;
 }
 #fb_icon:hover
@@ -134,10 +139,11 @@
 {
     opacity:0;
     padding-top:170px;
+    text-align:center;
 }
 #linked_icon
 {
-    background:url('/static/images/contactus_page/linkedin_icon_160.png') no-repeat;
+    background:url('/static/images/linkedin_icon_160.png') no-repeat;
     cursor:pointer;
 }
 #linked_icon:hover
@@ -154,10 +160,11 @@
 {
     opacity:0;
     padding-top:170px;
+    text-align:center;
 }
 #tw_icon
 {
-    background:url('/static/images/contactus_page/twitter_icon_160.png') no-repeat;
+    background:url('/static/images/twitter_icon_160.png') no-repeat;
     cursor:pointer;
 }
 #tw_icon:hover
@@ -169,34 +176,3 @@
 {
     opacity:1;
 }
-/* .contact_or
-{
-    font-size:45px;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    padding-top:27%;
-    padding-left:40px;
-}
-.contact_direct
-{
-    padding-top:35%;
-    font-size:45px;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    padding-bottom:5%;
-    text-align:center;
-}
-.contact_direct_border
-{
-    margin-bottom:3%;
-    border-bottom:2px inset #343434;
-}
-.contact_form
-{
-    margin-right:20%;
-    padding:4%;
-    border-radius:5px;
-}
-.contact_form #form_text
-{
-    width:240px;
-}
-*/

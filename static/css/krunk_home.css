@@ -1,3 +1,7 @@
+body
+{
+    font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;
+}
 .menuitem
 {
     top:30%;
@@ -33,16 +37,25 @@
 
 #about
 {   
-    /*background:url(/static/images/krunk2.png) 50% 0 no-repeat fixed;*/
+   /* background:url(/static/images/Grey-Wallpaper.png)  no-repeat fixed; */
+    background:url(/static/images/icons_aboutus.png)  no-repeat fixed; 
     width:100%;
     overflow:hidden;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
 }
 
 #services
 {
-    /*background:url(/static/images/bubbles1.png) 50% 50% no-repeat fixed,url(/static/images/bubbles2.png) 50% 50% no-repeat fixed;*/
+    background:url(/static/images/icons_servicespg.png)  no-repeat fixed; 
     width:100%;
     overflow:hidden;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
 }
 
 #projects

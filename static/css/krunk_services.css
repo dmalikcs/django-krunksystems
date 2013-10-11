@@ -1,126 +1,93 @@
-.service_nav
+.service_icon_main 
 {
-    padding-top:3%;
-    margin-left:4%;
-    margin-right:3.5%;
+    margin-top:-12% 0 0 15%;
 }
-
-.nav_servicetxt > a
+.service_icon_main img
 {
-    text-decoration:none;
-}
-.service_nav .navbar-inner
-{
-    background-color:transparent;
-    background-shadow:none;
-    background-image:none;
-    border:0 none #fff;
-    box-shadow:none;
-    margin-right:0;
-}
-.service_menubar .navbar-inner
-{
-    background-color:grey;
-    background-shadow:none;
-    background-image:none;
-    border:0 none #fff
-    box-shadow:none;
-    margin-right:0;
-    margin-left:-1%;
-}
-
-.services_circle img
-{
-    /*width:115px;
-    height:40px;*/
-    padding-bottom:5%;
-/*    -webkit-transform:rotate(-90deg);
-    -moz-transform:rotate(-90deg);*/
-}
-
-.services_circle h4
-{
-    margin-top:8%;
-    text-shadow:none;
-    color:#fff;
+    width:180px;
+    height:180px;
 }
 .main_circle
 {
-    width:100px;
-    height:100px;
-    text-align:center;
+    padding:3% 2% 0% 2%;
+    width:90px;
+    height:90px;
 }
-
 .main_circle img
 {
     margin-top:12%;
 }
-
-.main_circle .erp_icon
+.main_circle .erp_icon_img
 {
     margin-top:0;
 }
-
-/*
- .main_circle h5
+.service_menubar
 {
-    margin-top:40%;
-    text-shadow:none;
-    color:#343435;
+    margin:1.5% 0 4% 0;
+    padding:0 11% 1.5% 0.5%;
 }
-*/
 .training_circle
 {
     background-color:#EB5E5E;
     border:2px solid #D35454;
 }
-
+.training_circle:hover
+{
+    box-shadow:0px 0px 6px 3px #d45454 inset;
+}
 .consulting_circle
 {
     background-color:#4CACE7;
     border:2px solid #459DD3;
+}
+.consulting_circle:hover
+{
+    box-shadow:0px 0px 6px 3px #459DD3 inset;
 }
 .development_circle
 {
     background-color:#E7A600;
     border:2px solid #D39700;
 }
+.development_circle:hover
+{
+    box-shadow:0px 0px 6px 3px #d39700 inset;
+}
 .erp_circle
 {
     background-color:#2EF888;
     border:2px solid #27D876;
 }
-.service_nav #service_container
+.erp_circle:hover
 {
-    padding-left:4%;
+    box-shadow:0px 0px 6px 3px #27d876 inset;
+}
+.nav_abtus1 #service_container
+{
+    padding:3% 0 0 10%;
 }
 #service_container .service_heading
 {
-    font-size:35px;
-    color:#4A4850;
-    margin-top:1%;
-    margin-bottom:6%;
-    margin-left:35%;
-    font-family:'Droid Serif', serif;
-    font-weight:100;
+    font:lighter 40px Lucida Sans Unicode, Lucida Grande, sans-serif;
+    color:#404040;
+    margin:-1% 0 5% 0;
+    text-align:center;
 }
 #service_container .service_heading .service_provide
 {
-    font-weight:600;
-    font-size:38px;
+    font:700 45px Lucida Sans Unicode, Lucida Grande, sans-serif;
+    color:#333;
 }
 #service_container  .service_head_border
 {
-    margin-left:40%;
-    margin-right:35%;
+    margin:0 36%;
     border-bottom : 3px solid #4A4850;
 }
 #service_container .service_content
 {
-    margin-top:6%;
-    margin-left:10%;
+    margin:4% 10% 0% 7%;
     font-size:20px;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;
     color:#605d68;
     letter-spacing: .9px;
     line-height:150%;
@@ -138,6 +105,11 @@
 #training_border
 {
     color:#605d68;
+    font-size:15px;
+}
+#training_border .icon-chevron-right
+{
+    margin-top:4px;
 }
 .course_accordion .accordion-group
 {
@@ -155,63 +127,26 @@
 {
     color:#605d68;
 }
-#CorporateTraining .corporate_icon
+.training_icon
 {
     border-bottom:1px inset #eb5e5e;
     margin-bottom:10px;
     padding-bottom:8px;
     font-size:20px;
     color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;
 }
-#CorporateTraining .corporate_icon .icon-list
-{
-    margin-top:.5%;
-}
-#CorporateTraining .lorem_training_para
+.service-section .lorem_para
 {
     color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;
+    font-size:14.5px;
 }
-#IndustrialTraining .industrial_icon
-{
-    border-bottom:1px inset #eb5e5e;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#IndustrialTraining .industrial_icon .icon-italic
+.service-section i
 {
     margin-top:.8%;
     width:10px;
     height:16px;
-}
-#IndustrialTraining .lorem_industry_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#AcademyTraining .academy_icon
-{
-    border-bottom:1px inset #eb5e5e;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#AcademyTraining .academy_icon .icon-book
-{
-    margin-top:.8%;
-    width:10px;
-    height:16px;
-}
-#AcademyTraining .lorem_academy_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .tabs-left > .nav-tabs .active > #consulting_border, .tabs-left > .nav-tabs .active > #consulting_border:hover, .tabs-left > .nav-tabs .active > #consulting_border:focus
 {
@@ -226,78 +161,15 @@
 #consulting_border
 {
     color:#605D68;
+    font-size:15px;
 }
-#PythonConsultancy .python_icon
+#consulting_border .icon-chevron-right
+{
+    margin-top:4px;
+}
+.consult_icon
 {
     border-bottom:1px inset #4CACE7;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#PythonConsultancy .python_icon .icon-edit
-{
-    margin-top:.7%;
-}
-#PythonConsultancy .lorem_python_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#DjangoConsultancy .django_icon
-{
-    border-bottom:1px inset #4CACE7;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#DjangoConsultancy .django_icon .icon-wrench
-{
-    margin-top:.7%;
-}
-#DjangoConsultancy .lorem_django_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#OpensourceConsultancy .opensource_icon
-{
-    border-bottom:1px inset #4CACE7;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#OpensourceConsultancy .opensource_icon .icon-adjust
-{
-    margin-top:.7%;
-}
-#OpensourceConsultancy .lorem_opensource_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#MidrangeConsultancy .midrange_icon
-{
-    border-bottom:1px inset #4CACE7;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#MidrangeConsultancy .midrange_icon .icon-cog
-{
-    margin-top:.7%;
-}
-#MidrangeConsultancy .lorem_midrange_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .tabs-left > .nav-tabs .active > #development_border, .tabs-left > .nav-tabs .active > #development_border:hover, .tabs-left > .nav-tabs .active > #development_border:focus
 {
@@ -312,42 +184,15 @@
 #development_border
 {
     color:#605d68;
+    font-size:15px;
 }
-#Webdevelopment .web_icon
+#development_border .icon-chevron-right
+{
+    margin-top:4px;
+}
+.develop_icon
 {
     border-bottom:1px inset #E7A600;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#Webdevelopment .web_icon .icon-cog
-{
-    margin-top:.7%;
-}
-#Webdevelopment .lorem_web_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#Applicationdevelopment .app_icon
-{
-    border-bottom:1px inset #E7A600;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#Applicationdevelopment .app_icon .icon-cog
-{
-    margin-top:.7%;
-}
-#Applicationdevelopment .lorem_app_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .tabs-left > .nav-tabs .active > #erp_border, .tabs-left > .nav-tabs .active > #erp_border:hover, .tabs-left > .nav-tabs .active > #erp_border:focus
 {
@@ -362,56 +207,15 @@
 #erp_border
 {
     color:#605d68;
+    font-size:14.4px;
 }
-#openerp_implementation .erp_implement_icon
+#erp_border .icon-chevron-right
+{
+    margin-top:4px;
+}
+.erp_icon
 {
     border-bottom:1px inset #2EF888;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#openerp_implementation .erp_implement_icon .icon-cog
-{
-    margin-top:.7%;
-}
-#openerp_implementation .lorem_erp_implement_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#openerp_customization .erp_customize_icon
-{
-    border-bottom:1px inset #2EF888;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-#openerp_customization .erp_customize_icon .icon-cog
-{
-    margin-top:.7%;
-}
-#openerp_customization .lorem_erp_customize_para
-{
-    color:#605D68;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-.modules_head
-{
-    border-bottom:1px inset #2EF888;
-    margin-bottom:10px;
-    padding-bottom:8px;
-    font-size:20px;
-    color:#4A4850;
-    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-.modules_head .icon-cog
-{
-    margin-top:.7%;
-    width:20px;
 }
 .thumbnails_move
 {
